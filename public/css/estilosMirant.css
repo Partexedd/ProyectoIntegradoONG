@@ -17,3 +17,8 @@ h1{
 .jumbotron{margin-top: -9px;
     height: 500px !important;
 }
+.peliculas{list-style: none;
+   }
+    .project-list{ display: flex;}
+.pelicula{    width: 294px;
+    height: 230px;}
