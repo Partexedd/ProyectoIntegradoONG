@@ -1,0 +1,9 @@
+h1#tituloInicial{
+    font-family: Arial;
+    margin-top: 3%;
+    color: rgba(29,68,81,0.97);
+}
+#CartelMirant{width: 500px;
+background-image: url(".././img/Carteles_mirant/Cartel-IMP_page-0001.jpg");
+background-size: cover;
+margin-top: 10px;}
