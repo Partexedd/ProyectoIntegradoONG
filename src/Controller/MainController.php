@@ -37,7 +37,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/contacto", name="contacto")
+     * @Route("/mirant", name="mirant")
      */
     public function mirant()
     {
