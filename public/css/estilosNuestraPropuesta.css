@@ -1,0 +1,26 @@
+body{
+    font-family: Verdana;
+}
+
+h1#tituloInicial{
+    font-family: Arial;
+    margin-top: 3%;
+}
+
+div#primerTexto{
+    margin-top: 2%;
+    margin-left: 14%;
+    margin-right: 14%;
+    font-size: 18px;
+}
+
+#menu * { list-style:none;}
+#menu li{ line-height: 150%;}
+#menu li a{color:#222; text-decoration:none;}
+#menu li a:before{ content:"\025b8"; color:#ddd;}
+#menu input[name="list"] {position: absolute; left: -1000em;}
+#menu label:before{ content:"\025b8"; margin-right:4px;}
+#menu input:checked ~ label:before{ content:"\025be"; width: 20%}
+#menu .interior{display: none;}
+#menu input:checked ~ ul{display:block;}
+#menu ul.interior{margin-right: 5%;}
