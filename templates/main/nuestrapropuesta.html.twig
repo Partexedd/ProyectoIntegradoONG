@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/estilosNuestraPropuesta.css">
+    <link rel="stylesheet" href="css/estilosNuestraPropuesta.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
 <body>
     <section class="container">
         <article class="row">
-            <h1 class="col-12 text-center" id="tituloInicial">Nuestra propuesta</h1>
+            <h1 class="col-12 text-center">Nuestra propuesta</h1>
             <div class="text-justify" id="primerTexto">
                 <p>El proyecto de las <strong>Redes Sanitarias Solidarias</strong> que existen en las <strong>
                 tres provincias de la C.Valenciana</strong> es una iniciativa impulsada por las ONGD Medicus Mundi Mediterrània, ACOEC y Farmamundi. Se trata de un conjunto de redes provinciales formadas por numerosas y diversas entidades del sector sanitario, que han mostrado su <strong>compromiso 
@@ -23,19 +23,72 @@
                 Salud Global, Cooperación al Desarrollo, Derecho a la Salud y Agenda 2030.</strong></p>
             </div>
         </article>
-    </section>
-    <section class="container">
-        <article class="row">
-            <div id="desplegables">
+        <article id="desplegables">
             <ul id="menu">
-            <li><input type="checkbox" name="list" id="nivel1-1">
-                <label for="nivel1-1">¿Qué hacemos?</label>
+            <input type="checkbox" name="list" id="nivel-1">
+                <label for="nivel-1">¿Qué hacemos?</label>
                 <ul class="interior text-justify">
                     <p>Buscamos a través del trabajo en red, la formación y la reflexión, un camino compartido por todas las entidades sobre la manera de entender la salud global, a través de la defensa del derecho a la salud, y de la cooperación al desarrollo bajo el enfoque de los derechos humanos.</p>
                 </ul>
-            </li>
+            </input>
             </ul>
-            </div>
+                <hr>
+            <ul id="menu">
+                <input type="checkbox" name="list" id="nivel-2">
+                <label for="nivel-2">¿Cómo lo hacemos?</label>
+                <ul class="interior text-justify">
+                    <p>Integrando en nuestras entidades enfoques y miradas compartidas para el desarrollo humano, la defensa de los derechos humanos, la equidad en diversidad y la sostenibilidad como ejes de nuestra formación y actuación en el campo de la salud.</p>
+                </ul>
+                </input>
+            </ul>
+                <hr>
+            <ul id="menu">
+                <input type="checkbox" name="list" id="nivel-3">
+                <label for="nivel-3">¿Para qué lo hacemos?</label>
+                <ul class="interior text-justify">
+                    <p>Para que todas las entidades del sector socio-sanitario de la Comunitat Valenciana avancemos en la misma dirección en la defensa del derecho a la salud desde una visión global, integral e incluyente.</p>
+                </ul>
+                </input>
+            </ul>
+                <hr>
+            <ul id="menu">
+                <input type="checkbox" name="list" id="nivel-4">
+                <label for="nivel-4">¿Por qué lo hacemos?</label>
+                <ul class="interior text-justify">
+                    <p>Porque la sociedad reclama un cambio de paradigma en la forma de entender la salud. Porque estar sano no es solo no estar enfermo, porque la salud no entiende de fronteras, porque la salud de las personas es una cuestión de justicia social.</p>
+                </ul>
+                </input>
+            </ul>
+        </article>
+        <article id="desplegables">
+            <br>
+            <h2 class="col-12 text-center">Nuestros objetivos</h2>
+            <ul id="menu">
+            <input type="checkbox" name="list" id="nivel-11">
+                <label for="nivel-11">Crear redes</label>
+                <ul class="interior text-justify">
+                    <p>Crear redes de entidades del sector socio-sanitario cuya finalidad sea facilitar la formación de estudiantes y profesionales en temas de solidaridad y salud global, aprovechando los beneficios derivados del trabajo en red.</p>
+                </ul>
+            </input>
+            </ul>
+                <hr>
+            <ul id="menu">
+                <input type="checkbox" name="list" id="nivel-21">
+                <label for="nivel-21">Visibilizar la implicación del sector</label>
+                <ul class="interior text-justify">
+                    <p>Visibilizar la implicación del sector sanitario de la Comunidad Valenciana en mejorar la formación de estudiantes y profesionales en temas de salud global, repercutiendo así en la información de la que dispone el resto de la población.</p>
+                </ul>
+                </input>
+            </ul>
+                <hr>
+            <ul id="menu">
+                <input type="checkbox" name="list" id="nivel-31">
+                <label for="nivel-31">Crear espacio de encuentro</label>
+                <ul class="interior text-justify">
+                    <p>Crear un espacio donde las ONGD sanitarias puedan informar sobre el trabajo que realizan y donde las personas interesadas puedan establecer un primer contacto con las mismas.</p>
+                </ul>
+                </input>
+            </ul>
         </article>
     </section>
 </body>
