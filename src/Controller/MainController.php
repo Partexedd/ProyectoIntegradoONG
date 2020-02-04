@@ -17,12 +17,21 @@ class MainController extends AbstractController
         ]);
     }
 
-       /**
+    /**
      * @Route("/nuestraPropuesta", name="nuestraPropuesta")
      */
     public function nuestraPropuesta()
     {
         return $this->render('main/nuestrapropuesta.html.twig', [
+        ]);
+    }
+
+    /**
+     * @Route("/mirant", name="mirant")
+     */
+    public function mirant()
+    {
+        return $this->render('main/mirant.html.twig', [
         ]);
     }
 }
