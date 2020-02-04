@@ -18,19 +18,21 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estilosMirant.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
+   
     <section class="container">
         <article class="row">
             <h1 class="col text-center" id="tituloInicial">II EDICIÓN</h1>
         </article>
-        <div class="row">
+        <div class="row" id="contenido-mirant">
             <div class="col-xl-6 text-center">
-                <h1>Nuestra Empresa</h1>
+                <h1 id="titulo-mirant">"Salud y Mujer, Necesidades y Desafios"</h1>
             </div>
             <div class="col-xl-7">
-                <p>
+                <p id="texto-mirant">
                     Mirant sale del juego con la contracción de las palabras Mostra ItineRANT. Pero también
                     significa mirando en valenciano. La primera de las acepciones del verbo mirar se refiere a
                     “Dirigir la vista hacia algo y fijar la atención en ello”. Eso es lo que esperamos conseguir con
@@ -46,11 +48,37 @@
                 </p>
             </div>
 
-            <div class="col-xl-5">
-                <img id="img-nosotros" width="80%" src="img/Carteles_mirant/Cartel-IMP_page-0001.jpg">
+            <div class="col-xl-5 text-center">
+                <img id="CartelMirant" width="80%" src="img/Carteles_mirant/Cartel-IMP_page-0001.jpg">
             </div>
         </div>
+
+
     </section>
+    <section>
+        <iframe width="100%" height="500" src="https://www.youtube.com/embed/755APbFY-Ng" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="jumbotron">
+            <article class="row" style="margin-top: 24px;">
+                <h1 class="col text-center" id="tituloInicial">Las Sedes ¡Inscríbite!</h1>
+            </article>
+            <article class="container" id="botones-mirant">
+                <div class="direcciones row text-center">
+                    <div class="col-xl-4">
+                        <a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button"
+                            aria-pressed="true">Castellón</a>
+                    </div>
+                    <div class="col-xl-4">
+                        <a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button" aria-pressed="true">Valencia</a>
+                    </div>
+                    <div class="col-xl-4">
+                        <a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button" aria-pressed="true">Alicante</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
 </body>
 
 </html>
