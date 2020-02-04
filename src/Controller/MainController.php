@@ -33,5 +33,15 @@ class MainController extends AbstractController
     {
         return $this->render('main/contacto.html.twig', [
         ]);
+
+    }
+
+    /**
+     * @Route("/contacto", name="contacto")
+     */
+    public function mirant()
+    {
+        return $this->render('main/mirant.html.twig', [
+        ]);
     }
 }
