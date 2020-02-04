@@ -25,4 +25,13 @@ class MainController extends AbstractController
         return $this->render('main/nuestrapropuesta.html.twig', [
         ]);
     }
+
+    /**
+     * @Route("/contacto", name="contacto")
+     */
+    public function contacto()
+    {
+        return $this->render('main/contacto.html.twig', [
+        ]);
+    }
 }
