@@ -7,9 +7,19 @@
 /public/bundles/
 /var/
 /vendor/
+/translations/
+/tests/
+/bin/
+/config/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
+.env.test
+.env
+composer.lock
+composer.json
+symfony.lock
+phpunit.xml.dist
 .phpunit
 .phpunit.result.cache
 /phpunit.xml
