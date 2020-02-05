@@ -2,15 +2,23 @@ h1{
     margin: 4% 0% !important;
 }
 .pTexto{
-    margin: 0% 14%;
+    margin: 0% 10%;
     font-size: 18px;
 }
 .dirFoto{
     width: 42%;
     margin-bottom: 14%;
 }
+#divDir1, #divDir2, #divDir3{
+    margin: 2% 0%;
+    height: 0px;
+    width: 100%;
+}
+.h1Form{
+    margin-top: 2% !important;
+}
 .direcciones{
-    margin: 7% 7%;
+    margin: 7% 2%;
 }
 label{
     margin-top: 2%;
@@ -21,12 +29,14 @@ input{
 button{
     background-color: #3953a0;
     color: #fff;
-    padding: 10px 15px 10px 15px !important;
     border-radius: 0px !important; 
 }
 button:hover{
     background-color: #425dac;
     transition: 0.2;
+}
+#but1, #but2, #but3{
+    width: 40% !important;
 }
 .modelo{
     background-color: #ff9a00;

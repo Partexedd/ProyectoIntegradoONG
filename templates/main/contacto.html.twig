@@ -12,8 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/estilosContacto.css">
-    <link>
+    <link rel="stylesheet" href="./css/estilosContacto.css">
+    <link rel="stylesheet" href="./css/master.css">
+    <script src="./js/scriptContacto.js"></script>
     <title>Contacto - Red Sanitaria Solidaria Comunidad Valenciana</title>
 </head>
 <body>
@@ -24,28 +25,31 @@
             o una administración pública. Únete a la red sanitaria solidaria de tu provincia y ayudanos 
             a hacer desde la comunidad valenciana un mundo y una sociedad más sanos.</div>
         </article>
-        <article>
+        <article id="direccion">
             <div class="direcciones row text-center">
                 <div class="col-4">
                     <img src="img/castellon.png" alt="Castellón" class="dirFoto"><br>
                     <h3>Castellón</h3><br>
-                    <button class="btn">Ver más</button>
+                    <button class="btn" id="but1">Ver dirección</button>
+                    <div id="divDir1" class="col text-center"></div>
                 </div>
                 <div class="col-4">
                     <img src="img/valencia.png" alt="Valencia" class="dirFoto"><br>
                     <h3>Valencia</h3><br>
-                    <button class="btn">Ver más</button>
+                    <button class="btn" id="but2">Ver dirección</button>
+                    <div id="divDir2" class="col text-center"></div>
                 </div>
                 <div class="col-4">
                     <img src="img/alicante.png" alt="Alicante" class="dirFoto"><br>
                     <h3>Alicante</h3><br>
-                    <button class="btn">Ver más</button>
+                    <button class="btn" id="but3">Ver dirección</button>
+                    <div id="divDir3" class="col text-center"></div>
                 </div>
             </div>
         </article>
-        <article class="row">
-            <h1 class="col-12 text-center">Formulario de contacto</h1>
-            <form class="col-6 offset-3" action="">
+        <article class="row text-secondary">
+            <h1 class="col-12 text-center h1Form text-dark">Formulario de contacto</h1>
+            <form class="col-8 offset-2" action="">
                 <label for="nombre">Tu nombre (requerido)</label><br>
                 <input name="nombre" class="form-control" type="text"></input>
                 <label for="email">Tu correo electrónico (requerido)</label><br>
