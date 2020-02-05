@@ -1,3 +1,6 @@
+h1{
+    margin: 4% 0% !important;
+}
 .pTexto{
     margin: 0% 14%;
     font-size: 18px;
@@ -14,4 +17,25 @@ label{
 }
 input{
     margin: 1% 0%;
+}
+button{
+    background-color: #3953a0;
+    color: #fff;
+    padding: 10px 15px 10px 15px !important;
+    border-radius: 0px !important; 
+}
+button:hover{
+    background-color: #425dac;
+    transition: 0.2;
+}
+.modelo{
+    background-color: #ff9a00;
+    color: #fff;
+    padding: 10px 15px 10px 15px !important;
+    border-radius: 3px !important;
+    margin: 2% 0% 6% 0%;
+}
+.modelo:hover{
+    background-color: #ffa723;
+    transition: 0.2;
 }

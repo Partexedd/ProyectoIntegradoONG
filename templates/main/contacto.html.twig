@@ -29,31 +29,54 @@
                 <div class="col-4">
                     <img src="img/castellon.png" alt="Castellón" class="dirFoto"><br>
                     <h3>Castellón</h3><br>
-                    <button class="btn btn-primary">Ver más</button>
+                    <button class="btn">Ver más</button>
                 </div>
                 <div class="col-4">
                     <img src="img/valencia.png" alt="Valencia" class="dirFoto"><br>
                     <h3>Valencia</h3><br>
-                    <button class="btn btn-primary">Ver más</button>
+                    <button class="btn">Ver más</button>
                 </div>
                 <div class="col-4">
                     <img src="img/alicante.png" alt="Alicante" class="dirFoto"><br>
                     <h3>Alicante</h3><br>
-                    <button class="btn btn-primary">Ver más</button>
+                    <button class="btn">Ver más</button>
                 </div>
             </div>
         </article>
         <article class="row">
             <h1 class="col-12 text-center">Formulario de contacto</h1>
-            <form class="col-4 offset-4" action="">
+            <form class="col-6 offset-3" action="">
                 <label for="nombre">Tu nombre (requerido)</label><br>
-                <input class="form-control" type="text"></input>
-                <label for="nombre">Tu correo electrónico (requerido)</label><br>
-                <input class="form-control" type="text"></input>
-                <label for="nombre">Selecciona la RSS de tu provincia</label><br>
-                <input class="form-control" type="text"></input>
+                <input name="nombre" class="form-control" type="text"></input>
+                <label for="email">Tu correo electrónico (requerido)</label><br>
+                <input name="email" class="form-control" type="text"></input>
+                <label for="rss">Selecciona la RSS de tu provincia</label><br>
+                <select class="custom-select" name="rss">
+                    <option value="rssc">RSS Castellón</option>
+                    <option value="rssv">RSS Valencia</option>
+                    <option value="rssa">RSS Alicante</option>
+                </select><br>
+                <label for="selRSS">¿A quién representas?</label>
+                <select class="custom-select" id="selRSS">
+                    <option value="administracionPublica">Admnistración Pública</option>
+                    <option value="asociacion">Asociación</option>
+                    <option value="ong_d">ONG/ONGD</option>
+                    <option value="colegioProfesional">Colegio Profesional</option>
+                    <option value="universidades">Universidades</option>
+                    <option value="otra">Otra</option>
+                </select>
+                <label for="asunto">Asunto</label><br>
+                <input name="asunto" class="form-control" type="text"></input>
+                <label for="mensaje">Tu mensaje</label><br>
+                <textarea name="mensaje" class="form-control" type="text" style="height:200px;resize:none;" cols="40" rows="20"></textarea><br>
+                <button class="btn">Enviar</button>
             </form>
         </article>
+        <article class="row">
+            <div class="col-12 text-center">
+                <h1>Modelo de adhesión a la RSS de tu provincia</h1>
+                <a href="../wp-content/uploads/2018/10/MODELO-DOCUMENTO-ADHESIÓN-A-RSS.pdf"><button class="btn modelo">Ver modelo</button></a>
+            </div>
     </section>
 </body>
 </html>
