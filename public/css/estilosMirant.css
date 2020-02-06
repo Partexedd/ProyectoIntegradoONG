@@ -23,7 +23,5 @@ h1{
     .project-list{ display: flex;}
 .pelicula{    width: 294px;
     height: 230px;}
- /* Styles for wrapping the search box */
-
-
-/* Bootstrap 4 text input with search icon */
+.dirFoto{width: 42%;
+margin: 14% 0%;}
