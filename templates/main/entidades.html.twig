@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Entidades</title>
+    <link rel="stylesheet" href="css/estilosEntidades.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/scriptEntidades.js"></script>
+</head>
+<body>
+    <section class="container">
+        <article>
+            <div class="row">
+                <h3 class="col-12 text-center"><b>Mapa de la Salud Global y Desarrollo Humano de la C.Valenciana</b></h3>
+                <div class="text-justify" id="primerTexto">
+                    <p>En el siguiente mapa podrás localizar las entidades que forman parte de las Redes Sanitarias Solidarias de las tres provincias de la Comunidad Valenciana. También podrás localizar (marcadores naranjas) otras entidades que no forman parte de las RSS, pero con las que compartimos objetivos y líneas de trabajo como la cooperación al desarrollo y la defensa del derecho a la salud.</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1uKVDBlaFmrizerhTXUjNBX8mCj24FJPV" width="940" height="480"></iframe>
+            </div>
+        </article>
+        <article id="direccion">
+            <div class="row">
+                <h3 class="col-12 text-center"><b>¿Quienes formamos las RSS?</b></h3>
+            </div>
+            <div class="direcciones row text-center">
+                <div class="col-4">
+                        <a href="#popup1"><img id="imagenPopUp" src="img/castellon.png" alt="Castellón" class="dirFoto"></a><br>
+                    <h2><a href="#popup1">Castellón</a></h2><br>
+                </div>
+                <div class="col-4">
+                    <img id="imagenPopUp" src="img/valencia.png" alt="Valencia" class="dirFoto"><br>
+                    <h2>Valencia</h2><br>
+                </div>
+                <div class="col-4">
+                    <img id="imagenPopUp" src="img/alicante.png" alt="Alicante" class="dirFoto"><br>
+                    <h2>Alicante</h2><br>
+                </div>
+            </div>
+            <div id="popup1" class="overlay">
+                <div id="popupBody">
+                    <h2>Red Sanitaria Solidaria de Castellón</h2>
+                    <a id="cerrar" href="#">&times;</a>
+                    <div style="width:100%;height:400px;overflow:auto;" class="popupContent">
+                        <p><b>Administración pública:</b></p>
+                        <img width="200" height="200" src="img/Entidades/Castellon/AdminPublica/ajuntament-onda-1.jpg" alt="ayuntamiento_castellon">
+                        <img width="200" height="200" src="img/Entidades/Castellon/AdminPublica/ayuntamiento_castellon.jpg" alt="ayuntamiento_castellon">
+                        <br>
+                        <p><b>Colegios profesionales oficiales de sector sanitario:</b></p>
+                        <img width="200" height="200" src="img/Entidades/Castellon/Colegios profesionales oficiales de sector sanitario/codecs-.jpg" alt="codecs">
+                        <img width="200" height="200" src="img/Entidades/Castellon/Colegios profesionales oficiales de sector sanitario/codinucova.jpg" alt="ayuntamiento_castellon">
+                        <img width="200" height="200" src="img/Entidades/Castellon/Colegios profesionales oficiales de sector sanitario/enfermeria_castellon-.jpg" alt="codinucova">
+                        <img width="200" height="200" src="img/Entidades/Castellon/Colegios profesionales oficiales de sector sanitario/farmnaceutics_castello-.jpg" alt="farmnaceutics_castello-">
+                        <img width="200" height="200" src="img/Entidades/Castellon/Colegios profesionales oficiales de sector sanitario/fisioterapeutas_cv-.jpg" alt="fisioterapeutas_cv-">
+                        <img width="200" height="200" src="img/Entidades/Castellon/Colegios profesionales oficiales de sector sanitario/medicos_cs-.jpg" alt="medicos_cs-">
+                        <img width="200" height="200" src="img/Entidades/Castellon/Colegios profesionales oficiales de sector sanitario/podologos_cv-.jpg" alt="podologos_cv-">
+                        <img width="200" height="200" src="img/Entidades/Castellon/Colegios profesionales oficiales de sector sanitario/psicologos_cv-.jpg" alt="psicologos_cv-">
+                        <img width="200" height="200" src="img/Entidades/Castellon/Colegios profesionales oficiales de sector sanitario/treball_social_cs-.jpg" alt="treball_social_cs-">
+                        <br>
+                        <p><b>Universidades y centros de formación:</b></p>
+                        <img width="200" height="200" src="img/Entidades/Castellon/Universidades y centros de formación/CEU-.jpg" alt="CEU">
+                        <img width="150" height="150" src="img/Entidades/Castellon/Universidades y centros de formación/coopsalus.jpeg" alt="coopsalus">
+                        <img style="margin-left: 40px" width="150" height="150" src="img/Entidades/Castellon/Universidades y centros de formación/nuevo-logo-de-la-uji-.jpg" alt="nuevo-logo-de-la-uji">
+                        <br>
+                        <p><b>Organización No Gubernamental para el Desarrollo (ONGD):</b></p>
+                        <img width="200" height="200" src="img/Entidades/Castellon/ONGD/el_alto-.jpg" alt="el_alto-">
+                        <img width="200" height="200" src="img/Entidades/Castellon/ONGD/el_mat-.jpg" alt="el_mat-">
+                        <img width="200" height="200" src="img/Entidades/Castellon/ONGD/farmamundi-.jpg" alt="farmamundi">
+                        <img width="200" height="200" src="img/Entidades/Castellon/ONGD/HCEM-.jpg" alt="HCEM-">
+                        <img width="200" height="200" src="img/Entidades/Castellon/ONGD/medicusmundi-.jpg" alt="medicusmundi-">
+                        <img width="200" height="200" src="img/Entidades/Castellon/ONGD/safane-.jpg" alt="safane-">
+                        <img width="200" height="200" src="img/Entidades/Castellon/ONGD/youcanyole-.jpg" alt="youcanyole-">
+
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

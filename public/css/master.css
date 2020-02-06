@@ -15,32 +15,69 @@ h1{
 h4{
     font-size: 26px;
 }
-ul{
-    margin-right: 40px;
+.has-search .form-control {
+    padding-left: 2.375rem;
 }
-nav{
-    width: 100%;
-    margin-top: 14px;
-    background-color: #ffffff82;
+
+.has-search .form-control-feedback {
     position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
 }
-#img-header{
-    background-image: url(.././img/header-inicio.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 736px;
-    background-color: #00000080;
-    background-blend-mode: soft-light;
-    margin-top:-429px;
-    z-index: -4;
-}
-li>a{
-    color: #183e7d !important;
-    font-weight: bold;
-    font-size: 15px;
-    margin-left: 1px;
+.main {
+    margin-right: -7px !important;
+
 }
 li>a:hover{
     color: #1f51a0 !important;
 }
+ul{margin-right: 40px;}
+nav{
+
+    width: 100%;
+    margin-top: 34px;
+    margin-bottom:200px;
+    background-color: #ffffff82;
+    position: relative;
+    border:1px solid rgba(255, 0, 0, 0);
+}
+.btn-outline-success{color:#244396 !important;
+    background-color: #20459700 !important;
+    background-image: none;
+    border-color:#224496 !important;}
+input[type="search"]{display: block !important;}
+#img-header{
+    background-image: url(.././img/header-inicio.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 100%;
+    background-blend-mode: soft-light;
+    background-color: #00000080;
+    border:1px solid rgba(255, 0, 0, 0);
+    background-attachment: fixed;
+    /* position: absolute;
+    top:0px;
+    left:0px;
+    background-image: url(.././img/header-inicio.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    height: 100%;
+    width: 100%;
+    background-color: #00000080;
+    
+    margin-top:0px;
+    z-index: -4; */
+}
+li>a{color: #183e7d !important;
+        font-weight: bold;
+        font-size: 17px;
+        margin-left: 1px;
+        text-align: center
+    }
