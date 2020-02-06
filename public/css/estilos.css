@@ -12,7 +12,7 @@
 #img-header{background-image: url(.././img/header-inicio.jpg);
 background-repeat: no-repeat;
 background-size: cover;
-background-attachment: fixed;
+
 height: 517px;
 background-color: #00000080;
 background-blend-mode: soft-light;}
