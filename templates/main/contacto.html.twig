@@ -1,31 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+{% extends "main/layout.html.twig" %}
+{% block head %}
     <link rel="stylesheet" href="./css/estilosContacto.css">
-    <link rel="stylesheet" href="./css/master.css">
     <script src="./js/scriptContacto.js"></script>
-    <title>Contacto - Red Sanitaria Solidaria Comunidad Valenciana</title>
-</head>
-
-<body>
+{% endblock %}
+{% block titulo %}Contacto{% endblock %}
+{% block contenido %}
     <!-- Section -->
     <section class="container">
     <!-- Descripción de contacto -->
         <article class="row">
-            <h1 class="col-12 text-center">Únete a la red</h1>
-            <div class="pTexto text-justify">No importa si eres una asociación, una universidad, un colegio oficial 
+            <h1 class="col-12 text-center text-dark">Únete a la red</h1>
+            <div class="pTexto text-justify text-dark">No importa si eres una asociación, una universidad, un colegio oficial 
             o una administración pública. Únete a la red sanitaria solidaria de tu provincia y ayudanos 
             a hacer desde la comunidad valenciana un mundo y una sociedad más sanos.</div>
         </article>
@@ -84,11 +69,9 @@
         </article>
         <!-- Modelo de adhesión de la RSS -->
         <article class="row">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center text-dark">
                 <h1>Modelo de adhesión a la RSS de tu provincia</h1>
                 <a href="https://redsanitariasolidaria.org/wp-content/uploads/2018/10/MODELO-DOCUMENTO-ADHESIO%CC%81N-A-RSS.pdf" target="_blank"><button class="btn modelo">Ver modelo</button></a>
             </div>
     </section>
-    <!-- Footer -->
-</body>
-</html>
+{% endblock %}
