@@ -1,70 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<script src="https://kit.fontawesome.com/ad58fc7f24.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="css/estilosMirant.css">
-</head>
-
-<body>
-	<div id="img-header">
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand" style="text-transform: uppercase; font-size: 30px;" href="#"><img src="img/logo.png"
-					style="margin-left:22px; margin-top: -6px; margin-bottom:-9px " width="270" alt=""> </a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-				<ul class="navbar-nav ml-auto my-2 my-lg-0">
-					<li class="nav-item active">
-						<a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="servicios.html">Nuestra propuesta</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="flota.html">Jornadas Formativas</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="flota.html">Mirant</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="flota.html">Forma Parte</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="flota.html">Contacto</a>
-					</li>
-					<li class="nav-item">
-<div class="main">
-  
-        <!-- Another variation with a button -->
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search this blog">
-          <div class="input-group-append">
-            <button class="btn btn-secondary" type="button">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </div>    
-      </div>
-			</div>
-		</nav>
-	</div>
-					</li>
-				</ul>
-				<br>
-    
+{% extends "main/layout.html.twig" %}
+{% block head %}
+    <link rel="stylesheet" href="css/estilosMirant.css">
+{% endblock %}
+{% block titulo %}Mirant{% endblock %}
+{% block contenido %}
 	<section class="container">
 		<article class="row">
 			<h1 class="col text-center" id="tituloInicial">II EDICIÓN</h1>
@@ -94,36 +33,28 @@
 				<img id="CartelMirant" width="80%" src="img/Carteles_mirant/Cartel-IMP_page-0001.jpg">
 			</div>
 		</div>
-
-
-	</section>
-	<section>
-		<iframe width="100%" height="500" src="https://www.youtube.com/embed/755APbFY-Ng" frameborder="0"
-			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<div class="jumbotron">
-			<article class="row" style="margin-top: 24px;">
+		</section>
+		<section>
+		<iframe width="100%" height="500" src="https://www.youtube.com/embed/755APbFY-Ng" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<article class="jumbotron">
+			<div class="row" style="margin-top: 24px;">
 				<h1 class="col text-center" id="tituloInicial">Las Sedes ¡Inscríbite!</h1>
-			</article>
-			<article class="container" id="botones-mirant">
+			</div>
+			<div class="container" id="botones-mirant">
 				<div class="direcciones row text-center">
 					<div class="col-xl-4">
-						<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button"
-							aria-pressed="true">Castellón</a>
+						<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button" aria-pressed="true">Castellón</a>
 					</div>
 					<div class="col-xl-4">
-						<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button"
-							aria-pressed="true">Valencia</a>
+						<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button" aria-pressed="true">Valencia</a>
 					</div>
 					<div class="col-xl-4">
-						<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button"
-							aria-pressed="true">Alicante</a>
+						<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button" aria-pressed="true">Alicante</a>
 					</div>
 				</div>
-			</article>
-		</div>
-	</section>
-	<section>
-
+			</div>
+		</article>
+		</section>
 		<article class="row" style="margin-top: 24px;">
 			<h1 class="col text-center" id="tituloInicial">Peliculas</h1>
 		</article>
@@ -131,38 +62,27 @@
 			<div class="Galeria-pelis row text-center">
 				<div class="col-xl-4">
 					<div class="thumb">
-						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img
-								src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt="" />
-						</a>
+						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt=""/></a>
 					</div>
-					<h3 class="entry-title">Comandante Arian
-					</h3>
-					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button"
-						aria-pressed="true">Ver trailer</a>
+					<h3 class="entry-title">Comandante Arian</h3>
+					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button" aria-pressed="true">Ver trailer</a>
 				</div>
 				<div class="col-xl-4">
 					<div class="thumb">
-						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img
-								src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt="" />
-						</a>
+						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt=""/></a>
 					</div>
 					<h3 class="entry-title">La Manzana de Eva</h3>
-					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button"
-						aria-pressed="true">Ver trailer</a>
+					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button" aria-pressed="true">Ver trailer</a>
 				</div>
 				<div class="col-xl-4">
 					<div class="thumb">
-						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img
-								src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt="" />
-						</a>
+						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt=""/></a>
 					</div>
 					<h3 class="entry-title">Woman</h3>
-					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button"
-						aria-pressed="true">Ver trailer</a>
+					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button" aria-pressed="true">Ver trailer</a>
+					</div>
 				</div>
-				</ul>
 			</div>
 		</article>
-</body>
-
-</html>
+	</section>
+{% endblock %}

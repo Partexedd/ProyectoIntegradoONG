@@ -1,25 +1,27 @@
-body{
-    font-family: Verdana;
+/* Estilos nuestra propuesta */
+h1, h3{
+	margin-top: 6%;
 }
-
-h1, h2{
-    font-family: Arial;
-    margin-top: 3% !important;
+strong{
+    color: #3953a0;
 }
-
 div#primerTexto{
     margin-top: 2%;
     margin-left: 14%;
     margin-right: 14%;
     font-size: 18px;
 }
-
 article#desplegables{
     margin-top: 2%;
     margin-left: 10%;
     margin-right: 11%;
     font-size: 18px;
 }
+article#carousel1{
+    margin-bottom: 10%;
+}
+
+/* Estilos y funcionamiento de los desplegables */
 
 #menu * { list-style:none;}
 #menu li{ line-height: 150%;}
@@ -32,3 +34,50 @@ article#desplegables{
 #menu .interior{display: none;}
 #menu input:checked ~ ul{display:block;}
 #menu ul.interior{margin-right: 5%;}
+
+/* Estilos y funcionamiento del carousel */
+
+  @keyframes scroll {
+	0% {
+	  transform: translateX(0);
+	}
+	100% {
+	  transform: translateX(calc(-250px * 7));
+	}
+  }
+  .slider {
+	background: white;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+	height: 130px;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+  }
+  .slider::before, .slider::after {
+	background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+	content: "";
+	height: 100px;
+	position: absolute;
+	width: 200px;
+	z-index: 2;
+  }
+  .slider::after {
+	right: 0;
+	top: 0;
+	transform: rotateZ(180deg);
+  }
+  .slider::before {
+	left: 0;
+	top: 0;
+  }
+  .slider .slide-track {
+	animation: scroll 40s linear infinite;
+	display: flex;
+	width: calc(250px * 14);
+  }
+  .slider .slide {
+	height: 100px;
+	width: 250px;
+  }
+  

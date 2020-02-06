@@ -1,0 +1,57 @@
+{% extends "main/base.html.twig" %}
+{% block body %}
+    <!-- Header y barra de navegación -->
+    <header>
+	<div id="img-header">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand" style="text-transform: uppercase; font-size: 30px;" href="#"><img src="img/logo.png"
+					style="margin-left:22px; margin-top: -6px; margin-bottom:-9px " width="270" alt=""> </a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('index') }}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('nuestraPropuesta') }}">Nuestra propuesta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Jornadas Formativas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('mirant') }}">Mirant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Forma Parte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('contacto') }}">Contacto</a>
+                    </li>
+                </ul>
+            <div class="main">
+  
+        <!-- Another variation with a button -->
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search this blog">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>    
+      </div>
+			</div>
+		</nav>
+	</div>
+					</li>
+				</ul>
+				<br>
+    </header>
+    {% block contenido %}{% endblock %}
+    <!-- Footer -->
+{% endblock %}

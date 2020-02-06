@@ -1,59 +1,51 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+{% extends "main/layout.html.twig" %}
+{% block head %}
     <link rel="stylesheet" href="css/estilosNuestraPropuesta.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</head>
-
-<body>
+{% endblock %}
+{% block titulo %}Nuestra Propuesta{% endblock %}
+{% block contenido %}
     <section class="container">
         <article class="row">
             <h1 class="col-12 text-center">Nuestra propuesta</h1>
             <div class="text-justify" id="primerTexto">
-                <p>El proyecto de las <strong>Redes Sanitarias Solidarias</strong> que existen en las <strong>
-                tres provincias de la C.Valenciana</strong> es una iniciativa impulsada por las ONGD Medicus Mundi Mediterrània, ACOEC y Farmamundi. Se trata de un conjunto de redes provinciales formadas por numerosas y diversas entidades del sector sanitario, que han mostrado su <strong>compromiso 
-                con la</strong> <strong>formación</strong> de profesionales y estudiantes en temas de <strong>
-                Salud Global, Cooperación al Desarrollo, Derecho a la Salud y Agenda 2030.</strong></p>
+                <p>El proyecto de las<strong>Redes Sanitarias Solidarias</strong> que existen en las
+                <strong>tres provincias de la C.Valenciana</strong> es una iniciativa impulsada por las ONGD Medicus Mundi Mediterrània, 
+                ACOEC y Farmamundi. Se trata de un conjunto de redes provinciales formadas por numerosas y diversas entidades del sector 
+                sanitario, que han mostrado su <strong>compromiso con la formación</strong> de profesionales y estudiantes en temas de
+                <strong>salud Global, Cooperación al Desarrollo, Derecho a la Salud y Agenda 2030.</strong></p>
             </div>
         </article>
         <article id="desplegables">
             <ul id="menu">
-            <input type="checkbox" name="list" id="nivel-1">
-                <label for="nivel-1">¿Qué hacemos?</label>
+                <input type="checkbox" name="list" id="nivel-1">
+                <label for="nivel-1"><b>¿Qué hacemos?</b></label>
                 <ul class="interior text-justify">
                     <p>Buscamos a través del trabajo en red, la formación y la reflexión, un camino compartido por todas las entidades sobre la manera de entender la salud global, a través de la defensa del derecho a la salud, y de la cooperación al desarrollo bajo el enfoque de los derechos humanos.</p>
                 </ul>
-            </input>
+                </input>
             </ul>
-                <hr>
+            <hr>
             <ul id="menu">
                 <input type="checkbox" name="list" id="nivel-2">
-                <label for="nivel-2">¿Cómo lo hacemos?</label>
+                <label for="nivel-2"><b>¿Cómo lo hacemos?</b></label>
                 <ul class="interior text-justify">
                     <p>Integrando en nuestras entidades enfoques y miradas compartidas para el desarrollo humano, la defensa de los derechos humanos, la equidad en diversidad y la sostenibilidad como ejes de nuestra formación y actuación en el campo de la salud.</p>
                 </ul>
                 </input>
             </ul>
-                <hr>
+            <hr>
             <ul id="menu">
                 <input type="checkbox" name="list" id="nivel-3">
-                <label for="nivel-3">¿Para qué lo hacemos?</label>
+                <label for="nivel-3"><b>¿Para qué lo hacemos?</b></label>
                 <ul class="interior text-justify">
                     <p>Para que todas las entidades del sector socio-sanitario de la Comunitat Valenciana avancemos en la misma dirección en la defensa del derecho a la salud desde una visión global, integral e incluyente.</p>
                 </ul>
                 </input>
             </ul>
-                <hr>
+            <hr>
             <ul id="menu">
                 <input type="checkbox" name="list" id="nivel-4">
-                <label for="nivel-4">¿Por qué lo hacemos?</label>
+                <label for="nivel-4"><b>¿Por qué lo hacemos?</b></label>
                 <ul class="interior text-justify">
                     <p>Porque la sociedad reclama un cambio de paradigma en la forma de entender la salud. Porque estar sano no es solo no estar enfermo, porque la salud no entiende de fronteras, porque la salud de las personas es una cuestión de justicia social.</p>
                 </ul>
@@ -62,34 +54,119 @@
         </article>
         <article id="desplegables">
             <br>
-            <h2 class="col-12 text-center">Nuestros objetivos</h2>
+            <div class="row">
+                <h3 class="col-12 text-center"><b>Nuestros objetivos</b></h3>
+            </div>
             <ul id="menu">
-            <input type="checkbox" name="list" id="nivel-11">
-                <label for="nivel-11">Crear redes</label>
+                <input type="checkbox" name="list" id="nivel-11">
+                <label for="nivel-11"><b>Crear redes</b></label>
                 <ul class="interior text-justify">
                     <p>Crear redes de entidades del sector socio-sanitario cuya finalidad sea facilitar la formación de estudiantes y profesionales en temas de solidaridad y salud global, aprovechando los beneficios derivados del trabajo en red.</p>
                 </ul>
-            </input>
+                </input>
             </ul>
-                <hr>
+            <hr>
             <ul id="menu">
                 <input type="checkbox" name="list" id="nivel-21">
-                <label for="nivel-21">Visibilizar la implicación del sector</label>
+                <label for="nivel-21"><b>Visibilizar la implicación del sector</b></label>
                 <ul class="interior text-justify">
                     <p>Visibilizar la implicación del sector sanitario de la Comunidad Valenciana en mejorar la formación de estudiantes y profesionales en temas de salud global, repercutiendo así en la información de la que dispone el resto de la población.</p>
                 </ul>
                 </input>
             </ul>
-                <hr>
+            <hr>
             <ul id="menu">
                 <input type="checkbox" name="list" id="nivel-31">
-                <label for="nivel-31">Crear espacio de encuentro</label>
+                <label for="nivel-31"><b>Crear espacio de encuentro</b></label>
                 <ul class="interior text-justify">
                     <p>Crear un espacio donde las ONGD sanitarias puedan informar sobre el trabajo que realizan y donde las personas interesadas puedan establecer un primer contacto con las mismas.</p>
                 </ul>
                 </input>
             </ul>
         </article>
+        <article id="carousel1">
+            <div class="row">
+            <h3 class="col-12 text-center"><b>¿Quienes Somos?</b></h3>
+            </div>
+            <div class="slider container">
+                <div class="slide-track">
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/acoec.jpg" height="150" width="160" alt="acoec" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/ajuntament-onda-1-.jpg" height="150" width="160" alt="ajuntament-onda-1-" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/ayuntamiento_alicante.jpg" height="150" width="160" alt="ayuntamiento_alicante" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/ayuntamiento_castellon.jpg" height="150" width="160" alt="ayuntamiento_castellon" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/ayuntamiento_valencia.jpg" height="150" width="160" alt="ayuntamiento_valencia" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/CEU-.jpg" height="150" width="160" alt="CEU-" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/codecs-.jpg" height="150" width="160" alt="codecs-" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/codinucova.jpg" height="150" width="160" alt="codinucova" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/diputacio_valencia.jpg" height="150" width="160" alt="diputacio_valencia" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/el_alto.jpg" height="150" width="160" alt="el_alto" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/el_mat.jpg" height="150" width="160" alt="el_mat" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/enfermeria_alicante4.jpg" height="150" width="160" alt="enfermeria_alicante4" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/enfermeria_castellon-.jpg" height="150" width="160" alt="enfermeria_castellon-" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/enfermeria-valecnia.jpg" height="150" width="160" alt="enfermeria-valecnia" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/farmaceuticos_alicante.jpg" height="150" width="160" alt="farmaceuticos_alicante" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/farmaceuticos_valencia.jpg" height="150" width="160" alt="farmaceuticos_valencia" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/farmamundi.jpg" height="150" width="160" alt="farmamundi" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/farmnaceutics_castello-.jpg" height="150" width="160" alt="farmnaceutics_castello-" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/fisioterapeutas_cv-.jpg" height="150" width="160" alt="fisioterapeutas_cv-" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/HCEM.jpg" height="150" width="160" alt="HCEM" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/medicos_alicante.jpg" height="160" width="160" alt="medicos_alicante" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/medicos_cs-.jpg" height="150" width="160" alt="medicos_cs-" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/medicos_del_mundo.jpg" height="150" width="160" alt="medicos_del_mundo" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/medicos_valencia.jpg" height="150" width="160" alt="medicos_valencia" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/medicusmundi.jpg" height="150" width="160" alt="medicusmundi" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/opticos.jpg" height="150" width="160" alt="opticos" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/podologos_cv_.jpg" height="150" width="160" alt="podologos_cv_" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/psicologos_cv.jpg" height="150" width="160" alt="psicologos_cv" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/safane.jpg" height="150" width="160" alt="safane" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/treball_social_cs.jpg" height="160" width="250" alt="treball_social_cs" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/ua.jpg" height="150" width="160" alt="ua" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/umh.jpg" height="150" width="160" alt="umh" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/upv.jpg" height="150" width="160" alt="upv-1" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/uv.jpg" height="150" width="160" alt="uv" /></div>
+                    <div class="slide">
+                        <img src="img/Carrusel_nuestraPropuesta/youcanyole.jpg" height="150" width="160" alt="youcanyole" />
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button type="button" id="botonConocenos" class="btn btn-primary col-2 text-center offset-5">Conócenos</button>
+            </div>
+        </article>
     </section>
-</body>
-</html>
+{% endblock %}
