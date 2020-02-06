@@ -1,12 +1,10 @@
+/* Estilos nuestra propuesta */
 body{
-    font-family: Verdana;
+	background: #E3E3E3;
+	display: flex;
+	height: 100vh;
 }
 
-h1{
-    color: #204661;
-    font-family: Arial;
-    margin-top: 6% !important;
-}
 
 strong{
     color: #3953a0;
@@ -26,6 +24,13 @@ article#desplegables{
     font-size: 18px;
 }
 
+article#carousel1{
+    margin-bottom: 10%;
+}
+
+
+/* Estilos y funcionamiento de los desplegables */
+
 #menu * { list-style:none;}
 #menu li{ line-height: 150%;}
 #menu li a{color:#222; text-decoration:none;}
@@ -38,13 +43,8 @@ article#desplegables{
 #menu input:checked ~ ul{display:block;}
 #menu ul.interior{margin-right: 5%;}
 
-body {
-	align-items: center;
-	background: #E3E3E3;
-	display: flex;
-	height: 100vh;
-	justify-content: center;
-  }
+/* Estilos y funcionamiento del carousel */
+
   @keyframes scroll {
 	0% {
 	  transform: translateX(0);
