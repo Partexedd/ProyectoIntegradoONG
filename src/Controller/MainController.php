@@ -44,4 +44,13 @@ class MainController extends AbstractController
         return $this->render('main/mirant.html.twig', [
         ]);
     }
+
+    /**
+     * @Route("/entidades", name="entidades")
+     */
+    public function entidades()
+    {
+        return $this->render('main/entidades.html.twig', [
+        ]);
+    }
 }

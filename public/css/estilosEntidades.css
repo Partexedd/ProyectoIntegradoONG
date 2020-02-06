@@ -1,0 +1,69 @@
+body{
+    overflow: auto;
+}
+
+iframe{
+    margin-left: 8.6%;
+}
+
+.dirFoto{
+    width: 42%;
+    margin: 14% 0%;
+}
+
+div#primerTexto{
+    margin-top: 2%;
+    margin-left: 14%;
+    margin-right: 14%;
+    font-size: 18px;
+}
+
+div#popupBody img{
+    border: #212529 2px;
+}
+
+a{
+    color: #212529 !important;
+}
+
+a:hover{
+    color: #212529 !important;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+#popupBody{
+    width: 60%;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+    background: #FFF;
+    position: relative;
+    transition: all 5s ease-in-out;
+    margin: 7% auto; 
+}
+
+#cerrar{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F00;
+}
