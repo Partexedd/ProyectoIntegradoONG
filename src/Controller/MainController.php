@@ -44,4 +44,13 @@ class MainController extends AbstractController
         return $this->render('main/mirant.html.twig', [
         ]);
     }
+
+    /**
+     * @Route("/jornadasFormativas", name="jornadasFormativas")
+     */
+    public function jornadas()
+    {
+        return $this->render('main/jornadas.html.twig', [
+        ]);
+    }
 }
