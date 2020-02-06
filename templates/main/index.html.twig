@@ -1,20 +1,168 @@
-<!DOCTYPE html>
-
-<title>Hello MainController!</title>
-
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+{% extends "main/layout.html.twig" %}
+{% block head %}
+<script src="https://kit.fontawesome.com/ad58fc7f24.js" crossorigin="anonymous"></script>
+<style media="all">
+  i#i{
+    font-size:48px;
+    color:lightgray;
+  }
+    i#i:hover{
+      color:lightgreen;
+    }
+    .card:hover{
+      box-shadow: 0px 0px 55px 5px lightgreen;
+    }
+    #jumbotron{
+      background-color: #00000057;
+      background-blend-mode:soft-light;
+    }
 </style>
+{% endblock %}
+{% block titulo %}Red Sanitaria Solidaria{% endblock %}
+{% block contenido %}
+<section class="container">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+  <article class="row">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/symfony/ProyectoIntegradoONG/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/symfony/ProyectoIntegradoONG/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="col-12 text-center">
+      <h1>Conócenos</h1>
+    </div>
+    <div class="col-12 text-center">
+      <iframe width="700" height="315" src="https://www.youtube.com/embed/UI-CHyHa4VE" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+  </article>
+
+  <article class="row">
+
+    <div class="col-12 text-center">
+      <h1>¿Qué hacemos?</h1>
+    </div>
+    <div class="col-8 text-justify offset-2">
+      <p>Somos un conjunto de entidades del sector social y sanitario que buscamos a través del trabajo en red, la formación y la reflexión, un camino compartido sobre la manera de entender la salud global, a través de la defensa del derecho a la salud, y de la cooperación al desarrollo bajo el enfoque de los derechos humanos.</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="col-lg-3 col-md-6 col-xs-6 col-12">
+        <div class="card text-center">
+          <div class="card-body">
+            <i id="i" class="fa fa-stethoscope"></i>
+            <h3 class="card-title mt-2" style="height:60px">Salud Global</h3>
+            <hr>
+            <p class="card-text" style="height:100px">Entendemos que la salud es un concepto global que no entiende de fronteras.</p>
+            <button type="button" class="btn btn-primary mt-2">Leer más</button>
+          </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-xs-6 col-12">
+        <div class="card text-center">
+          <div class="card-body">
+            <i id="i" class="fa fa-address-card"></i>
+            <h3 class="card-title mt-2" style="height:60px">Derecho a la Salud</h3>
+            <hr>
+            <p class="card-text" style="height:100px">Trabajamos por la defensa del derecho a la salud desde un paradigma holístico y global.</p>
+            <button type="button" class="btn btn-primary mt-2">Leer más</button>
+          </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-xs-6 col-12">
+        <div class="card text-center">
+          <div class="card-body">
+            <i id="i" class="fa fa-globe" aria-hidden="true"></i>
+            <h3 class="card-title mt-2" style="height:60px">Cooperación al desarrollo</h3>
+            <hr>
+            <p class="card-text" style="height:100px">Apostamos por una cooperación construida bajo el enfoque de los derechos humanos.</p>
+            <button type="button" class="btn btn-primary mt-2">Leer más</button>
+          </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-xs-6 col-12">
+        <div class="card text-center">
+          <div class="card-body">
+            <i id="i" class="fa fa-book"></i>
+            <h3 class="card-title mt-2" style="height:60px">Agenda 2030 ODS</h3>
+            <hr>
+            <p class="card-text" style="height:100px">Enfocamos nuestras acciones hacia el plan de acción a favor de las personas y el planeta.</p>
+            <button type="button" class="btn btn-primary mt-2">Leer más</button>
+          </div>
+        </div>
+    </div>
+
+  </article>
+
+  <article class="row justify-content-center">
+
+    <h4 class="text-secondary">¿Quieres conocer mejor el proyecto?</h4>
+
+  </article>
+  <article class="row justify-content-center">
+
+    <h4 class="text-secondary">Descárgate el suplemento sobre las Redes Sanitarias Solidarias que editó La Directa.</h4>
+
+  </article>
+  <article class="row justify-content-center">
+
+    <a type="button" target="_blank" class="btn btn-primary" href="https://redsanitariasolidaria.org/wp-content/uploads/2019/08/Suplement_XarxaSanitat_web.pdf"><i class="fa fa-file-pdf-o mr-2"></i>Suplemento "La Directa"</a>
+
+  </article>
+
+  <article id="jumbotron" class="jumbotron d-flex align-items-center" style="background-image:url('http://redsanitariasolidaria.org/wp-content/uploads/2019/02/20170314_113338.jpg'); background-repeat: no-repeat; height: 600px; background-size: cover;">
+
+    <div class="container d-flex justify-content-center">
+      <h3 class="text-light text-center">La sociedad reclama un cambio de paradigma en la forma de entender la salud.</h3>
+    </div>
+
+  </article>
+
+  <article class="row">
+
+    <p class="text-secondary text-justify">Porque estar sano no es solo no estar enfermo, porque la salud no entiende de fronteras, porque la salud de las personas es una cuestión de <b>justicia social</b>.</p>
+
+  </article>
+
+  <article class="row justify-content-center">
+
+    <button type="button" class="btn btn-primary mt-2">Leer más</button>
+
+  </article>
+
+  <article class="row justify-content-center">
+
+    <h3 class="text-secondary">Juntas somos más fuertes.</h4>
+
+  </article>
+
+  <article class="row justify-content-center">
+
+    <iframe src="https://www.google.com/maps/d/embed?mid=1uKVDBlaFmrizerhTXUjNBX8mCj24FJPV" width="800" height="480"></iframe>
+    <a type="button" class="btn btn-primary" href=""><i class="fa fa-group mr-2"></i>Conócenos mejor, visita los perfiles de cada entidad</a>
+
+  </article>
+
+  <article class="row justify-content-center">
+
+    <h4>Proyecto coordinado por</h4>
+
+  </article>
+
+  <article class="row justify-content-center">
+
+    <img class="col-lg-3 col-md-3 col-xs-3 col-3" src="img/MMMediterranea.png" alt="Logo Medicus Mundi Mediterranea">
+    <img class="col-lg-2 col-md-2 col-xs-2 col-2 offset-2" src="img/logo-acoec.jpg" alt="Logo acoec">
+    <img class="col-lg-3 col-md-3 col-xs-3 col-3 offset-2" src="img/LOGO_FARMAMUNDI-1024x456.jpg" alt="Logo Farmamundi">
+  </article>
+
+  <article class="row justify-content-center">
+
+    <h4>Con la financiación de:</h4>
+
+  </article>
+
+  <article class="row justify-content-center">
+
+    <img class="col-lg-6 col-md-6 col-xs-4 col-4" src="img/Logo-transparencia_Negro.png" alt="Logo Generalitat Valenciana">
+
+  </article>
+
+</section>
 {% endblock %}
