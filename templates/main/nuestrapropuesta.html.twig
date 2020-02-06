@@ -1,34 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+{% extends "main/layout.html.twig" %}
+{% block head %}
     <link rel="stylesheet" href="css/estilosNuestraPropuesta.css">
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</head>
-
-<body>
+{% endblock %}
+{% block titulo %}Nuestra Propuesta{% endblock %}
+{% block contenido %}
     <section class="container">
         <article class="row">
             <h1 class="col-12 text-center">Nuestra propuesta</h1>
             <div class="text-justify" id="primerTexto">
-                <p>El proyecto de las
-                    <strong>Redes Sanitarias Solidarias</strong> que existen en las
-                    <strong>
-							tres provincias de la C.Valenciana</strong> es una iniciativa impulsada por las ONGD Medicus Mundi Mediterrània, ACOEC y Farmamundi. Se trata de un conjunto de redes provinciales formadas por numerosas y diversas entidades del sector sanitario, que han mostrado su
-                    <strong>compromiso 
-														                con la</strong>
-                    <strong>formación</strong> de profesionales y estudiantes en temas de
-                    <strong>
-							Salud Global, Cooperación al Desarrollo, Derecho a la Salud y Agenda 2030.</strong>
-                </p>
+                <p>El proyecto de las<strong>Redes Sanitarias Solidarias</strong> que existen en las
+                <strong>tres provincias de la C.Valenciana</strong> es una iniciativa impulsada por las ONGD Medicus Mundi Mediterrània, 
+                ACOEC y Farmamundi. Se trata de un conjunto de redes provinciales formadas por numerosas y diversas entidades del sector 
+                sanitario, que han mostrado su <strong>compromiso con la formación</strong> de profesionales y estudiantes en temas de
+                <strong>salud Global, Cooperación al Desarrollo, Derecho a la Salud y Agenda 2030.</strong></p>
             </div>
         </article>
         <article id="desplegables">
@@ -185,6 +169,4 @@
             </div>
         </article>
     </section>
-</body>
-
-</html>
+{% endblock %}
