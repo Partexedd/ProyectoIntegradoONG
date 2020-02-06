@@ -16,7 +16,7 @@ h1{
                 font-weight: bold;}
 #botones-mirant{margin-top: 75px;}
 .jumbotron{margin-top: -9px;
-
+    margin-bottom: -2rem !important;
 }
 .peliculas{list-style: none;
    }
@@ -25,3 +25,11 @@ h1{
     height: 230px;}
 .dirFoto{width: 42%;
 margin: 14% 0%;}
+#peliculas{background-image: url(.././img/pelis_mirant.jpg);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:
+    #0000008a;
+    background-blend-mode: soft-light;}
+ #titulos-peliculas{color: white;}   
