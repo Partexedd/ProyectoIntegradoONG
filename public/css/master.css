@@ -47,11 +47,20 @@ nav{
     position: relative;
     border:1px solid rgba(255, 0, 0, 0);
 }
+
 .btn-outline-success{color:#244396 !important;
     background-color: #20459700 !important;
     background-image: none;
     border-color:#224496 !important;}
 input[type="search"]{display: block !important;}
+
+
+img.iconosRRSS{
+    width: 30px;
+    height: 30px;
+
+}
+
 #img-header{
     background-image: url(.././img/header-inicio.jpg);
     background-repeat: no-repeat;

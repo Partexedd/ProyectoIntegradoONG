@@ -2,13 +2,11 @@
 {% block body %}
     <!-- Header y barra de navegación -->
     <header>
-	<div id="img-header">
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand" style="text-transform: uppercase; font-size: 30px;" href="#"><img src="img/logo.png"
-					style="margin-left:22px; margin-top: -6px; margin-bottom:-9px " width="270" alt=""> </a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+	    <div id="img-header">
+		    <nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand" style="text-transform: uppercase; font-size: 30px;" href="#"><img src="img/logo.png"style="margin-left:22px; margin-top: -6px; margin-bottom:-9px " width="270" alt=""> </a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -27,25 +25,27 @@
                         <a class="nav-link" href="{{ path('mirant') }}">Mirant</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Forma Parte</a>
+                        <a class="nav-link" href="{{ path('formaParte') }}">Forma Parte</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('contacto') }}">Contacto</a>
                     </li>
-                </ul>
-            <div class="main">
+            </ul>
+
+                <div class="main">
   
         <!-- Another variation with a button -->
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search this blog">
-          <div class="input-group-append">
-            <button class="btn btn-secondary" type="button">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </div>    
-      </div>
-			</div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search this blog">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="button">
+                            <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>    
+                </div>
+            </nav>
+        </div><br>
 		</nav>
 		<div class="sticky-container">
     <ul class="sticky">
@@ -77,4 +77,55 @@
     {% block contenido %}{% endblock %}
 
     <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4" style="background-color: #ebebeb;">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <div>
+                        
+                    </div>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h3 class="text-uppercase">Redes Sociales</h3>
+                    <img class="iconosRRSS" src="https://images.vexels.com/media/users/3/137380/isolated/preview/1b2ca367caa7eff8b45c09ec09b44c16-icono-de-instagram-logo-by-vexels.png"></img>
+                    <button type="button" class="btn btn-lg btn-so">
+                        <i class="fab fa-stack-overflow pr-1"></i>
+                        <span>Instagram</span>
+                    </button>
+                    <br>
+                    <img class="iconosRRSS" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/600px-Facebook_Logo_%282019%29.png"></img>
+                    <button type="button" class="btn btn-lg btn-so">
+                        <i class="fab fa-stack-overflow pr-1"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <br>
+                    <img class="iconosRRSS" src="https://images.vexels.com/media/users/3/137419/isolated/preview/b1a3fab214230557053ed1c4bf17b46c-icono-de-twitter-logo-by-vexels.png"></img>
+                    <button type="button" class="btn btn-lg btn-so">
+                        <i class="fab fa-stack-overflow pr-1"></i>
+                        <span>Twitter</span>
+                    </button>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h3 class="text-uppercase">Red Sanitaria Solidaria</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="localizacion.html">Localizacion</a>
+                        </li>
+                        <li>
+                            <a href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3"><h6>© 2020 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/"> redsanitariasolidaria.org</h6></a>
+        </div>
+    </footer>
 {% endblock %}
