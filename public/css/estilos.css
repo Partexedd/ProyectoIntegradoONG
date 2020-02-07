@@ -60,4 +60,19 @@ br+h1{color:white;
   }
 
   /* Estilos footer */
-  
+  footer > div{
+    color: white;
+    z-index: 100 !important;
+  }
+
+  div#cartaFooter{
+      color: white;
+      margin-top: -12% !important;
+      margin-left: 20%;
+      margin-bottom: 5%;
+      width: 430px; 
+      height: 370px; 
+      background-color:white;
+      border-radius: 6px;
+      box-shadow: 5px 3px 3px 4px #888888;
+  }
