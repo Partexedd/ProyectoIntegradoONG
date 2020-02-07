@@ -63,7 +63,7 @@ a:hover{
     background: #FFF;
     position: relative;
     transition: all 5s ease-in-out;
-    margin: 7% auto; 
+    margin: 5% auto; 
 }
 
 #cerrar{
@@ -97,4 +97,8 @@ a:hover{
     font-weight: bold;
     text-decoration: none;
     color: #F00;
+}
+
+#direccion{
+    margin-bottom: 10%; 
 }
