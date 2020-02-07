@@ -3,7 +3,12 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Contactar;
+use Symfony\Component\HttpFoundation\Request;
+use App\Form\EnvioContactoType;
 
 class MainController extends AbstractController
 {
@@ -29,9 +34,30 @@ class MainController extends AbstractController
     /**
      * @Route("/contacto", name="contacto")
      */
-    public function contacto()
+    public function contacto(Request $request, \Swift_Mailer $mailer)
     {
+        $contactoTo=new Contactar();
+        $form=$this->CreateForm(EnvioContactoType::Class, $contactoTo);
+
+       $form->handleRequest($request); 
+if($form->isSubmitted() && $form->isValid()){
+    $entityManager=$this->getDoctrine()->getManager();
+    $contactoTo->setFecha(new \DateTime('now'));
+    $entityManager->persist($contactoTo);
+    $entityManager->flush();
+    $email = (new Email())
+            ->from('borjahervas74@gmail.com')
+            ->to('borjahervas74@gmail.com')
+            //->cc('cc@example.com')
+            //->bcc('bcc@example.com')
+            //->replyTo('fabien@example.com')
+            //->priority(Email::PRIORITY_HIGH)
+            ->subject('Time for Symfony Mailer!')
+            ->text('Sending emails is fun again!')
+            ->html('<p>See Twig integration for better HTML integration!</p>');
+}
         return $this->render('main/contacto.html.twig', [
+            'form' => $form->CreateView()
         ]);
 
     }
