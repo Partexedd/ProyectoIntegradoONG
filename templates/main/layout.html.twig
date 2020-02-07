@@ -2,13 +2,11 @@
 {% block body %}
     <!-- Header y barra de navegación -->
     <header>
-	<div id="img-header">
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand" style="text-transform: uppercase; font-size: 30px;" href="#"><img src="img/logo.png"
-					style="margin-left:22px; margin-top: -6px; margin-bottom:-9px " width="270" alt=""> </a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+	    <div id="img-header">
+		    <nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand" style="text-transform: uppercase; font-size: 30px;" href="#"><img src="img/logo.png"style="margin-left:22px; margin-top: -6px; margin-bottom:-9px " width="270" alt=""> </a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,26 +30,24 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('contacto') }}">Contacto</a>
                     </li>
-                </ul>
-            <div class="main">
+            </ul>
+
+                <div class="main">
   
         <!-- Another variation with a button -->
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search this blog">
-          <div class="input-group-append">
-            <button class="btn btn-secondary" type="button">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </div>    
-      </div>
-			</div>
-		</nav>
-	</div>
-					</li>
-				</ul>
-				<br>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search this blog">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="button">
+                            <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>    
+                </div>
+            </nav>
+        </div><br>
     </header>
     {% block contenido %}{% endblock %}
+
     <!-- Footer -->
 {% endblock %}
