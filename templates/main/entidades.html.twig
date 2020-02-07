@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Entidades</title>
+{% extends "main/layout.html.twig" %}
+{% block head %}
     <link rel="stylesheet" href="css/estilosEntidades.css">
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="js/scriptEntidades.js"></script>
-</head>
-<body>
+{% endblock %}
+{% block titulo %}Nuestra Propuesta{% endblock %}
+{% block contenido %}
     <section class="container">
         <article>
             <div class="row">
@@ -34,21 +25,21 @@
             <div class="direcciones row text-center">
                 <div class="col-4">
                         <a href="#popup1"><img id="imagenPopUp" src="img/castellon.png" alt="Castellón" class="dirFoto"></a><br>
-                    <h2><a href="#popup1">Castellón</a></h2><br>
+                        <h2><a id="desAcScroll" href="#popup1">Castellón</a></h2><br>
                 </div>
                 <div class="col-4">
-                    <img id="imagenPopUp" src="img/valencia.png" alt="Valencia" class="dirFoto"><br>
-                    <h2>Valencia</h2><br>
+                    <a href="#popup2"><img id="imagenPopUp2" src="img/valencia.png" alt="Valencia" class="dirFoto"></a><br>
+                    <h2><a id="desAcScroll2" href="#popup2">Valencia</a></h2><br>
                 </div>
                 <div class="col-4">
-                    <img id="imagenPopUp" src="img/alicante.png" alt="Alicante" class="dirFoto"><br>
-                    <h2>Alicante</h2><br>
+                    <a href="#popup3"><img id="imagenPopUp3" src="img/alicante.png" alt="Alicante" class="dirFoto"></a><br>
+                    <h2><a id="desAcScroll3" href="#popup3">Alicante</a></h2><br>
                 </div>
             </div>
             <div id="popup1" class="overlay">
                 <div id="popupBody">
                     <h2>Red Sanitaria Solidaria de Castellón</h2>
-                    <a id="cerrar" href="#">&times;</a>
+                    <a id="cerrar" href="#direccion">&times;</a>
                     <div style="width:100%;height:400px;overflow:auto;" class="popupContent">
                         <p><b>Administración pública:</b></p>
                         <img width="200" height="200" src="img/Entidades/Castellon/AdminPublica/ajuntament-onda-1.jpg" alt="ayuntamiento_castellon">
@@ -68,7 +59,7 @@
                         <p><b>Universidades y centros de formación:</b></p>
                         <img width="200" height="200" src="img/Entidades/Castellon/Universidades y centros de formación/CEU-.jpg" alt="CEU">
                         <img width="150" height="150" src="img/Entidades/Castellon/Universidades y centros de formación/coopsalus.jpeg" alt="coopsalus">
-                        <img style="margin-left: 40px" width="150" height="150" src="img/Entidades/Castellon/Universidades y centros de formación/nuevo-logo-de-la-uji-.jpg" alt="nuevo-logo-de-la-uji">
+                        <img width="150" height="150" src="img/Entidades/Castellon/Universidades y centros de formación/nuevo-logo-de-la-uji-.jpg" alt="nuevo-logo-de-la-uji">
                         <br>
                         <p><b>Organización No Gubernamental para el Desarrollo (ONGD):</b></p>
                         <img width="200" height="200" src="img/Entidades/Castellon/ONGD/el_alto-.jpg" alt="el_alto-">
@@ -82,7 +73,67 @@
                     </div>
                 </div>
             </div>
+            <div id="popup2" class="overlay">
+                <div id="popupBody">
+                    <h2>Red Sanitaria Solidaria de Valencia</h2>
+                    <a id="cerrar2" href="#direccion">&times;</a>
+                    <div style="width:100%;height:400px;overflow:auto;" class="popupContent">
+                        <p><b>Administración pública:</b></p>
+                        <img width="200" height="200" src="img/Entidades/Valencia/Administraciones publicas/diputacio_valencia-.jpg" alt="diputacio_valencia">
+                        <img width="200" height="200" src="img/Entidades/Valencia/Administraciones publicas/valencia-.jpg" alt="valencia">
+                        <br>
+                        <p><b>Colegios profesionales oficiales de sector sanitario:</b></p>
+                        <img width="200" height="200" src="img/Entidades/Valencia/Colegios Profesionales Oficiales del sector sanitario/codinucova.jpg" alt="codinucova">
+                        <img width="200" height="200" src="img/Entidades/Valencia/Colegios Profesionales Oficiales del sector sanitario/enfermeria-valecnia-.jpg" alt="enfermeria-valencia">                        <img width="200" height="200" src="img/Entidades/Castellon/Colegios profesionales oficiales de sector sanitario/enfermeria_castellon-.jpg" alt="codinucova">
+                        <img width="200" height="200" src="img/Entidades/Valencia/Colegios Profesionales Oficiales del sector sanitario/farmaceuticos_valencia-.jpg" alt="farmaceuticos_valencia">
+                        <img width="200" height="200" src="img/Entidades/Valencia/Colegios Profesionales Oficiales del sector sanitario/medicos_valencia-.jpg" alt="medicos_valencia">
+                        <img width="200" height="200" src="img/Entidades/Valencia/Colegios Profesionales Oficiales del sector sanitario/opticos.jpg" alt="opticos">
+                        <img width="200" height="200" src="img/Entidades/Valencia/Colegios Profesionales Oficiales del sector sanitario/psicologos_cv-.jpg" alt="psicologos_cv">
+                        <br>
+                        <p><b>Universidades y centros de formación:</b></p>
+                        <img width="200" height="200" src="img/Entidades/Valencia/Universidades/CEU-.jpg" alt="CEU">
+                        <img width="200" height="200" src="img/Entidades/Valencia/Universidades/upv-1-.jpg" alt="upv-1">
+                        <img width="200" height="200" src="img/Entidades/Valencia/Universidades/uv-.jpg" alt="uv">
+                        <br>
+                        <p><b>Organización No Gubernamental para el Desarrollo (ONGD):</b></p>
+                        <img width="200" height="200" src="img/Entidades/Valencia/ONGD/acoec-.jpg" alt="acoec">
+                        <img width="200" height="200" src="img/Entidades/Valencia/ONGD/alanna-.jpg" alt="alanna">
+                        <img width="200" height="200" src="img/Entidades/Valencia/ONGD/farmamundi-.jpg" alt="farmamundi">
+                        <img width="200" height="200" src="img/Entidades/Valencia/ONGD/medicusmundi-.jpg" alt="medicusmundi">
+                        <img width="200" height="200" src="img/Entidades/Valencia/ONGD/odontologia-solidaria.jpg" alt="odontologia-solidaria">
+                        <img width="200" height="200" src="img/Entidades/Valencia/ONGD/soepic-wpv.jpg" alt="soepic-wpv">
+                    </div>
+                </div>
+            </div>
+            <div id="popup3" class="overlay">
+                <div id="popupBody">
+                    <h2>Red Sanitaria Solidaria de Alicante</h2>
+                    <a id="cerrar3" href="#direccion">&times;</a>
+                    <div style="width:100%;height:400px;overflow:auto;" class="popupContent">
+                        <p><b>Administración pública:</b></p>
+                        <img width="200" height="200" src="img/Entidades/Alicante/Administracion publica/ayuntamiento_alicante-.jpg" alt="ayuntamiento_alicante"
+                        <br>
+                        <p><b>Colegios profesionales oficiales de sector sanitario:</b></p>
+                        <img width="200" height="200" src="img/Entidades/Alicante/Colegios Profesionales Oficiales del sector sanitario/enfermeria_alicante4-.jpg" alt="enfermeria_alicante4-">
+                        <img width="200" height="200" src="img/Entidades/Alicante/Colegios Profesionales Oficiales del sector sanitario/farmaceuticos_alicante-.jpg" alt="farmaceuticos_alicante">
+                        <img width="200" height="200" src="img/Entidades/Alicante/Colegios Profesionales Oficiales del sector sanitario/fisioterapeutas_cv-.jpg" alt="fisioterapeutas_cv-">
+                        <img width="200" height="200" src="img/Entidades/Alicante/Colegios Profesionales Oficiales del sector sanitario/medicos_alicante-.jpg" alt="medicos_alicante-">
+                        <img width="200" height="200" src="img/Entidades/Alicante/Colegios Profesionales Oficiales del sector sanitario/opticos.jpg" alt="opticos">
+                        <br>
+                        <p><b>Universidades y centros de formación:</b></p>
+                        <img width="200" height="200" src="img/Entidades/Alicante/Universidades/ua-.jpg" alt="ua">
+                        <img width="200" height="200" src="img/Entidades/Valencia/Universidades/ccc.jpg" alt="ccc">
+                        <br>
+                        <p><b>Organización No Gubernamental para el Desarrollo (ONGD):</b></p>
+                        <img width="200" height="200" src="img/Entidades/Alicante/ONGD/acci-alicante.jpg" alt="acci-alicante">
+                        <img width="200" height="200" src="img/Entidades/Alicante/ONGD/coopenf-.jpg" alt="coopenf">
+                        <img width="200" height="200" src="img/Entidades/Alicante/ONGD/fontilles-.jpg" alt="fontilles-">
+                        <img width="200" height="200" src="img/Entidades/Alicante/ONGD/medicos_del_mundo-.jpg" alt="medicos_del_mundo">
+                        <img width="200" height="200" src="img/Entidades/Alicante/ONGD/medicusmundi-.jpg" alt="medicusmundi">
+                        <img width="200" height="200" src="img/Entidades/Alicante/ONGD/toubabs.jpg" alt="toubabs">
+                    </div>
+                </div>
+            </div>
         </article>
     </section>
-</body>
-</html>
+{% endblock %}
