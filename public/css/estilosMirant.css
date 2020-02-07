@@ -1,4 +1,8 @@
 
+body {
+padding:0px;
+margin:
+0px;}
 h1{
     font-family: Arial;
     margin-top: 3%;
@@ -18,6 +22,7 @@ h1{
 .jumbotron{margin-top: -9px;
     margin-bottom: -2rem !important;
 }
+.row{margin-right: 0px !important}
 .peliculas{list-style: none;
    }
     .project-list{ display: flex;}
