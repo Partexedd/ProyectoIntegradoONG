@@ -30,12 +30,12 @@ label{
 input{
     margin: 1% 0%;
 }
-.btn{
+.boton{
     background-color: #3953a0;
     color: #fff;
     border-radius: 0px !important; 
 }
-.btn:hover{
+.boton:hover{
     background-color: #425dac;
     color: #fff;
     border-radius: 0px !important; 
