@@ -26,16 +26,24 @@ label{
 input{
     margin: 1% 0%;
 }
-button{
+.btn{
     background-color: #3953a0;
     color: #fff;
     border-radius: 0px !important; 
 }
-button:hover{
+.btn:hover{
+    background-color: #425dac;
+    color: #fff;
+    border-radius: 0px !important; 
+}
+#but1:hover, #but2:hover, #but3:hover{
     background-color: #425dac;
     transition: 0.2;
 }
 #but1, #but2, #but3{
+    background-color: #3953a0;
+    color: #fff;
+    border-radius: 0px !important; 
     width: 40% !important;
 }
 .modelo{
@@ -47,5 +55,6 @@ button:hover{
 }
 .modelo:hover{
     background-color: #ffa723;
+    color: #fff;
     transition: 0.2;
 }

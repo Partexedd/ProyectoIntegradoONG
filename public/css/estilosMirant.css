@@ -1,4 +1,8 @@
 
+body {
+padding:0px;
+margin:
+0px;}
 h1{
     font-family: Arial;
     margin-top: 3%;
@@ -16,14 +20,22 @@ h1{
                 font-weight: bold;}
 #botones-mirant{margin-top: 75px;}
 .jumbotron{margin-top: -9px;
-    height: 500px !important;
+    margin-bottom: -2rem !important;
 }
+.row{margin-right: 0px !important}
 .peliculas{list-style: none;
    }
     .project-list{ display: flex;}
 .pelicula{    width: 294px;
     height: 230px;}
- /* Styles for wrapping the search box */
+.dirFoto{width: 42%;
+margin: 14% 0%;}
+#peliculas{background-image: url(.././img/pelis_mirant.jpg);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:
+    #0000008a;
+    background-blend-mode: soft-light;}
+ #titulos-peliculas{color: white;}   
 
-
-/* Bootstrap 4 text input with search icon */

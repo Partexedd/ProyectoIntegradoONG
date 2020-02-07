@@ -1,6 +1,9 @@
 {% extends "main/layout.html.twig" %}
 {% block head %}
     <link rel="stylesheet" href="css/estilosMirant.css">
+<script src="js/sweetalert2.all.min.js"></script>
+<script src="js/sweetalert2.min.js"></script>
+<link rel="css/stylesheet" href="sweetalert2.min.css">
 {% endblock %}
 {% block titulo %}Mirant{% endblock %}
 {% block contenido %}
@@ -37,26 +40,30 @@
 		<section>
 		<iframe width="100%" height="500" src="https://www.youtube.com/embed/755APbFY-Ng" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		<article class="jumbotron">
-			<div class="row" style="margin-top: 24px;">
+			<div class="row" style="margin-top: -24px;">
 				<h1 class="col text-center" id="tituloInicial">Las Sedes ¡Inscríbite!</h1>
 			</div>
-			<div class="container" id="botones-mirant">
-				<div class="direcciones row text-center">
-					<div class="col-xl-4">
-						<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button" aria-pressed="true">Castellón</a>
-					</div>
-					<div class="col-xl-4">
-						<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button" aria-pressed="true">Valencia</a>
-					</div>
-					<div class="col-xl-4">
-						<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: -24px;" role="button" aria-pressed="true">Alicante</a>
-					</div>
-				</div>
-			</div>
+            <div class="direcciones row text-center">
+                <div class="col-xl-4">
+                    <img id="imagenPopUp" src="img/castellon.png" alt="Castellón" class="dirFoto"><br>
+                    <h3>Castellón</h3><br>
+					<button id="Castellon" class="btn btn-info">Inscribirse</button>
+                </div>
+                <div class="col-xl-4">
+                    <img id="imagenPopUp" src="img/valencia.png" alt="Valencia" class="dirFoto"><br>
+                    <h3>Valencia</h3><br>
+					<button id="Valencia" class="btn btn-info">Inscribirse</button>
+                </div>
+                <div class="col-xl-4">
+                    <img id="imagenPopUp" src="img/alicante.png" alt="Alicante" class="dirFoto"><br>
+                    <h3>Alicante</h3><br>
+						<button id="Alicante" class="btn btn-info">Inscribirse</button>
+                </div>
+            </div>
 		</article>
-		</section>
+		<div id="peliculas" >
 		<article class="row" style="margin-top: 24px;">
-			<h1 class="col text-center" id="tituloInicial">Peliculas</h1>
+			<h1 class="col text-center" id="titulos-peliculas">Peliculas</h1>
 		</article>
 		<article class="container" id="botones-mirant">
 			<div class="Galeria-pelis row text-center">
@@ -64,25 +71,80 @@
 					<div class="thumb">
 						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt=""/></a>
 					</div>
-					<h3 class="entry-title">Comandante Arian</h3>
+					<h3 class="entry-title" id="titulos-peliculas">Comandante Arian</h3>
 					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button" aria-pressed="true">Ver trailer</a>
 				</div>
 				<div class="col-xl-4">
 					<div class="thumb">
 						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt=""/></a>
 					</div>
-					<h3 class="entry-title">La Manzana de Eva</h3>
+					<h3 class="entry-title" id="titulos-peliculas">La Manzana de Eva</h3>
 					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button" aria-pressed="true">Ver trailer</a>
 				</div>
 				<div class="col-xl-4">
 					<div class="thumb">
 						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt=""/></a>
 					</div>
-					<h3 class="entry-title">Woman</h3>
+					<h3 class="entry-title" id="titulos-peliculas">Woman</h3>
 					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button" aria-pressed="true">Ver trailer</a>
 					</div>
 				</div>
 			</div>
 		</article>
+		</div>
+
 	</section>
+
+	<script>
+	$("#Castellon").click(function(){
+Swal.fire({
+  title: 'Estás seguro?',
+  text: "Vas a ser redireccionado a la página de reserva de entradas gratuitas de Castellón",
+  icon: 'question',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  cancelButtonText: 'Cancelar',
+  confirmButtonText: 'Sí, quiero visitar la página!'
+}).then((result) => {
+  if (result.value) {
+location.href ="https://redsanitariasolidaria.org/mostra-de-cinema-castellon-ii/";
+  }
+})
+
+});
+$("#Valencia").click(function(){
+Swal.fire({
+  title: 'Estás seguro?',
+  text: "Vas a ser redireccionado a la página de reserva de entradas gratuitas de Valencia",
+  icon: 'question',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  cancelButtonText: 'Cancelar',
+  confirmButtonText: 'Sí, quiero visitar la página!'
+}).then((result) => {
+  if (result.value) {
+location.href ="https://redsanitariasolidaria.org/mostra-de-cinema-valencia-ii/";
+  }
+})
+
+});
+$("#Alicante").click(function(){
+Swal.fire({
+  title: 'Estás seguro?',
+  text: "Vas a ser redireccionado a la página de reserva de entradas gratuitas de Alicante",
+  icon: 'question',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  cancelButtonText: 'Cancelar',
+  confirmButtonText: 'Sí, quiero visitar la página!'
+}).then((result) => {
+  if (result.value) {
+location.href ="https://redsanitariasolidaria.org/mostra-de-cinema-alicante-ii/";
+  }
+})
+
+});</script>
 {% endblock %}
