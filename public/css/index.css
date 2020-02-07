@@ -1,0 +1,18 @@
+i#i{
+  font-size:48px;
+  color:lightgray;
+}
+  i#i:hover{
+    color:lightgreen;
+  }
+  .card:hover{
+    box-shadow: 0px 0px 55px 5px lightgreen;
+  }
+  #jumbotron{
+    background-color: #00000057;
+    background-blend-mode:soft-light;
+  }
+  article{
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }

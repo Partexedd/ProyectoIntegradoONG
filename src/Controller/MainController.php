@@ -63,4 +63,13 @@ class MainController extends AbstractController
         return $this->render('main/entidades.html.twig', [
         ]);
     }
+
+    /**
+     * @Route("/formaParte", name="formaParte")
+     */
+    public function formaParte()
+    {
+        return $this->render('main/forma_parte.html.twig', [
+        ]);
+    }
 }
