@@ -44,10 +44,10 @@
             {{form_start(form, {'attr':{'class':"col-8 offset-2", "action":""}})}}
                 <label for="nombre">Tu nombre (requerido)</label><br>
                 {# <input name="nombre" class="form-control" type="text"></input> #}
-                 {{form_widget(form.nombre, {'attr':{'class':'form-control', 'placeholder':'Name', 'required':''}})}}
+                 {{form_widget(form.nombre, {'attr':{'class':'form-control', 'placeholder':'Email', 'required':''}})}}
                 <label for="email">Tu correo electrónico (requerido)</label><br>
                 {# <input name="email" class="form-control" type="text"></input> #}
-                {{form_widget(form.email, {'attr':{'class':'form-control', 'placeholder':'Name', 'required':''}})}}
+                {{form_widget(form.email, {'attr':{'class':'form-control', 'placeholder':'RSS', 'required':''}})}}
                 <label for="rss">Selecciona la RSS de tu provincia</label><br>
                 {# <select class="custom-select" name="rss">
                     <option value="rssc">RSS Castellón</option>
@@ -71,7 +71,7 @@
                 {{form_widget(form.asunto, {'attr':{'class':'form-control', 'placeholder':'Asunto', 'required':''}})}}
                 <label for="mensaje">Tu mensaje</label><br>
                 {# <textarea name="mensaje" class="form-control" type="text" style="height:200px;resize:none;" cols="40" rows="20"></textarea><br> #}
-                 {{form_widget(form.mensaje, {'attr':{'class':'form-control', 'placeholder':'Name', 'required':'', 'style':"height:200px;resize:none;", 'cols':"40", 'rows':"20"}})}}
+                 {{form_widget(form.mensaje, {'attr':{'class':'form-control', 'placeholder':'Mensaje', 'required':'', 'style':"height:200px;resize:none;", 'cols':"40", 'rows':"20"}})}}
                 {# <button class="btn boton">Enviar</button> #}
                 {{form_widget(form.send, {'attr':{'class':'btn boton', 'placeholder':'Enviar',  'type':'submit'}})}}
             {# </form> #}

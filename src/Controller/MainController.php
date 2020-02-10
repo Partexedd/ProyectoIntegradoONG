@@ -37,12 +37,12 @@ class MainController extends AbstractController
         $contactoTo=new Contactar();
         $form=$this->CreateForm(EnvioContactoType::Class, $contactoTo);
 
-       $form->handleRequest($request); 
-if($form->isSubmitted() && $form->isValid()){
-    $entityManager=$this->getDoctrine()->getManager();
-    $contactoTo->setFecha(new \DateTime('now'));
-    $entityManager->persist($contactoTo);
-    $entityManager->flush();}
+        $form->handleRequest($request); 
+        if($form->isSubmitted() && $form->isValid()){
+            $entityManager=$this->getDoctrine()->getManager();
+            $contactoTo->setFecha(new \DateTime('now'));
+            $entityManager->persist($contactoTo);
+            $entityManager->flush();}
         return $this->render('main/contacto.html.twig', [
             'form' => $form->CreateView()
         ]);
