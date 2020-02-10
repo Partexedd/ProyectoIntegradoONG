@@ -1,10 +1,7 @@
 {% extends "admin/layout.html.twig" %}
-{% extends "Controller/ContactarController.php" %}
 
     {% block div %}
-                   <a class="nav-link" href="{{ path('logOut') }}">cerrar sesion</a>
-                          <p>Hola {{ app.session.get("nombre_usuario") }}</p>
-                          <h1>Contactar index</h1>
+    <h1>Contactar index</h1>
 
     <table class="table">
         <thead>
