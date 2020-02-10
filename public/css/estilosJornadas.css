@@ -1,3 +1,25 @@
+h1{
+    margin-top: 6%;
+}
+.linkh1, .linkh1:hover{
+    text-decoration: none;
+    color: #183e7d;
+}
+.divUno, .divDos{
+    border-right: solid 3px #183e7d;
+     padding:2% 3%;
+}
 .Ag30{
-    
+    font-size: 18px;
+    margin: 4% 2% 5% 2%;
+}
+.boton{
+    background-color: #3953a0;
+    color: #fff;
+    padding: 12px;
+}
+.boton:hover{
+    background-color: #425dac;
+    color: #fff;
+    padding: 12px;
 }
