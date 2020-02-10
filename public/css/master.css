@@ -37,7 +37,9 @@ h4{
 li>a:hover{
     color: #1f51a0 !important;
 }
-ul{margin-right: 26px;}
+ul#navbar{margin-right: 26px;}
+
+
 nav{
 
     width: 100%;
