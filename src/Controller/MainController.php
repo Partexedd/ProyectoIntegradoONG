@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Contactar;
+use Symfony\Component\HttpFoundation\Request;
+use App\Form\EnvioContactoType;
 
 class MainController extends AbstractController
 {
@@ -29,9 +32,19 @@ class MainController extends AbstractController
     /**
      * @Route("/contacto", name="contacto")
      */
-    public function contacto()
+    public function contacto(Request $request)
     {
+        $contactoTo=new Contactar();
+        $form=$this->CreateForm(EnvioContactoType::Class, $contactoTo);
+
+       $form->handleRequest($request); 
+if($form->isSubmitted() && $form->isValid()){
+    $entityManager=$this->getDoctrine()->getManager();
+    $contactoTo->setFecha(new \DateTime('now'));
+    $entityManager->persist($contactoTo);
+    $entityManager->flush();}
         return $this->render('main/contacto.html.twig', [
+            'form' => $form->CreateView()
         ]);
 
     }
