@@ -1,0 +1,86 @@
+{% extends "admin/layout.html.twig" %}
+
+    {% block div %}
+        <h1>Contactar index</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                {# <th>Id</th> #}
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">RssProvincia</th>
+                <th scope="col">Representa</th>
+                <th scope="col">Asunto</th>
+                <th scope="col">Mensaje</th>
+                <th scope="col">Fecha</th>
+                {# <th>actions</th> #}
+            </tr>
+        </thead>
+        <tbody>
+        {% for contactar in contactars %}
+            <tr>
+                {# <td>{{ contactar.id }}</td> #}
+                <td  scope="row">{{ contactar.nombre }}</td>
+                <td>{{ contactar.email }}</td>
+                <td>{{ contactar.rssProvincia }}</td>
+                <td>{{ contactar.representa }}</td>
+                <td>{{ contactar.asunto }}</td>
+                <td>{{ contactar.mensaje }}</td>
+                <td>{{ contactar.fecha ? contactar.fecha|date('Y-m-d H:i:s') : '' }}</td>
+                <td><a class="nav-link" href="{{ path('contactar_borrar') }}"><button class="btn" id="Castellon"><i class="fas fa-minus-circle" style="font-size:20px; margin-top:10px"></i></button></a></td>
+               {{ include('admin/borrarMensaje.html.twig') }}
+
+          {# <a href="{{ path('contactar_edit', {'id': contactar.id}) }}">edit</a>#}
+                </td> 
+
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+                     <script>
+	$("#Castellon").click(function(){
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
+
+swalWithBootstrapButtons.fire({
+  title: '¿Estas seguro?',
+  text: "¿Estas seguro de que quieres borrar este mensaje?",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Sí, borrar!',
+  cancelButtonText: 'No, cancelar!',
+  reverseButtons: true
+}).then((result) => {
+  if (result.value) {
+    swalWithBootstrapButtons.fire(
+                     {{ include('admin/borrarMensaje.html.twig') }}
+      'Mensaje Borrado!',
+      'El mensaje ha sido borrado.',
+      'success'
+    )
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire(
+      'Cancelado',
+      'El mensaje no ha sido borrado :)',
+      'error'
+    )
+  }
+})
+    });
+</script>
+{% endblock %}

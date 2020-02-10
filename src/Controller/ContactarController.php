@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
  * @Route("/contactar")
@@ -19,10 +20,12 @@ class ContactarController extends AbstractController
     /**
      * @Route("/", name="contactar_index", methods={"GET"})
      */
-    public function index(ContactarRepository $contactarRepository): Response
+    public function index(ContactarRepository $contactarRepository, SessionInterface $session): Response
     {
-        return $this->render('contactar/index.html.twig', [
+        $user1 = $session->get('nombre_usuario');
+        return $this->render('admin/contactar/index.html.twig', [
             'contactars' => $contactarRepository->findAll(),
+            'user' => $user1,
         ]);
     }
 
@@ -43,7 +46,7 @@ class ContactarController extends AbstractController
             return $this->redirectToRoute('contactar_index');
         }
 
-        return $this->render('contactar/new.html.twig', [
+        return $this->render('admin/contactar/new.html.twig', [
             'contactar' => $contactar,
             'form' => $form->createView(),
         ]);
@@ -54,7 +57,7 @@ class ContactarController extends AbstractController
      */
     public function show(Contactar $contactar): Response
     {
-        return $this->render('contactar/show.html.twig', [
+        return $this->render('admin/contactar/show.html.twig', [
             'contactar' => $contactar,
         ]);
     }
@@ -73,8 +76,8 @@ class ContactarController extends AbstractController
             return $this->redirectToRoute('contactar_index');
         }
 
-        return $this->render('contactar/edit.html.twig', [
-            'contactar' => $contactar,
+        return $this->render('admin/contactar/edit.html.twig', [
+            'contactar' => $contactanmr,
             'form' => $form->createView(),
         ]);
     }
