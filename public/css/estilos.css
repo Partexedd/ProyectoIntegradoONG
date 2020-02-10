@@ -44,3 +44,8 @@ br+h1{color:white;
       border-radius: 6px;
       box-shadow: 5px 3px 3px 4px #888888;
   }
+
+  div#redesSociales{
+    text-align: left;
+    margin-left: 20%;
+}
