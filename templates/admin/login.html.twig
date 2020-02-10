@@ -1,0 +1,37 @@
+{% extends "admin/layout.html.twig" %}
+
+    {% block div %}
+                               {% if user == ""%}
+      <div id="content">
+         <div class="row">
+            <div class="col">
+               <form method="POST" action="{{ url("admin") }}" class="admin-login" style="margin-top:20%;">
+                  <div class="login">
+                     <div class="banner banner-login"></div>
+                     <div class="form">
+                        <div class="wrapper">
+                           <div class="row">
+                              <div class="label">Admin ID</div>
+                              <input type="text" name="user" id="user" required>
+                           </div>
+                           <div class="row">
+                              <div class="label">Password</div>
+                              <input type="password" name="password"  id="password" required>
+                           </div>
+                           <div class="row">
+                              <button type="submit">Login</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+               </form>
+            </div>
+         </div>
+      </div>
+      
+                {% endif %}
+
+
+
+{% endblock %}
