@@ -5,13 +5,17 @@ h1{
     margin: 0% 10%;
     font-size: 20px;
 }
+#img-header{
+    background-image: url(http://redsanitariasolidaria.org/wp-content/uploads/2018/10/Namuno.-Visita-seguiment-2-maig-2006.jpg) !important;
+    background-size: cover;
+}
 .dirFoto{
     width: 42%;
     margin-bottom: 14%;
 }
 #divDir1, #divDir2, #divDir3{
-    margin: 2% 0%;
-    height: 0px;
+    margin: 4% 0% 16% 0%;
+    height: 20px;
     width: 100%;
 }
 .h1Form{
@@ -26,35 +30,35 @@ label{
 input{
     margin: 1% 0%;
 }
-.btn{
-    background-color: #3953a0;
-    color: #fff;
+.bot{
+    background-color: #3953a0 !important;
+    color: #fff !important;
     border-radius: 0px !important; 
 }
-.btn:hover{
-    background-color: #425dac;
-    color: #fff;
+.bot:hover{
+    background-color: #425dac !important;
+    color: #fff !important;
     border-radius: 0px !important; 
 }
 #but1:hover, #but2:hover, #but3:hover{
-    background-color: #425dac;
-    transition: 0.2;
+    background-color: #425dac !important;
+    transition: 0.2 !important;
 }
 #but1, #but2, #but3{
-    background-color: #3953a0;
-    color: #fff;
+    background-color: #3953a0 !important;
+    color: #fff !important;
     border-radius: 0px !important; 
     width: 40% !important;
 }
 .modelo{
-    background-color: #ff9a00;
-    color: #fff;
+    background-color: #ff9a00 !important;
+    color: #fff !important;
     padding: 10px 15px 10px 15px !important;
     border-radius: 3px !important;
-    margin: 2% 0% 6% 0%;
+    margin: 2% 0% 6% 0% !important;
 }
 .modelo:hover{
-    background-color: #ffa723;
-    color: #fff;
-    transition: 0.2;
+    background-color: #ffa723 !important;
+    color: #fff !important;
+    transition: 0.2 !important;
 }

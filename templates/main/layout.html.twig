@@ -1,78 +1,144 @@
 {% extends "main/base.html.twig" %}
 {% block body %}
-    <!-- Header y barra de navegación -->
-    <header>
-	<div id="img-header">
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand" style="text-transform: uppercase; font-size: 30px;" href="#"><img src="img/logo.png"
-					style="margin-left:22px; margin-top: -6px; margin-bottom:-9px " width="270" alt=""> </a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+	<!-- Header y barra de navegación -->
+	<header>
+		<div id="img-header">
+			<nav class="navbar navbar-expand-lg navbar-dark">
+				<a class="navbar-brand" style="text-transform: uppercase; font-size: 30px;" href="#"><img src="img/logo.png" style="margin-left:22px; margin-top: -6px; margin-bottom:-9px " width="270" alt="">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-				<ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('index') }}">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('nuestraPropuesta') }}">Nuestra propuesta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('jornadasFormativas') }}">Jornadas Formativas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('mirant') }}">Mirant</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Forma Parte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('contacto') }}">Contacto</a>
-                    </li>
-                </ul>
-            <div class="main">
-  
-        <!-- Another variation with a button -->
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search this blog">
-          <div class="input-group-append">
-            <button class="btn btn-secondary" type="button">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </div>    
-      </div>
-			</div>
+					<ul class="navbar-nav ml-auto my-2 my-lg-0">
+						<li class="nav-item active">
+							<a class="nav-link" href="{{ path('index') }}">Inicio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('nuestraPropuesta') }}">Nuestra propuesta</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('jornadasFormativas') }}">Jornadas Formativas</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Mirant
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Mirant I</a>
+                                <div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{{path('mirant')}}">Mirant II</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Mirant III</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('formaParte') }}">Forma Parte</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('contacto') }}">Contacto</a>
+						</li>
+					</ul>
+
+					<div
+						class="main">
+
+						<!-- Another variation with a button -->
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search this blog">
+							<div class="input-group-append">
+								<button class="btn btn-secondary" type="button">
+									<i class="fa fa-search"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div><br>
 		</nav>
 		<div class="sticky-container">
-    <ul class="sticky">
-        <li>
-            <img src="img/iconos_rrss/instagram.png" width="32" height="32">
-            <p><a href="https://www.instagram.com/red.sanitaria.solidaria/" target="_blank">Siguenos en<br>Instagram</a></p>
-        </li>
-        <li>
-            <img src="img/iconos_rrss/facebook.png" width="32" height="32">
-            <p><a href="https://www.facebook.com/Red-Sanitaria-Solidaria-1590026707810592/" target="_blank">Siguenos en <br>Facebook</a></p>
-        </li>
-        <li>
-            <img src="img/iconos_rrss/youtube.png" width="32" height="32">
-            <p><a href="https://www.youtube.com/channel/UC8R-NvlhdzXxySXABd7FFGQ" target="_blank">Siguenos en <br>YouYube</a></p>
-        </li>
-        <li>
-            <img src="img/iconos_rrss/twitter.png" width="32" height="32">
-            <p><a href="https://twitter.com/RedSanitaria" target="_blank">Siguenos en <br>Twitter</a></p>
-        </li>
-    </ul>
-</div>
-    </div>
+			<ul class="sticky">
+				<a href="https://www.instagram.com/red.sanitaria.solidaria/" target="_blank">
+					<li>
+						<img src="img/iconos_rrss/instagram.png" width="32" height="32">
 					</li>
-				</ul>
-				<br>
-            <a id="button"></a>
-    </header>
-    {% block contenido %}{% endblock %}
+				</a>
+				<a href="https://www.facebook.com/Red-Sanitaria-Solidaria-1590026707810592/" target="_blank">
+					<li>
+						<img src="img/iconos_rrss/facebook.png" width="32" height="32">
+					</li>
+				</a>
+				<a href="https://www.youtube.com/channel/UC8R-NvlhdzXxySXABd7FFGQ" target="_blank">
+					<li>
+						<img src="img/iconos_rrss/youtube.png" width="32" height="32">
+					</li>
+				</a>
+				<a href="https://twitter.com/RedSanitaria" target="_blank">
+					<li>
+						<img src="img/iconos_rrss/twitter.png" width="32" height="32">
+					</li>
+				</a>
+			</ul>
+		</div>
+	</div>
+{% block contenido %}{% endblock %}
     <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4" style="background-color:#3a4685; color:white;">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-sm-8 col-xs-12 col-md-4 col-lg-4 col-xl-4">
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-sm-8 col-xs-12 col-md-4 col-lg-4 col-xl-4">
+                    <img class="iconosRRSS" src="https://images.vexels.com/media/users/3/137380/isolated/preview/1b2ca367caa7eff8b45c09ec09b44c16-icono-de-instagram-logo-by-vexels.png"></img>
+                    <button type="button" class="btn btn-lg btn-so">
+                        <i class="fab pr-1"></i>
+                        <span style="color:white;">Instagram</span>
+                    </button>
+                    <br>
+                    <img class="iconosRRSS" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/600px-Facebook_Logo_%282019%29.png"></img>
+                    <button type="button" class="btn btn-lg btn-so">
+                        <i class="fab pr-1"></i>
+                        <span style="color:white;">Facebook</span>
+                    </button>
+                    <br>
+                    <img class="iconosRRSS" src="https://images.vexels.com/media/users/3/137419/isolated/preview/b1a3fab214230557053ed1c4bf17b46c-icono-de-twitter-logo-by-vexels.png"></img>
+                    <button type="button" class="btn btn-lg btn-so">
+                        <i class="fab pr-1"></i>
+                        <span style="color:white;">Twitter</span>
+                    </button>
+                    <br>
+                    <img class="iconosRRSS" src="https://cdn.icon-icons.com/icons2/70/PNG/512/youtube_14198.png"></img>
+                    <button type="button" class="btn btn-lg btn-so">
+                        <i class="fab pr-1"></i>
+                        <span style="color:white;">YouTube</span>
+                    </button>
+                </div>
+                <div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4">
+                    <h5 style="font-size: 22px; color:white; font-family:verdana;" class="text-uppercase">Red Sanitaria Solidaria</h5>
+                    <ul class="list-unstyled text-center" >
+                        <li style="font-size: 17px;">
+                            <b>Castellón de la Plana</b><br>
+                            964 222 020 – 601 187 746
+                        </li>
+                        <li style="font-size: 17px;">
+                            <b>Valencia</b><br>
+                            670 394 103
+                        </li>
+                        <li style="font-size: 17px;">
+                            <b>Alicante</b><br>
+                            965 650 487 – 660 575 104
+                        </li>
+                    </ul>
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3"><h6>© 2020 Copyright:
+            <a style="color:white !important;" href="https://mdbootstrap.com/education/bootstrap/"> redsanitariasolidaria.org</h6></a>
+        </div>
+    </footer>
 {% endblock %}

@@ -11,6 +11,11 @@ iframe{
     margin: 14% 0%;
 }
 
+#img-header{
+    background-image: url(.././img/head\ fotos/fotoHeadEntidades.jpg) !important;
+    background-size: cover;
+}
+
 h3{
     margin-top: 5% !important;
 }
@@ -58,7 +63,7 @@ a:hover{
     background: #FFF;
     position: relative;
     transition: all 5s ease-in-out;
-    margin: 7% auto; 
+    margin: 5% auto; 
 }
 
 #cerrar{
@@ -93,3 +98,21 @@ a:hover{
     text-decoration: none;
     color: #F00;
 }
+
+#direccion{
+    margin-bottom: 10%; 
+}
+
+.map-responsive {
+    overflow:hidden;
+    padding-bottom:40%;
+    position:relative;
+    height:0;
+    }
+    .map-responsive iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }

@@ -1,45 +1,13 @@
 /*-----Header-----*/
-#nav{width: 100%;
-    margin-top: -260px;
-    background-color: #ffffff82;
-    height: 156px;}
+
     li>a{color: #183e7d !important;
         font-weight: bold;
         font-size: 15px;
         margin-left: 1px;
     }
 .navbar{padding: 0px !important;}
-#img-header{background-image: url(.././img/header-inicio.jpg);
-background-repeat: no-repeat;
-background-size: cover;
 
-height: 517px;
-background-color: #00000080;
-background-blend-mode: soft-light;}
-#img-header-servicios{background-image: url(img/FRAGADIS-SPAR-FRAIKIN-ALQUILER-P-FLOTA-PANO.jpg);
-    background-repeat: no-repeat;
-background-size: cover;
-height: 464px;
-background-color: #00000080;
-background-blend-mode: soft-light;
-background-position-x: center;
-background-position-y: center;}
-#img-header-flota{background-image: url(img/flota.jpg);
-    background-repeat: no-repeat;
-background-size: cover;
-height: 464px;
-background-color: #00000080;
-background-blend-mode: soft-light;
-background-position-x: center;
-background-position-y: center;}
-#img-header-contacta{background-image: url(img/pexels-photo-326576.jpeg);
-    background-repeat: no-repeat;
-background-size: cover;
-height: 464px;
-background-color: #00000080;
-background-blend-mode: soft-light;
-background-position-x: center;
-background-position-y: center;}
+
 li{font-size: 21px;
     font-family: verdana;
     margin-right: 25px;}
@@ -57,4 +25,22 @@ br+h1{color:white;
   .active-pink input[type=text] {
   border-bottom: 1px solid #f48fb1;
   box-shadow: 0 1px 0 0 #f48fb1;
+  }
+
+  /* Estilos footer */
+  footer > div{
+    color: white;
+    z-index: 100 !important;
+  }
+
+  div#cartaFooter{
+      color: white;
+      margin-top: -12% !important;
+      margin-left: 20%;
+      margin-bottom: 5%;
+      width: 65%; 
+      height: 150%; 
+      background-color:white;
+      border-radius: 6px;
+      box-shadow: 5px 3px 3px 4px #888888;
   }

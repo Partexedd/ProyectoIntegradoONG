@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     textoImagenPopUp3.addEventListener('click', cancelarScroll);
 
     function cancelarScroll() {
-        debugger
         let body = document.getElementsByTagName("BODY")[0];
         body.style.overflow = 'hidden';
     }

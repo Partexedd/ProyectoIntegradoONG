@@ -37,7 +37,7 @@ h4{
 li>a:hover{
     color: #1f51a0 !important;
 }
-ul{margin-right: 40px;}
+ul{margin-right: 26px;}
 nav{
 
     width: 100%;
@@ -47,11 +47,20 @@ nav{
     position: relative;
     border:1px solid rgba(255, 0, 0, 0);
 }
+
 .btn-outline-success{color:#244396 !important;
     background-color: #20459700 !important;
     background-image: none;
     border-color:#224496 !important;}
 input[type="search"]{display: block !important;}
+
+
+img.iconosRRSS{
+    width: 30px;
+    height: 30px;
+
+}
+
 #img-header{
     background-image: url(.././img/header-inicio.jpg);
     background-repeat: no-repeat;
@@ -75,6 +84,30 @@ input[type="search"]{display: block !important;}
     margin-top:0px;
     z-index: -4; */
 }
+#img-header-servicios{background-image: url(img/FRAGADIS-SPAR-FRAIKIN-ALQUILER-P-FLOTA-PANO.jpg);
+    background-repeat: no-repeat;
+background-size: cover;
+height: 464px;
+background-color: #00000080;
+background-blend-mode: soft-light;
+background-position-x: center;
+background-position-y: center;}
+#img-header-flota{background-image: url(img/flota.jpg);
+    background-repeat: no-repeat;
+background-size: cover;
+height: 464px;
+background-color: #00000080;
+background-blend-mode: soft-light;
+background-position-x: center;
+background-position-y: center;}
+#img-header-contacta{background-image: url(img/pexels-photo-326576.jpeg);
+    background-repeat: no-repeat;
+background-size: cover;
+height: 464px;
+background-color: #00000080;
+background-blend-mode: soft-light;
+background-position-x: center;
+background-position-y: center;}
 li>a{color: #183e7d !important;
         font-weight: bold;
         font-size: 17px;
@@ -85,15 +118,17 @@ li>a{color: #183e7d !important;
 /*Menu Redes Sociales*/
  /**/
  .sticky-container{
-    padding:0px;
-    margin:0px;
-position: absolute;
-    right:-130px;
-    top:274px;
-    width:210px;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    right: 28px;
+    top: 274px;
+    width: 55px;
     z-index: 1100;
-    float: right;
 }
+.sticky{margin-right: 40px !important;
+    width: 82px;
+    position: absolute;}
 .sticky li{
     list-style-type:none;
     background-color:#ffffff82;
@@ -106,9 +141,6 @@ position: absolute;
     -o-transition:all 0.25s ease-in-out;
     transition:all 0.25s ease-in-out;
     cursor:pointer;
-}
-.sticky li:hover{
-    margin-left:-115px;
 }
 .sticky li img{
     float:left;
@@ -125,8 +157,87 @@ position: absolute;
     text-decoration:none;
     color:#2C3539;
 }
-.sticky li p a:hover{
-    text-decoration:underline;
-}
 
 /*fin menu redes sociales*/
+/*Boton subir*/
+#button {
+    display: inline-block;
+    background-color: #354292;;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #button:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  #button:active {
+    background-color: #555;
+  }
+  #button.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Styles for the content section */
+  
+  .content {
+    width: 77%;
+    margin: 50px auto;
+    font-family: 'Merriweather', serif;
+    font-size: 17px;
+    color: #6c767a;
+    line-height: 1.9;
+  }
+  @media (min-width: 500px) {
+    .content {
+      width: 43%;
+    }
+    #button {
+      margin: 30px;
+    }
+  }
+  .content h1 {
+    margin-bottom: -10px;
+    color: #03a9f4;
+    line-height: 1.5;
+  }
+  .content h3 {
+    font-style: italic;
+    color: #96a2a7;
+  }
+  /* Estilos footer */
+  footer > div{
+    color: white;
+    z-index: 100 !important;
+  }
+
+  div#cartaFooter{
+      color: white;
+      margin-top: -12% !important;
+      margin-left: 20%;
+      margin-bottom: 5%;
+      width: 90%; 
+      height: 150%; 
+      background-color:white;
+      border-radius: 6px;
+      box-shadow: 5px 3px 3px 4px #888888;
+  }

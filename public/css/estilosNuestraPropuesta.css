@@ -5,6 +5,12 @@ h1, h3{
 strong{
     color: #3953a0;
 }
+
+#img-header{
+	background-image: url(.././img/head\ fotos/fotoHeadNuestraPropuesta.jpg) !important;
+	background-size: cover;
+}
+
 div#primerTexto{
     margin-top: 2%;
     margin-left: 14%;
