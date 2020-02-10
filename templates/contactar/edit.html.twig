@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Contactar</title>
+
+{% block body %}
+    <h1>Edit Contactar</h1>
+
+    {{ include('contactar/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('contactar_index') }}">back to list</a>
+
+    {{ include('contactar/_delete_form.html.twig') }}
+{% endblock %}
