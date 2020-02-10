@@ -1,16 +1,11 @@
-<!doctype html>
-<html>
-<head>
-  <title>Prueba de Bootstrap 4</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="forma_parte.css">
-  <script src="https://kit.fontawesome.com/ad58fc7f24.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <div class="container">
-    <div class="row">
+{% extends "main/layout.html.twig" %}
+{% block titulo %}Forma Parte{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="./css/forma_parte.css">
+{% endblock %}
+{% block contenido %}
+<section class="container-fluid">
+    <article class="row">
       <div class="col-md-12">
           <div class="text-center">
             <div class="body text-grey">
@@ -25,11 +20,8 @@
             </div>
           </div>
       </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row mt-5">
+    </article>
+    <article class="row mt-5">
       <div class="col-md col-xl-4">
           <div class="card">
             <div class="card-body text-center text-grey">
@@ -69,17 +61,12 @@
             </div>
           </div>
       </div>
-    </div>
+    </article>
     <br>
-  </div>
 
-  <div class="row" style="background-image: url('https://redsanitariasolidaria.org/wp-content/uploads/2018/08/1690.jpg'); width:200px; height:200px; background-repeat:no-repeat; background-size: cover;">
-    <div class="col-md">
-    </div>
-  </div>
+    <article id="jumbotron" class="jumbotron d-flex align-items-center" style="background-image:url('https://redsanitariasolidaria.org/wp-content/uploads/2018/08/1690.jpg'); background-repeat: no-repeat; height: 600px; background-size: cover;">
+      <h1 style="color:white; text-align:center">Por una salud universal, pública y gratuita, basada en la atención primaria.</h1>
+    </article>
   <br>
-  <div class="SIGUENOS">
-    <h1 class="col-12 text-center">Síguenos en las redes sociales.</h1>
-  </div>
-</body>
-</html>
+</section>
+{% endblock %}
