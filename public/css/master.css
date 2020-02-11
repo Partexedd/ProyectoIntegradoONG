@@ -232,17 +232,47 @@ li>a{color: #183e7d !important;
     z-index: 100 !important;
   }
 
-  div#cartaFooter{
-      color: white;
-      margin-top: -12% !important;
-      margin-left: 20%;
-      margin-bottom: 5%;
-      width: 90%; 
-      height: 150%; 
-      background-color:white;
-      border-radius: 6px;
-      box-shadow: 5px 3px 3px 4px #888888;
+
+  .card {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 1rem;
+    position: relative;
   }
+
+  .botonAContacto {
+    margin-top: 8px;
+    margin-bottom: 15px;
+  }
+
+  .titulov {
+    margin-top: 15px;
+  }
+
+  .card-1 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
 .ftr{
   margin-left: 8%;
+}
+
+#rsss{
+  text-align: right;
+}
+
+#textCard{
+  color: black !important;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.titulo{
+  margin-top: 14px;
+}
+
+@media only screen and (max-width: 1200px){
+ 
 }
