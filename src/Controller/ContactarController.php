@@ -61,6 +61,16 @@ class ContactarController extends AbstractController
             'contactar' => $contactar,
         ]);
     }
+    /**
+     * @Route("/{id}/form", name="contactar_form_delete", methods={"GET"})
+     */
+    public function formDelete(Contactar $contactar): Response
+    {
+        return $this->render('contactar/_delete_form.html.twig', [
+            'contactar' => $contactar,
+            
+        ]);
+    }
 
     /**
      * @Route("/{id}/edit", name="contactar_edit", methods={"GET","POST"})

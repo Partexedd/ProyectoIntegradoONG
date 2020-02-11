@@ -1,26 +1,14 @@
-<form method="post" action="{{ path('contactar_delete', {'id': contactar.id}) }}" onclick="#Alicante" onsubmit="">
+    <script>
+
+    window.onload=function(){
+                // Una vez cargada la página, el formulario se enviara automáticamente.
+		document.forms["eliminar"].submit("return Hola");
+
+    }
+
+    </script>
+<form method="post" name="eliminar" action="{{ path('contactar_delete', {'id': contactar.id}) }}">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contactar.id) }}">
-<<<<<<< HEAD
-=======
-<td><button class="btn" id="Castellon"><i class="fas fa-minus-circle" style="font-size:20px; margin-top:10px"></i></button></td>
->>>>>>> 3b9ddccaf5ee2c92227ecef8d48dacbfeed894f4
-</form>
-<script>
-$("#Alicante").click(function(){
-Swal.fire({
-  title: 'Estás seguro?',
-  text: "Vas a ser redireccionado a la página de reserva de entradas gratuitas de Alicante",
-  icon: 'question',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  cancelButtonText: 'Cancelar',
-  confirmButtonText: 'Sí, quiero visitar la página!'
-}).then((result) => {
-  if (result.value) {
-location.href ="https://redsanitariasolidaria.org/mostra-de-cinema-alicante-ii/";
-  }
-})
 
-});</script>
+</form>
