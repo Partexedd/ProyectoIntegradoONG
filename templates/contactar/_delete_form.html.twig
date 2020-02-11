@@ -1,7 +1,10 @@
 <form method="post" action="{{ path('contactar_delete', {'id': contactar.id}) }}" onclick="#Alicante" onsubmit="">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contactar.id) }}">
+<<<<<<< HEAD
+=======
 <td><button class="btn" id="Castellon"><i class="fas fa-minus-circle" style="font-size:20px; margin-top:10px"></i></button></td>
+>>>>>>> 3b9ddccaf5ee2c92227ecef8d48dacbfeed894f4
 </form>
 <script>
 $("#Alicante").click(function(){

@@ -166,7 +166,6 @@ class MainController extends AbstractController
     }
 
 
-    
       /**
      * @Route("sendlogin", name="sendlogin")
      */
