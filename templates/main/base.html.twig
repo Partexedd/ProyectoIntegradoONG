@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/ad58fc7f24.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{{asset("bootstrap.min.css", "estilos")}}">
-           <script src="{{asset("jquery-3.4.1.slim.min.js", "script")}}"></script>
-       <script src="{{asset("popper.min.js", "script")}}" ></script>
-        <link rel="stylesheet" href="{{asset("bootstrap.min.css", "estilos")}}">
-    <link rel="stylesheet" href="{{asset("master.css", "estilos")}}">
-           <script src="{{asset("ad58fc7f24.js", "script")}}"></script>
+    <link rel="stylesheet" href="{{asset("bootstrap.min.css", "estilos")}}">
+    <script src="{{ asset("jquery-3.4.1.slim.min.js", "script") }}"></script>
+    <script src="{{ asset("popper.min.js", "script") }}" ></script>
+    <link rel="stylesheet" href="{{ asset("bootstrap.min.css", "estilos") }}">
+    <link rel="stylesheet" href="{{ asset("master.css", "estilos") }}">
+    <script src="{{ asset("ad58fc7f24.js", "script") }}"></script>
 
 
 		{% block head %}{% endblock %}
@@ -23,7 +23,7 @@
 	<body>
 
 		{% block body %}{% endblock %}
-        <script src="{{asset("scriptBackToTop.js", "script")}}"></script>
+        <script src="{{ asset("scriptBackToTop.js", "script") }}"></script>
         <script src="https://code.jquery.com/jquery-3.1.0.js" crossorigin="anonymous"></script>
 	</body>
 
