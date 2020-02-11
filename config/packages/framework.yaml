@@ -20,4 +20,5 @@ framework:
                 base_path: '/css'
             script:
                 base_path: '/js'
-
+            imagen:
+                base_path: '/img'

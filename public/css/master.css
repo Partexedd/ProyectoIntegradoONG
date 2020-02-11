@@ -82,7 +82,7 @@ img.iconosRRSS{
     height: 100%;
     width: 100%;
     background-color: #00000080;
-    
+
     margin-top:0px;
     z-index: -4; */
 }
@@ -172,7 +172,7 @@ li>a{color: #183e7d !important;
     position: fixed;
     bottom: 30px;
     right: 30px;
-    transition: background-color .3s, 
+    transition: background-color .3s,
       opacity .5s, visibility .5s;
     opacity: 0;
     visibility: hidden;
@@ -198,9 +198,9 @@ li>a{color: #183e7d !important;
     opacity: 1;
     visibility: visible;
   }
-  
+
   /* Styles for the content section */
-  
+
   .content {
     width: 77%;
     margin: 50px auto;
@@ -232,13 +232,24 @@ li>a{color: #183e7d !important;
     z-index: 100 !important;
   }
 
-
-  .card {
+  div#cartaFooter{
+      color: white;
+      margin-top: -12% !important;
+      margin-left: 20%;
+      margin-bottom: 5%;
+      width: 90%;
+      height: 150%;
+      background-color:white;
+      border-radius: 6px;
+      box-shadow: 5px 3px 3px 4px #888888;
+    }
+  .cardEs {
     background: #fff;
     border-radius: 2px;
     display: inline-block;
     margin: 1rem;
     position: relative;
+    margin-top: -15%;
   }
 
   .botonAContacto {
@@ -273,6 +284,8 @@ li>a{color: #183e7d !important;
   margin-top: 14px;
 }
 
-@media only screen and (max-width: 1200px){
- 
+@media only screen and (max-width: 700px){
+  .ftr{
+    text-align: center;
+  }
 }

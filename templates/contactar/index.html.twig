@@ -28,7 +28,12 @@
                 <td>{{ contactar.asunto }}</td>
                 <td>{{ contactar.mensaje }}</td>
                 <td>{{ contactar.fecha ? contactar.fecha|date('Y-m-d H:i:s') : '' }}</td>
+<<<<<<< HEAD
                 <td><button class="btn" id="Mensaje"><i class="fas fa-minus-circle" style="font-size:20px; margin-top:10px"></i></button></td>
+=======
+                <td><a class="nav-link" href="{{ path('contactar_delete', {'id': contactar.id}) }}"><button class="btn" id="Castellon"><i class="fas fa-minus-circle" style="font-size:20px; margin-top:10px"></i></button></a></td>
+               {{ include('contactar/_delete_form.html.twig') }}
+>>>>>>> 3b9ddccaf5ee2c92227ecef8d48dacbfeed894f4
 
           <a href="{{ path('contactar_delete', {'id': contactar.id}) }}">edit</a>
           {{ include('contactar/_delete_form.html.twig') }}
