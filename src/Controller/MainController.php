@@ -31,7 +31,7 @@ class MainController extends AbstractController
      */
     public function nuestraPropuesta()
     {
-        $user1 = $session->get('nombre_usuario');
+        //$user1 = $session->get('nombre_usuario');
         return $this->render('main/nuestrapropuesta.html.twig', [
         ]);
     }
@@ -83,7 +83,7 @@ class MainController extends AbstractController
      */
     public function entidades(SessionInterface $session)
     {
-        $user1 = $session->get('nombre_usuario');
+        //$user1 = $session->get('nombre_usuario');
         return $this->render('main/entidades.html.twig', [
         ]);
     }
