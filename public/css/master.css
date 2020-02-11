@@ -249,7 +249,7 @@ li>a{color: #183e7d !important;
     display: inline-block;
     margin: 1rem;
     position: relative;
-    
+    margin-top: -15%;
   }
 
   .botonAContacto {
@@ -284,3 +284,8 @@ li>a{color: #183e7d !important;
   margin-top: 14px;
 }
 
+@media only screen and (max-width: 700px){
+  .ftr{
+    text-align: center;
+  }
+}
