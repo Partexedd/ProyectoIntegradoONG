@@ -5,7 +5,7 @@ i#i{
   i#i:hover{
     color: cyan;
   }
-  .card:hover{
+  #cartas:hover{
     box-shadow: 0px 0px 30px 3px lightblue;
   }
   #jumbotron{
