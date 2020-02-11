@@ -45,7 +45,7 @@ class MainController extends AbstractController
         $contactoTo=new Contactar();
         $form=$this->CreateForm(EnvioContactoType::Class, $contactoTo);
 
-        $form->handleRequest($request); 
+        $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $entityManager=$this->getDoctrine()->getManager();
             $contactoTo->setFecha(new \DateTime('now'));
@@ -77,7 +77,7 @@ class MainController extends AbstractController
 
         ]);
     }
-    
+
     /**
      * @Route("/entidades", name="entidades")
      */
@@ -85,6 +85,15 @@ class MainController extends AbstractController
     {
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/entidades.html.twig', [
+        ]);
+    }
+
+    /**
+     * @Route("/expandido", name="expandido")
+     */
+    public function expandido()
+    {
+        return $this->render('main/leermas.html.twig', [
         ]);
     }
 
@@ -120,27 +129,27 @@ class MainController extends AbstractController
         //         return $this->redirectToRoute('indexAdmin', [
         //             'usuario' => $usuarioBBDD,
         //             'password' => $password,
-        //             'user' => $user, 
+        //             'user' => $user,
         //     ]);}
         // if ($user1!="" && $password!=""){
 
         //     $session->set('user', $user);
         //         return $this->redirectToRoute('index', [
         //             'controller_name' => 'AdminController',
-        //             'user' => $user, 
+        //             'user' => $user,
         //     ]);}
         // else{
-    
+
             return $this->render('admin/login.html.twig', [
 
                 'controller_name' => 'AdminController',
-                'user' => $user, 
+                'user' => $user,
                 ]);
-      
+
     }
 
 
-    
+
     /**
      * @Route("/indexadmin", name="indexAdmin")
      */
@@ -206,7 +215,7 @@ class MainController extends AbstractController
 
         return $this->redirectToRoute('mensajesAdmin');
     }
-    
+
       /**
      * @Route("sendlogin", name="sendlogin")
      */
@@ -237,7 +246,7 @@ class MainController extends AbstractController
         }
 
     }
-    
+
     // /**
     //  * @Route("/logOut", name="logOut")
     //  */
@@ -259,5 +268,5 @@ class MainController extends AbstractController
                 return $this->redirectToRoute('index');
 
     }
-    
+
 }
