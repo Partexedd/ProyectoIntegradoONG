@@ -165,57 +165,8 @@ class MainController extends AbstractController
             'contactars' => $contactarRepository->findAll(),]);
     }
 
-    /*Mensajes panel de administración*/
 
-    /**
-     * @Route("/mensajes", name="mensajesAdmin")
-     */
-    public function mensajesAdmin(Request $request, SessionInterface $session, ContactarRepository $contactarRepository)
-    {
-        $user1 = $session->get('nombre_usuario');
-        $user= $request->request->get("user");
-        if ( $user1=="") {
-            return $this->redirectToRoute('admin'); }
-        return $this->render('admin/mensajesContacto.html.twig', [
-            'controller_name' => 'AdminController',
-            'user' => $user1,
-            'contactars' => $contactarRepository->findAll(),]);
-    }
-
-    /**
-     * @Route("/{id}/borrar", name="contactar_borrar", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Contactar $contactar): Response
-    {
-        $form = $this->createForm(ContactarType::class, $contactar);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('contactar_index');
-        }
-
-        return $this->render('admin/borrarMensaje.html.twig', [
-            'contactar' => $contactanmr,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="contactar_delete", methods={"DELETE"})
-     */
-    public function delete(Request $request, Contactar $contactar): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$contactar->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($contactar);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('mensajesAdmin');
-    }
-
+    
       /**
      * @Route("sendlogin", name="sendlogin")
      */
