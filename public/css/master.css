@@ -37,7 +37,9 @@ h4{
 li>a:hover{
     color: #1f51a0 !important;
 }
-ul{margin-right: 26px;}
+ul#navbar{margin-right: 26px;}
+
+
 nav{
 
     width: 100%;
@@ -241,3 +243,6 @@ li>a{color: #183e7d !important;
       border-radius: 6px;
       box-shadow: 5px 3px 3px 4px #888888;
   }
+.ftr{
+  margin-left: 8%;
+}
