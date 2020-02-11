@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<title>Contactar</title>
+
+{% block body %}
+    <h1>Contactar</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contactar.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ contactar.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ contactar.email }}</td>
+            </tr>
+            <tr>
+                <th>RssProvincia</th>
+                <td>{{ contactar.rssProvincia }}</td>
+            </tr>
+            <tr>
+                <th>Representa</th>
+                <td>{{ contactar.representa }}</td>
+            </tr>
+            <tr>
+                <th>Asunto</th>
+                <td>{{ contactar.asunto }}</td>
+            </tr>
+            <tr>
+                <th>Mensaje</th>
+                <td>{{ contactar.mensaje }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ contactar.fecha ? contactar.fecha|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('contactar_index') }}">back to list</a>
+
+    <a href="{{ path('contactar_edit', {'id': contactar.id}) }}">edit</a>
+
+    {{ include('contactar/_delete_form.html.twig') }}
+{% endblock %}
