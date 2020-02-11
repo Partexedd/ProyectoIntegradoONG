@@ -23,7 +23,7 @@ class ContactarController extends AbstractController
     public function index(ContactarRepository $contactarRepository, SessionInterface $session): Response
     {
         $user1 = $session->get('nombre_usuario');
-        return $this->render('admin/contactar/index.html.twig', [
+        return $this->render('contactar/index.html.twig', [
             'contactars' => $contactarRepository->findAll(),
             'user' => $user1,
         ]);
@@ -46,7 +46,7 @@ class ContactarController extends AbstractController
             return $this->redirectToRoute('contactar_index');
         }
 
-        return $this->render('admin/contactar/new.html.twig', [
+        return $this->render('contactar/new.html.twig', [
             'contactar' => $contactar,
             'form' => $form->createView(),
         ]);
@@ -57,7 +57,7 @@ class ContactarController extends AbstractController
      */
     public function show(Contactar $contactar): Response
     {
-        return $this->render('admin/contactar/show.html.twig', [
+        return $this->render('contactar/show.html.twig', [
             'contactar' => $contactar,
         ]);
     }
@@ -76,7 +76,7 @@ class ContactarController extends AbstractController
             return $this->redirectToRoute('contactar_index');
         }
 
-        return $this->render('admin/contactar/edit.html.twig', [
+        return $this->render('contactar/edit.html.twig', [
             'contactar' => $contactanmr,
             'form' => $form->createView(),
         ]);

@@ -29,7 +29,7 @@ class MainController extends AbstractController
        /**
      * @Route("/nuestraPropuesta", name="nuestraPropuesta")
      */
-    public function nuestraPropuesta()
+    public function nuestraPropuesta(SessionInterface $session)
     {
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/nuestrapropuesta.html.twig', [
