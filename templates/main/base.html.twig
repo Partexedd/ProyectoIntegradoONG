@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/ad58fc7f24.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset("bootstrap.min.css", "estilos")}}">
     <script src="{{ asset("jquery-3.4.1.slim.min.js", "script") }}"></script>
+    <script src="{{ asset("bootstrap.js", "script") }}"></script>
     <script src="{{ asset("popper.min.js", "script") }}" ></script>
     <link rel="stylesheet" href="{{ asset("bootstrap.min.css", "estilos") }}">
     <link rel="stylesheet" href="{{ asset("master.css", "estilos") }}">
@@ -24,8 +25,8 @@
 	<body>
 
 		{% block body %}{% endblock %}
-        <script src="{{ asset("scriptBackToTop.js", "script") }}"></script>
         <script src="https://code.jquery.com/jquery-3.1.0.js" crossorigin="anonymous"></script>
+        <script src="{{ asset("scriptBackToTop.js", "script") }}"></script>
 	</body>
 
 </html>

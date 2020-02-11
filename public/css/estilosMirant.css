@@ -39,3 +39,8 @@ margin: 14% 0%;}
     background-blend-mode: soft-light;}
  #titulos-peliculas{color: white;}   
 
+ @media only screen and (max-width: 1000px){
+    .imgMir{
+      margin-bottom: 15%;
+    }
+  }
