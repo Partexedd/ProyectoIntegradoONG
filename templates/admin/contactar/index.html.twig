@@ -1,11 +1,11 @@
+{% extends "admin/layout.html.twig" %}
 
-    {% block body %}
-    <h1>Contactar index</h1>
+    {% block div %}
+              <h1>Contactar index</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>RssProvincia</th>
@@ -13,13 +13,12 @@
                 <th>Asunto</th>
                 <th>Mensaje</th>
                 <th>Fecha</th>
-                <th>actions</th>
+                {# <th>actions</th> #}
             </tr>
         </thead>
         <tbody>
         {% for contactar in contactars %}
             <tr>
-                <td>{{ contactar.id }}</td>
                 <td>{{ contactar.nombre }}</td>
                 <td>{{ contactar.email }}</td>
                 <td>{{ contactar.rssProvincia }}</td>

@@ -1382,21 +1382,21 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.0.2",
+            "version": "1.25.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "c861fcba2ca29404dc9e617eedd9eff4616986b8"
+                "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c861fcba2ca29404dc9e617eedd9eff4616986b8",
-                "reference": "c861fcba2ca29404dc9e617eedd9eff4616986b8",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
+                "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2",
-                "psr/log": "^1.0.1"
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
             },
             "provide": {
                 "psr/log-implementation": "1.0.0"
@@ -1404,36 +1404,33 @@
             "require-dev": {
                 "aws/aws-sdk-php": "^2.4.9 || ^3.0",
                 "doctrine/couchdb": "~1.0@dev",
-                "elasticsearch/elasticsearch": "^6.0",
-                "graylog2/gelf-php": "^1.4.2",
-                "jakub-onderka/php-parallel-lint": "^0.9",
+                "graylog2/gelf-php": "~1.0",
+                "jakub-onderka/php-parallel-lint": "0.9",
                 "php-amqplib/php-amqplib": "~2.4",
                 "php-console/php-console": "^3.1.3",
-                "phpspec/prophecy": "^1.6.1",
-                "phpunit/phpunit": "^8.3",
-                "predis/predis": "^1.1",
-                "rollbar/rollbar": "^1.3",
+                "phpunit/phpunit": "~4.5",
+                "phpunit/phpunit-mock-objects": "2.3.0",
                 "ruflin/elastica": ">=0.90 <3.0",
+                "sentry/sentry": "^0.13",
                 "swiftmailer/swiftmailer": "^5.3|^6.0"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
                 "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
-                "elasticsearch/elasticsearch": "Allow sending log messages to an Elasticsearch server via official client",
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
-                "ext-mbstring": "Allow to work properly with unicode symbols",
-                "ext-mongodb": "Allow sending log messages to a MongoDB server (via driver)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
-                "mongodb/mongodb": "Allow sending log messages to a MongoDB server (via library)",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
                 "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
-                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+                "sentry/sentry": "Allow sending log messages to a Sentry server"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -1459,33 +1456,32 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2019-12-20T14:22:59+00:00"
+            "time": "2019-09-06T13:49:17+00:00"
         },
         {
             "name": "ocramius/package-versions",
-            "version": "1.5.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/PackageVersions.git",
-                "reference": "1d32342b8c1eb27353c8887c366147b4c2da673c"
+                "reference": "a4d4b60d0e60da2487bd21a2c6ac089f85570dbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/1d32342b8c1eb27353c8887c366147b4c2da673c",
-                "reference": "1d32342b8c1eb27353c8887c366147b4c2da673c",
+                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/a4d4b60d0e60da2487bd21a2c6ac089f85570dbb",
+                "reference": "a4d4b60d0e60da2487bd21a2c6ac089f85570dbb",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0.0",
-                "php": "^7.3.0"
+                "php": "^7.1.0"
             },
             "require-dev": {
-                "composer/composer": "^1.8.6",
-                "doctrine/coding-standard": "^6.0.0",
+                "composer/composer": "^1.6.3",
+                "doctrine/coding-standard": "^5.0.1",
                 "ext-zip": "*",
-                "infection/infection": "^0.13.4",
-                "phpunit/phpunit": "^8.2.5",
-                "vimeo/psalm": "^3.4.9"
+                "infection/infection": "^0.7.1",
+                "phpunit/phpunit": "^7.0.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -2000,6 +1996,68 @@
                 "controllers"
             ],
             "time": "2019-10-16T18:54:45+00:00"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v6.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a",
+                "reference": "5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a",
+                "shasum": ""
+            },
+            "require": {
+                "egulias/email-validator": "~2.0",
+                "php": ">=7.0.0",
+                "symfony/polyfill-iconv": "^1.0",
+                "symfony/polyfill-intl-idn": "^1.10",
+                "symfony/polyfill-mbstring": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
+            },
+            "suggest": {
+                "ext-intl": "Needed to support internationalized email addresses",
+                "true/punycode": "Needed to support internationalized email addresses, if ext-intl is not installed"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.2-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Corbyn"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "https://swiftmailer.symfony.com",
+            "keywords": [
+                "email",
+                "mail",
+                "mailer"
+            ],
+            "time": "2019-04-21T09:21:45+00:00"
         },
         {
             "name": "symfony/asset",
@@ -4924,6 +4982,71 @@
             "time": "2019-08-07T11:52:19+00:00"
         },
         {
+            "name": "symfony/swiftmailer-bundle",
+            "version": "v3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/swiftmailer-bundle.git",
+                "reference": "6b895bc0a5e815d1bf2d444869415a7c752516aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/6b895bc0a5e815d1bf2d444869415a7c752516aa",
+                "reference": "6b895bc0a5e815d1bf2d444869415a7c752516aa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0",
+                "swiftmailer/swiftmailer": "^6.1.3",
+                "symfony/config": "^3.4|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+                "symfony/http-kernel": "^3.4|^4.0|^5.0"
+            },
+            "conflict": {
+                "twig/twig": "<1.41|<2.10"
+            },
+            "require-dev": {
+                "symfony/console": "^3.4|^4.0|^5.0",
+                "symfony/framework-bundle": "^3.4|^4.0|^5.0",
+                "symfony/phpunit-bridge": "^3.4.32|^4.3.5|^5.0",
+                "symfony/yaml": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "psr/log": "Allows logging"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\SwiftmailerBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony SwiftmailerBundle",
+            "homepage": "http://symfony.com",
+            "time": "2019-10-20T12:05:18+00:00"
+        },
+        {
             "name": "symfony/translation",
             "version": "v4.3.6",
             "source": {
@@ -5634,31 +5757,28 @@
                 "check",
                 "validate"
             ],
-            "time": "2019-11-24T13:36:37+00:00"
+            "time": "2019-08-24T08:43:50+00:00"
         },
         {
             "name": "zendframework/zend-code",
-            "version": "3.4.1",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-code.git",
-                "reference": "268040548f92c2bfcba164421c1add2ba43abaaa"
+                "reference": "46feaeecea14161734b56c1ace74f28cb329f194"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/268040548f92c2bfcba164421c1add2ba43abaaa",
-                "reference": "268040548f92c2bfcba164421c1add2ba43abaaa",
+                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/46feaeecea14161734b56c1ace74f28cb329f194",
+                "reference": "46feaeecea14161734b56c1ace74f28cb329f194",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
                 "zendframework/zend-eventmanager": "^2.6 || ^3.0"
             },
-            "conflict": {
-                "phpspec/prophecy": "<1.9.0"
-            },
             "require-dev": {
-                "doctrine/annotations": "^1.7",
+                "doctrine/annotations": "^1.0",
                 "ext-phar": "*",
                 "phpunit/phpunit": "^7.5.16 || ^8.4",
                 "zendframework/zend-coding-standard": "^1.0",
@@ -5672,8 +5792,7 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "3.4.x-dev",
-                    "dev-develop": "3.5.x-dev",
-                    "dev-dev-4.0": "4.0.x-dev"
+                    "dev-develop": "3.5.x-dev"
                 }
             },
             "autoload": {
@@ -5691,8 +5810,7 @@
                 "code",
                 "zf"
             ],
-            "abandoned": "laminas/laminas-code",
-            "time": "2019-12-10T19:21:15+00:00"
+            "time": "2019-10-05T23:18:22+00:00"
         },
         {
             "name": "zendframework/zend-eventmanager",
@@ -5746,7 +5864,6 @@
                 "events",
                 "zf2"
             ],
-            "abandoned": "laminas/laminas-eventmanager",
             "time": "2018-04-25T15:33:34+00:00"
         }
     ],

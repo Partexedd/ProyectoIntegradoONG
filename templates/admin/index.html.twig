@@ -1,47 +1,5 @@
 {% extends "admin/layout.html.twig" %}
 
     {% block div %}
-                   <a class="nav-link" href="{{ path('logOut') }}">cerrar sesion</a>
-                          <p>Hola {{ app.session.get("nombre_usuario") }}</p>
-                          <h1>Contactar index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>RssProvincia</th>
-                <th>Representa</th>
-                <th>Asunto</th>
-                <th>Mensaje</th>
-                <th>Fecha</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for contactar in contactars %}
-            <tr>
-                <td>{{ contactar.id }}</td>
-                <td>{{ contactar.nombre }}</td>
-                <td>{{ contactar.email }}</td>
-                <td>{{ contactar.rssProvincia }}</td>
-                <td>{{ contactar.representa }}</td>
-                <td>{{ contactar.asunto }}</td>
-                <td>{{ contactar.mensaje }}</td>
-                <td>{{ contactar.fecha ? contactar.fecha|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('contactar_show', {'id': contactar.id}) }}">show</a>
-                    <a href="{{ path('contactar_edit', {'id': contactar.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('contactar_new') }}">Create new</a>
+    
 {% endblock %}
