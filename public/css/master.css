@@ -243,12 +243,13 @@ li>a{color: #183e7d !important;
       border-radius: 6px;
       box-shadow: 5px 3px 3px 4px #888888;
     }
-  .card {
+  .cardEs {
     background: #fff;
     border-radius: 2px;
     display: inline-block;
     margin: 1rem;
     position: relative;
+    
   }
 
   .botonAContacto {
