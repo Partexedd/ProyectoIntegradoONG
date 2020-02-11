@@ -232,7 +232,6 @@ li>a{color: #183e7d !important;
     z-index: 100 !important;
   }
 
-<<<<<<< HEAD
   div#cartaFooter{
       color: white;
       margin-top: -12% !important;
@@ -243,8 +242,7 @@ li>a{color: #183e7d !important;
       background-color:white;
       border-radius: 6px;
       box-shadow: 5px 3px 3px 4px #888888;
-=======
-
+    }
   .card {
     background: #fff;
     border-radius: 2px;
@@ -256,7 +254,6 @@ li>a{color: #183e7d !important;
   .botonAContacto {
     margin-top: 8px;
     margin-bottom: 15px;
->>>>>>> 0f619168a2a2ff518eb94525982770450a12df85
   }
 
   .titulov {
@@ -270,8 +267,6 @@ li>a{color: #183e7d !important;
 .ftr{
   margin-left: 8%;
 }
-<<<<<<< HEAD
-=======
 
 #rsss{
   text-align: right;
@@ -288,7 +283,3 @@ li>a{color: #183e7d !important;
   margin-top: 14px;
 }
 
-@media only screen and (max-width: 1200px){
- 
-}
->>>>>>> 0f619168a2a2ff518eb94525982770450a12df85
