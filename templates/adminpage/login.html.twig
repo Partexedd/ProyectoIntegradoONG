@@ -1,4 +1,4 @@
-{% extends "admin/layout.html.twig" %}
+{% extends "adminpage/layout.html.twig" %}
 
     {% block div %}
     
@@ -6,7 +6,7 @@
       <div id="content">
          <div class="row">
             <div class="col">
-               <form method="POST" action="{{ url("admin") }}" class="admin-login" style="margin-top:20%;">
+               <form method="POST" action="{{ url("adminlogin") }}" class="admin-login" style="margin-top:20%;">
                   <div class="login">
                      <div class="banner banner-login"></div>
                      <div class="form">
