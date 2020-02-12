@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200212073033 extends AbstractMigration
+final class Version20200212111909 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -23,6 +23,7 @@ final class Version20200212073033 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('CREATE TABLE admin (id INT AUTO_INCREMENT NOT NULL, usuario VARCHAR(100) NOT NULL, password VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE contactar (id INT AUTO_INCREMENT NOT NULL, nombre VARCHAR(100) NOT NULL, email VARCHAR(255) NOT NULL, rss_provincia VARCHAR(30) NOT NULL, representa VARCHAR(30) NOT NULL, asunto VARCHAR(100) DEFAULT NULL, mensaje LONGTEXT NOT NULL, fecha DATETIME NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE ent_detalle (id INT AUTO_INCREMENT NOT NULL, ent_img VARCHAR(255) DEFAULT NULL, ent_tlf VARCHAR(255) DEFAULT NULL, ent_mail VARCHAR(50) DEFAULT NULL, ent_iframe VARCHAR(255) DEFAULT NULL, ent_nombre VARCHAR(75) DEFAULT NULL, ent_text LONGTEXT DEFAULT NULL, ent_facebook VARCHAR(255) DEFAULT NULL, ent_twitter VARCHAR(255) DEFAULT NULL, ent_instagram VARCHAR(255) DEFAULT NULL, ent_youtube VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE pag_contacto (id INT AUTO_INCREMENT NOT NULL, tit_cabecera VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE pag_entidades (id INT AUTO_INCREMENT NOT NULL, tit_cabecera VARCHAR(255) DEFAULT NULL, ent_img VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
@@ -39,6 +40,7 @@ final class Version20200212073033 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('DROP TABLE admin');
+        $this->addSql('DROP TABLE contactar');
         $this->addSql('DROP TABLE ent_detalle');
         $this->addSql('DROP TABLE pag_contacto');
         $this->addSql('DROP TABLE pag_entidades');

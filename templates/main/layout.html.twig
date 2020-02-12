@@ -2,7 +2,7 @@
 {% block body %}
 	<!-- Header y barra de navegación -->
 	<header>
-		<div id="img-header">
+		<div id="img-header" style="background-image: url(.././img/{{ imagenheader }});">
 			<nav class="navbar navbar-expand-lg navbar-dark">
 				<a class="navbar-brand" style="text-transform: uppercase; font-size: 30px;" href="#"><img src="img/logo.png" style="margin-left:22px; margin-top: -6px; margin-bottom:-9px " width="270" alt="">
 				</a>
@@ -83,6 +83,7 @@
 			</ul>
 		</div>
 	</div>
+</header>
 	{% block contenido %}{% endblock %}
 	<!-- footer -->
 	<footer style="background-color: #18374d">
