@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Contactar;
+use App\Entity\Admin;
 use App\Repository\ContactarRepository;
 use App\Form\ContactarType;
 use Symfony\Component\HttpFoundation\Request;
@@ -114,23 +115,20 @@ class MainController extends AbstractController
     public function loginadmin(Request $request, SessionInterface $session)
     {
         $user1 = $session->get('nombre_usuario');
-        // $user= $request->request->get("user");
-        // $password= $request->request->get("password");
-        // $usuarioBBDD=$this->getDoctrine()
-        // ->getRepository(Admin::class)
-        // ->findOneBy(['usuario' => $user]);
-        // $passwordBBDD=$this->getDoctrine()
-        // ->getRepository(Admin::class)
-        // ->findOneBy(['usuario' => $password]);
-        // if ($user== "adminca" && $password=="1234"){
+        $user= $request->request->get("user");
+        $password= $request->request->get("password");
+        $usuarioBBDD=$this->getDoctrine()
+        ->getRepository(Admin::class)
+        ->findOneBy(['usuario' => $user]);
+        if ($usuarioBBDD){
 
-        //     $session->set('nombre_usuario', $user1);
-        //     $session->set('pasword', $password);
-        //         return $this->redirectToRoute('indexAdmin', [
-        //             'usuario' => $usuarioBBDD,
-        //             'password' => $password,
-        //             'user' => $user,
-        //     ]);}
+            $session->set('nombre_usuario', $user1);
+            $session->set('password', $password);
+                return $this->redirectToRoute('indexAdmin', [
+                    'usuario' => $usuarioBBDD,
+                    'password' => $password,
+                    'user' => $user,
+            ]);}
         // if ($user1!="" && $password!=""){
 
         //     $session->set('user', $user);
@@ -138,14 +136,14 @@ class MainController extends AbstractController
         //             'controller_name' => 'AdminController',
         //             'user' => $user,
         //     ]);}
-        // else{
+        else{
 
             return $this->render('admin/login.html.twig', [
 
                 'controller_name' => 'AdminController',
                 'user' => $user,
                 ]);
-
+            }
     }
 
 
@@ -215,7 +213,7 @@ class MainController extends AbstractController
     {
         $session->clear();
         $session->invalidate();
-                return $this->redirectToRoute('index');
+                return $this->redirectToRoute('admin');
 
     }
 
