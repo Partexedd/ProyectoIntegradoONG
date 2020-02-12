@@ -91,3 +91,6 @@ article#carousel1{
 	width: 250px;
   }
   
+label ul{
+	transition: all 2s ease 1s;
+}
