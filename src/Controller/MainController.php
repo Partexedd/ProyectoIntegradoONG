@@ -114,15 +114,13 @@ class MainController extends AbstractController
     public function loginadmin(Request $request, SessionInterface $session)
     {
         $user1 = $session->get('nombre_usuario');
-        $user= $request->request->get("user");
+        // $user= $request->request->get("user");
         // $password= $request->request->get("password");
         // $usuarioBBDD=$this->getDoctrine()
         // ->getRepository(Admin::class)
         // ->findOneBy(['usuario' => $user]);
-        // $passwordBBDD=$this->getDoctrine()
-        // ->getRepository(Admin::class)
-        // ->findOneBy(['usuario' => $password]);
-        // if ($user== "adminca" && $password=="1234"){
+
+        // if ($user== $usuarioBBDD && $password==$passwordBBDD){
 
         //     $session->set('nombre_usuario', $user1);
         //     $session->set('pasword', $password);
