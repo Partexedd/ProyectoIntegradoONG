@@ -35,7 +35,7 @@ class MainController extends AbstractController
     {
         //$user1 = $session->get('nombre_usuario');
         return $this->render('main/nuestrapropuesta.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+          'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg'
         ]);
     }
 
@@ -55,7 +55,7 @@ class MainController extends AbstractController
             $entityManager->persist($contactoTo);
             $entityManager->flush();}
         return $this->render('main/contacto.html.twig', [
-          'imagenheader' => 'header-inicio.jpg',
+          'imagenheader' => 'Namuno.-Visita-seguiment-2-maig-2006.jpg',
             'form' => $form->CreateView()
         ]);
 

@@ -6,7 +6,7 @@ h1{
     font-size: 20px;
 }
 #img-header{
-    background-image: url(http://redsanitariasolidaria.org/wp-content/uploads/2018/10/Namuno.-Visita-seguiment-2-maig-2006.jpg) !important;
+    /* background-image: url(http://redsanitariasolidaria.org/wp-content/uploads/2018/10/Namuno.-Visita-seguiment-2-maig-2006.jpg) !important; */
     background-size: cover;
 }
 .dirFoto{
@@ -34,12 +34,12 @@ input{
     margin-top: 2%;
     background-color: #5c7f8b !important;
     color: #fff !important;
-    border-radius: 0px !important; 
+    border-radius: 0px !important;
 }
 .bot:hover, .collapsible:hover{
     background-color: #506E79 !important;
     color: #fff !important;
-    border-radius: 0px !important; 
+    border-radius: 0px !important;
 }
 .content {
   padding: 0 18px;

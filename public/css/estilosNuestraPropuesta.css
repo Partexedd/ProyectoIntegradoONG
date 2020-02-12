@@ -11,7 +11,7 @@ strong{
 }
 
 #img-header{
-	background-image: url(.././img/head\ fotos/fotoHeadNuestraPropuesta.jpg) !important;
+	/* background-image: url(.././img/head\ fotos/fotoHeadNuestraPropuesta.jpg) !important; */
 	background-size: cover;
 }
 
@@ -90,7 +90,7 @@ article#carousel1{
 	height: 100px;
 	width: 250px;
   }
-  
+
 label ul{
 	transition: all 2s ease 1s;
 }
