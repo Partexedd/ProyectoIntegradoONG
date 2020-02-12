@@ -46,6 +46,26 @@ class PagJornadasFormativas
      */
     private $jornadaCartel;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $jAlicante;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $jValencia;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $jCastellon;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $textDebajoJornada;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -119,6 +139,54 @@ class PagJornadasFormativas
     public function setJornadaCartel(?string $jornadaCartel): self
     {
         $this->jornadaCartel = $jornadaCartel;
+
+        return $this;
+    }
+
+    public function getJAlicante(): ?string
+    {
+        return $this->jAlicante;
+    }
+
+    public function setJAlicante(?string $jAlicante): self
+    {
+        $this->jAlicante = $jAlicante;
+
+        return $this;
+    }
+
+    public function getJValencia(): ?string
+    {
+        return $this->jValencia;
+    }
+
+    public function setJValencia(?string $jValencia): self
+    {
+        $this->jValencia = $jValencia;
+
+        return $this;
+    }
+
+    public function getJCastellon(): ?string
+    {
+        return $this->jCastellon;
+    }
+
+    public function setJCastellon(?string $jCastellon): self
+    {
+        $this->jCastellon = $jCastellon;
+
+        return $this;
+    }
+
+    public function getTextDebajoJornada(): ?string
+    {
+        return $this->textDebajoJornada;
+    }
+
+    public function setTextDebajoJornada(?string $textDebajoJornada): self
+    {
+        $this->textDebajoJornada = $textDebajoJornada;
 
         return $this;
     }
