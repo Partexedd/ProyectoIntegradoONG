@@ -273,6 +273,9 @@ li>a{color: #183e7d !important;
   text-align: right;
 }
 
+#cards{}
+#cards:hover{border:solid rgb(79, 79, 182) 1px}
+
 #textCard{
   color: black !important;
   margin-left: 20px;
