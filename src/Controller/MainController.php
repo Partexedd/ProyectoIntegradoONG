@@ -23,7 +23,6 @@ class MainController extends AbstractController
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
-            'imagenheader' => 'logo.png'
         ]);
     }
 
@@ -34,7 +33,6 @@ class MainController extends AbstractController
     {
         //$user1 = $session->get('nombre_usuario');
         return $this->render('main/nuestrapropuesta.html.twig', [
-          'imagenheader' => 'logo.png'
         ]);
     }
 
@@ -54,7 +52,6 @@ class MainController extends AbstractController
             $entityManager->persist($contactoTo);
             $entityManager->flush();}
         return $this->render('main/contacto.html.twig', [
-          'imagenheader' => 'logo.png'
             'form' => $form->CreateView()
         ]);
 
@@ -67,7 +64,6 @@ class MainController extends AbstractController
     {
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/mirant.html.twig', [
-          'imagenheader' => 'logo.png'
         ]);
     }
 
@@ -78,7 +74,7 @@ class MainController extends AbstractController
     {
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/jornadas.html.twig', [
-          'imagenheader' => 'logo.png'
+
         ]);
     }
 
@@ -89,7 +85,6 @@ class MainController extends AbstractController
     {
         //$user1 = $session->get('nombre_usuario');
         return $this->render('main/entidades.html.twig', [
-          'imagenheader' => 'logo.png'
         ]);
     }
 
@@ -99,7 +94,6 @@ class MainController extends AbstractController
     public function expandido()
     {
         return $this->render('main/leermas.html.twig', [
-          'imagenheader' => 'logo.png'
         ]);
     }
 
@@ -111,7 +105,6 @@ class MainController extends AbstractController
         $user1 = $session->get('nombre_usuario');
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/forma_parte.html.twig', [
-          'imagenheader' => 'logo.png'
         ]);
     }
 
@@ -126,8 +119,10 @@ class MainController extends AbstractController
         // $usuarioBBDD=$this->getDoctrine()
         // ->getRepository(Admin::class)
         // ->findOneBy(['usuario' => $user]);
-
-        // if ($user== $usuarioBBDD && $password==$passwordBBDD){
+        // $passwordBBDD=$this->getDoctrine()
+        // ->getRepository(Admin::class)
+        // ->findOneBy(['usuario' => $password]);
+        // if ($user== "adminca" && $password=="1234"){
 
         //     $session->set('nombre_usuario', $user1);
         //     $session->set('pasword', $password);
