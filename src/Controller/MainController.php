@@ -23,7 +23,7 @@ class MainController extends AbstractController
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
-            'imagenheade' => 'logo.png'
+            'imagenheader' => 'logo.png'
         ]);
     }
 
