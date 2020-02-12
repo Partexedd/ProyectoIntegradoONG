@@ -64,7 +64,7 @@ img.iconosRRSS{
 }
 
 #img-header{
-    background-image: url(.././img/header-inicio.jpg);
+    /* background-image: url(.././img/header-inicio.jpg); */
     background-repeat: no-repeat;
     background-size: auto;
     width: 100%;
