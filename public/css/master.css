@@ -273,8 +273,8 @@ li>a{color: #183e7d !important;
   text-align: right;
 }
 
-#cards{}
-#cards:hover{border:solid rgb(79, 79, 182) 1px}
+#cards{border:solid rgb(163, 163, 163) 1px}
+#cards:hover{border:solid rgb(93, 93, 173) 1px}
 
 #textCard{
   color: black !important;
