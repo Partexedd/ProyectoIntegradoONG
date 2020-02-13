@@ -24,7 +24,7 @@ class PagMirant
     private $titCabecera;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\PeliculasMirant", mappedBy="edicion")
+     * @ORM\OneToMany(targetEntity="App\Entity\peliculasMirant", mappedBy="edicion")
      */
     private $edicion;
 
