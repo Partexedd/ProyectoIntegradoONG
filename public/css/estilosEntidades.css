@@ -12,7 +12,7 @@ iframe{
 }
 
 #img-header{
-    background-image: url(.././img/head\ fotos/fotoHeadEntidades.jpg) !important;
+    /* background-image: url(.././img/head\ fotos/fotoHeadEntidades.jpg) !important; */
     background-size: cover;
 }
 
@@ -63,7 +63,7 @@ a:hover{
     background: #FFF;
     position: relative;
     transition: all 5s ease-in-out;
-    margin: 5% auto; 
+    margin: 5% auto;
 }
 
 #cerrar{
@@ -100,7 +100,7 @@ a:hover{
 }
 
 #direccion{
-    margin-bottom: 10%; 
+    margin-bottom: 10%;
 }
 
 iframe{
@@ -110,4 +110,3 @@ iframe{
     line-height: 1;
     border: none;
 }
-

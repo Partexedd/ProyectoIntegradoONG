@@ -4,8 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Contactar;
-use App\Entity\Admin;
+use App\Entity\{Contactar , Admin};
 use App\Repository\ContactarRepository;
 use App\Form\ContactarType;
 use Symfony\Component\HttpFoundation\Request;
@@ -66,6 +65,9 @@ class MainController extends AbstractController
      */
     public function mirant(SessionInterface $session)
     {
+        $mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
+        $imagenes=str_replace(" ","",$imagenes);
+        $img=explode(",",$imagenes);
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/mirant.html.twig', [
           'imagenheader' => 'header-inicio.jpg'
@@ -90,7 +92,7 @@ class MainController extends AbstractController
     {
         //$user1 = $session->get('nombre_usuario');
         return $this->render('main/entidades.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+          'imagenheader' => '/head\ fotos/fotoHeadEntidades.jpg'
         ]);
     }
 
@@ -112,7 +114,7 @@ class MainController extends AbstractController
         $user1 = $session->get('nombre_usuario');
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/forma_parte.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+          'imagenheader' => '1690.jpg'
         ]);
     }
 
@@ -148,7 +150,7 @@ if ($user1) {
                 'controller_name' => 'AdminController',
                 'user' =>"",
                 ]);
-            } 
+            }
     }
 
 

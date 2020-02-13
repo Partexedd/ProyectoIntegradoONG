@@ -17,84 +17,38 @@ class PagInicio
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\OneToOne(targetEntity="App\Entity\paginasONG", cascade={"persist", "remove"})
      */
     private $titCabecera;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $titPagina;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $desPagina;
-
-    /**
-     * @ORM\Column(type="string", length=50, nullable=true)
-     */
-    private $imagenPagina;
-
-    /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=100)
      */
     private $videoConocenos;
 
     /**
-     * @ORM\Column(type="string", length=150, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $pdfSuplemento;
+    private $linkSuplementoPDF;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\spotInicio", cascade={"persist", "remove"})
+     */
+    private $spot;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitCabecera(): ?string
+    public function getTitCabecera(): ?paginasONG
     {
         return $this->titCabecera;
     }
 
-    public function setTitCabecera(?string $titCabecera): self
+    public function setTitCabecera(?paginasONG $titCabecera): self
     {
         $this->titCabecera = $titCabecera;
-
-        return $this;
-    }
-
-    public function getTitPagina(): ?string
-    {
-        return $this->titPagina;
-    }
-
-    public function setTitPagina(?string $titPagina): self
-    {
-        $this->titPagina = $titPagina;
-
-        return $this;
-    }
-
-    public function getDesPagina(): ?string
-    {
-        return $this->desPagina;
-    }
-
-    public function setDesPagina(?string $desPagina): self
-    {
-        $this->desPagina = $desPagina;
-
-        return $this;
-    }
-
-    public function getImagenPagina(): ?string
-    {
-        return $this->imagenPagina;
-    }
-
-    public function setImagenPagina(?string $imagenPagina): self
-    {
-        $this->imagenPagina = $imagenPagina;
 
         return $this;
     }
@@ -104,21 +58,33 @@ class PagInicio
         return $this->videoConocenos;
     }
 
-    public function setVideoConocenos(?string $videoConocenos): self
+    public function setVideoConocenos(string $videoConocenos): self
     {
         $this->videoConocenos = $videoConocenos;
 
         return $this;
     }
 
-    public function getPdfSuplemento(): ?string
+    public function getLinkSuplementoPDF(): ?string
     {
-        return $this->pdfSuplemento;
+        return $this->linkSuplementoPDF;
     }
 
-    public function setPdfSuplemento(?string $pdfSuplemento): self
+    public function setLinkSuplementoPDF(string $linkSuplementoPDF): self
     {
-        $this->pdfSuplemento = $pdfSuplemento;
+        $this->linkSuplementoPDF = $linkSuplementoPDF;
+
+        return $this;
+    }
+
+    public function getSpot(): ?spotInicio
+    {
+        return $this->spot;
+    }
+
+    public function setSpot(?spotInicio $spot): self
+    {
+        $this->spot = $spot;
 
         return $this;
     }

@@ -5,7 +5,7 @@
 <title>Admin index</title>
     <h1>Admin index</h1>
 
-    <table class="table">
+    <table class="table" style="text-align: center">
         <thead>
             <tr>
                 <th>Id</th>
@@ -18,18 +18,16 @@
                 <td>{{ admin.id }}</td>
                 <td>{{ admin.usuario }}</td>
                 <td>
-               <button class="btn" id="Mensaje"><i class="fas fa-minus-circle" style="font-size:20px; margin-top:10px"></i></button>
-                    {# <a href="{{ path('admin_edit', {'id': admin.id}) }}">edit</a> #}
+              <button class="btn" id="Mensaje"><i class="fas fa-edit" style="font-size:20px; margin-top:10px"></i></button>
+
+                    
                 </td>
             </tr>
                     <script>
-$("#Mensaje").click(function(){
+ $("#Mensaje").click(function(){
   swal.fire({
   title: "<i>Title</i>", 
-  html: '<form name="admin" method="post">'+
-    '<div id="admin"><div><label for="admin_password" class="required">Password</label><input type="text" id="admin_password" name="admin[password]" required="required" maxlength="255" /></div><input type="hidden" id="admin__token" name="admin[_token]" value="rf2niVT-0IrB8_088E13UKspQZuOp0hCYdxtEm_pJSU" /></div>'+
-    '<button class="btn">Update</button>'+
-'</form>',
+  html:"{% apply replace({'\"': '\''})|replace({'\n': ''})|raw|spaceless %}{{ include('admin/_form.html.twig', {'button_label': 'Update',}) }}{% endapply %}",
   confirmButtonText: "V <u>redu</u>", 
 }).then((result) => {
   if (result.value) {
