@@ -24,19 +24,18 @@ class AdminController extends AbstractController
         $user1 = $session->get('nombre_usuario');
         $admin = new Admin();
         $form = $this->createForm(AdminType::class, $admin);
-        
-         /*$form->handleRequest($request);
+        $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            //return new Response('<pre>' . var_dump($form->handleRequest($request)) . '</pre>');
-            //return $this->redirectToRoute('admin_index');
-        } */
+            return new Response('<pre>' . var_dump($form->handleRequest($request)) . '</pre>');
+            return $this->redirectToRoute('admin_index');
+        }
         return $this->render('admin/index.html.twig', [
             'admins' => $adminRepository->findAll(),
-            /* 'admin' => $admin, */
+            'admin' => $admin,
             'user' => $user1,
-            'form' => $form->createView()
+            'form' => $form->createView(),
         ]);
     }
 
