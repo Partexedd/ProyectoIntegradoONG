@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\PagFormaParteRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\PagPropuestaRepository")
  */
-class PagFormaParte
+class PagPropuesta
 {
     /**
      * @ORM\Id()
@@ -17,7 +17,7 @@ class PagFormaParte
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\OneToOne(targetEntity="App\Entity\PaginasONG", cascade={"persist", "remove"})
      */
     private $titCabecera;
 
@@ -26,12 +26,12 @@ class PagFormaParte
         return $this->id;
     }
 
-    public function getTitCabecera(): ?string
+    public function getTitCabecera(): ?PaginasONG
     {
         return $this->titCabecera;
     }
 
-    public function setTitCabecera(?string $titCabecera): self
+    public function setTitCabecera(?PaginasONG $titCabecera): self
     {
         $this->titCabecera = $titCabecera;
 

@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200212113915 extends AbstractMigration
+final class Version20200213095100 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,9 @@ final class Version20200212113915 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE pag_jornadas_formativas ADD j_alicante VARCHAR(255) DEFAULT NULL, ADD j_valencia VARCHAR(255) DEFAULT NULL, ADD j_castellon VARCHAR(255) DEFAULT NULL');
+        $this->addSql('ALTER TABLE pag_mirant ADD introduccion_id INT NOT NULL');
+        $this->addSql('ALTER TABLE pag_mirant ADD CONSTRAINT FK_55157B4125AB11E9 FOREIGN KEY (introduccion_id) REFERENCES introduccion_mirant (id)');
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_55157B4125AB11E9 ON pag_mirant (introduccion_id)');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +32,8 @@ final class Version20200212113915 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE pag_jornadas_formativas DROP j_alicante, DROP j_valencia, DROP j_castellon');
+        $this->addSql('ALTER TABLE pag_mirant DROP FOREIGN KEY FK_55157B4125AB11E9');
+        $this->addSql('DROP INDEX UNIQ_55157B4125AB11E9 ON pag_mirant');
+        $this->addSql('ALTER TABLE pag_mirant DROP introduccion_id');
     }
 }

@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\PagFormaParte;
+use App\Entity\PaginasONG;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method PagFormaParte|null find($id, $lockMode = null, $lockVersion = null)
- * @method PagFormaParte|null findOneBy(array $criteria, array $orderBy = null)
- * @method PagFormaParte[]    findAll()
- * @method PagFormaParte[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method PaginasONG|null find($id, $lockMode = null, $lockVersion = null)
+ * @method PaginasONG|null findOneBy(array $criteria, array $orderBy = null)
+ * @method PaginasONG[]    findAll()
+ * @method PaginasONG[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PagFormaParteRepository extends ServiceEntityRepository
+class PaginasONGRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, PagFormaParte::class);
+        parent::__construct($registry, PaginasONG::class);
     }
 
     // /**
-    //  * @return PagFormaParte[] Returns an array of PagFormaParte objects
+    //  * @return PaginasONG[] Returns an array of PaginasONG objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class PagFormaParteRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?PagFormaParte
+    public function findOneBySomeField($value): ?PaginasONG
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')
