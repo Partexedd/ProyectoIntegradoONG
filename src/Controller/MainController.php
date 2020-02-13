@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\{Contactar,Admin,PagContacto,PagEntidades,PagFormaParte,PagInicio,PagJornadasFormativas,PagMirant,PagNuestraPropuesta};
+use App\Entity\{Contactar , Admin};
 use App\Repository\ContactarRepository;
 use App\Form\ContactarType;
 use Symfony\Component\HttpFoundation\Request;

@@ -1,0 +1,38 @@
+{% extends "adminpage/layout.html.twig" %}
+
+    {% block div %}
+    <title>PeliculasMirant index</title>
+    <h1>PeliculasMirant index</h1>
+
+    <table class="table" style="text-align: center">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Img</th>
+                <th>Trailer</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for peliculas_mirant in peliculas_mirants %}
+            <tr>
+                <td>{{ peliculas_mirant.id }}</td>
+                <td>{{ peliculas_mirant.titulo }}</td>
+                <td>{{ peliculas_mirant.img }}</td>
+                <td>{{ peliculas_mirant.trailer }}</td>
+                <td>
+                    <a href="{{ path('peliculas_mirant_show', {'id': peliculas_mirant.id}) }}">show</a>
+                    <a href="{{ path('peliculas_mirant_edit', {'id': peliculas_mirant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('peliculas_mirant_new') }}">Create new</a>
+{% endblock %}
