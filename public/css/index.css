@@ -15,9 +15,16 @@ article{
 }
 
 iframe{
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    line-height: 1;
-    border: none;
-}
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+      line-height: 1;
+      border: none;
+      height: 500px !important;
+  }
+
+@media only screen and (max-width: 1000px){
+    iframe{
+      height: 250px !important;
+    }
+  }
