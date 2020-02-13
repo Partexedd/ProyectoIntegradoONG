@@ -19,7 +19,7 @@ class PagMirant
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\paginasONG", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\PaginasONG", cascade={"persist", "remove"})
      */
     private $titCabecera;
 
@@ -34,7 +34,7 @@ class PagMirant
     private $videoMirant;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\introduccionMirant", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\IntroduccionMirant", cascade={"persist", "remove"})
      */
     private $introduccion;
 
