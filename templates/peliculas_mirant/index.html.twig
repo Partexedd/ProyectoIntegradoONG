@@ -17,9 +17,10 @@
         <tbody>
         {% for peliculas_mirant in peliculas_mirants %}
             <tr>
-                <td>{{ peliculas_mirant.id }}</td>
+                {# <td>{{ peliculas_mirant.id }}</td> #}
+                <td><a href="{{ path('peliculas_mirant_show', {'id': peliculas_mirant.id}) }}" ><img src="/img/Carteles_mirant/{{ peliculas_mirant.img }} "width="400"></a></td>
                 <td>{{ peliculas_mirant.titulo }}</td>
-                <td>{{ peliculas_mirant.img }}</td>
+
                 <td>{{ peliculas_mirant.trailer }}</td>
                 <td>
                     <a href="{{ path('peliculas_mirant_show', {'id': peliculas_mirant.id}) }}">show</a>

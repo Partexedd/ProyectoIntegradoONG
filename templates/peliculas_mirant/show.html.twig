@@ -1,27 +1,25 @@
-<!DOCTYPE html>
+{% extends "adminpage/layout.html.twig" %}
 
-<title>PeliculasMirant</title>
+    {% block div %}
+    <title>PeliculasMirant</title>
+     <h1>PeliculasMirant</h1>
 
-{% block body %}
-    <h1>PeliculasMirant</h1>
-
-    <table class="table">
+    <table class="table" style="text-align:center">
         <tbody>
-            <tr>
+            {# <tr>
                 <th>Id</th>
                 <td>{{ peliculas_mirant.id }}</td>
+            </tr> #}
+            <tr>
+                <td><p style="font-weight:bold">Img</p><img src="/img/Carteles_mirant/{{ peliculas_mirant.img }} "width="600"></a></td>
             </tr>
             <tr>
-                <th>Titulo</th>
-                <td>{{ peliculas_mirant.titulo }}</td>
+                
+                <td><p style="font-weight:bold">Titulo</p>{{ peliculas_mirant.titulo }}</td>
             </tr>
             <tr>
-                <th>Img</th>
-                <td>{{ peliculas_mirant.img }}</td>
-            </tr>
-            <tr>
-                <th>Trailer</th>
-                <td>{{ peliculas_mirant.trailer }}</td>
+                
+                <td><p style="font-weight:bold">Trailer</p><a href="{{ peliculas_mirant.trailer }}" style="color:blue;">{{ peliculas_mirant.trailer }}</td>
             </tr>
         </tbody>
     </table>
