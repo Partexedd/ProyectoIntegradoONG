@@ -5,56 +5,51 @@
 {% block titulo %}{% endblock %}
 {% block contenido %}
 <section class="container">
-
   <!-- Cards -->
   <article class="row">
-
-    <div id="cartas" class="col-lg-3 col-md-6 col-xs-6 col-12">
-        <div class="card text-center">
-          <div class="card-body">
+    <div class="col-lg-3 col-md-3 col-xs-6 col-12">
+      <div class="card">
+          <div class="card-body text-center" id="cards">
             <i id="i" class="fa fa-stethoscope"></i>
-            <h3 class="card-title mt-2" style="height:60px">Salud Global</h3>
+            <h3 class="card-title mt-2"  style="height:60px">Salud Global</h3>
             <hr>
             <p class="card-text" style="height:100px">Entendemos que la salud es un concepto global que no entiende de fronteras.</p>
             <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
-          </div>
         </div>
+      </div>
     </div>
-    <div id="cartas" class="col-lg-3 col-md-6 col-xs-6 col-12">
-        <div class="card text-center">
-          <div class="card-body">
-            <i id="i" class="fa fa-address-card"></i>
-            <h3 class="card-title mt-2" style="height:60px">Derecho a la Salud</h3>
-            <hr>
-            <p class="card-text" style="height:100px">Trabajamos por la defensa del derecho a la salud desde un paradigma holístico y global.</p>
-            <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
-          </div>
+    <div class="col-lg-3 col-md-3 col-xs-6 col-12">
+      <div class="card">
+          <div class="card-body text-center" id="cards">
+          <i id="i" class="fa fa-address-card"></i>
+          <h3 class="card-title mt-2" style="height:60px">Derecho a la Salud</h3>
+          <hr>
+          <p class="card-text" style="height:100px">Trabajamos por la defensa del derecho a la salud desde un paradigma holístico y global.</p>
+          <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
         </div>
+      </div>
     </div>
-    <div id="cartas" class="col-lg-3 col-md-6 col-xs-6 col-12">
-        <div class="card text-center">
-          <div class="card-body">
-            <i id="i" class="fa fa-globe" aria-hidden="true"></i>
-            <h3 class="card-title mt-2" style="height:60px">Cooperación al desarrollo</h3>
-            <hr>
-            <p class="card-text" style="height:100px">Apostamos por una cooperación construida bajo el enfoque de los derechos humanos.</p>
-            <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
-          </div>
+    <div class="col-lg-3 col-md-3 col-xs-6 col-12">
+      <div class="card">
+          <div class="card-body text-center" id="cards">
+          <i id="i" class="fa fa-globe" aria-hidden="true"></i>
+          <h3 class="card-title mt-2" style="height:60px">Cooperación al desarrollo</h3>
+          <hr>
+          <p class="card-text" style="height:100px">Apostamos por una cooperación construida bajo el enfoque de los derechos humanos.</p>
+          <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
         </div>
+      </div>
     </div>
-    <div id="cartas" class="col-lg-3 col-md-6 col-xs-6 col-12">
-        <div class="card text-center">
-          <div class="card-body">
-            <i id="i" class="fa fa-book"></i>
-            <h3 class="card-title mt-2" style="height:60px">Agenda 2030 ODS</h3>
-            <hr>
-            <p class="card-text" style="height:100px">Enfocamos nuestras acciones hacia el plan de acción a favor de las personas y el planeta.</p>
-            <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
-          </div>
-        </div>
+    <div class="col-lg-3 col-md-3 col-xs-6 col-12">
+      <div class="card">
+          <div class="card-body text-center" id="cards">
+          <i id="i" class="fa fa-book"></i>
+          <h3 class="card-title mt-2" style="height:60px">Agenda 2030 ODS</h3>
+          <hr>
+          <p class="card-text" style="height:100px">Entendemos que la salud es un concepto global que no entiende de fronteras.</p>
+          <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
+      </div>
     </div>
-
   </article>
-
 </section>
 {% endblock %}
