@@ -92,7 +92,7 @@ class MainController extends AbstractController
     {
         //$user1 = $session->get('nombre_usuario');
         return $this->render('main/entidades.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+          'imagenheader' => '/head\ fotos/fotoHeadEntidades.jpg'
         ]);
     }
 
@@ -114,7 +114,7 @@ class MainController extends AbstractController
         $user1 = $session->get('nombre_usuario');
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/forma_parte.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+          'imagenheader' => '1690.jpg'
         ]);
     }
 
@@ -150,7 +150,7 @@ if ($user1) {
                 'controller_name' => 'AdminController',
                 'user' =>"",
                 ]);
-            } 
+            }
     }
 
 
