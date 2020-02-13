@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,98 +17,159 @@ class PagMirant
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\PaginasONG", cascade={"persist", "remove"})
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $titCabecera;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\peliculasMirant", mappedBy="edicion")
+     * @ORM\Column(type="string", length=4, nullable=true)
      */
     private $edicion;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $videoMirant;
+    private $tituloMirantCab;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\IntroduccionMirant", cascade={"persist", "remove"})
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $introduccion;
+    private $descMirantCab;
 
-    public function __construct()
-    {
-        $this->edicion = new ArrayCollection();
-    }
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imgMirantCab;
+
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private $spotMirant;
+
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private $pelTitulo;
+
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private $pelTrailer;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $pelImg;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitCabecera(): ?paginasONG
+    public function getTitCabecera(): ?string
     {
         return $this->titCabecera;
     }
 
-    public function setTitCabecera(?paginasONG $titCabecera): self
+    public function setTitCabecera(?string $titCabecera): self
     {
         $this->titCabecera = $titCabecera;
 
         return $this;
     }
 
-    /**
-     * @return Collection|peliculasMirant[]
-     */
-    public function getEdicion(): Collection
+    public function getEdicion(): ?string
     {
         return $this->edicion;
     }
 
-    public function addEdicion(peliculasMirant $edicion): self
+    public function setEdicion(?string $edicion): self
     {
-        if (!$this->edicion->contains($edicion)) {
-            $this->edicion[] = $edicion;
-            $edicion->setEdicion($this);
-        }
+        $this->edicion = $edicion;
 
         return $this;
     }
 
-    public function removeEdicion(peliculasMirant $edicion): self
+    public function getTituloMirantCab(): ?string
     {
-        if ($this->edicion->contains($edicion)) {
-            $this->edicion->removeElement($edicion);
-            // set the owning side to null (unless already changed)
-            if ($edicion->getEdicion() === $this) {
-                $edicion->setEdicion(null);
-            }
-        }
+        return $this->tituloMirantCab;
+    }
+
+    public function setTituloMirantCab(?string $tituloMirantCab): self
+    {
+        $this->tituloMirantCab = $tituloMirantCab;
 
         return $this;
     }
 
-    public function getVideoMirant(): ?string
+    public function getDescMirantCab(): ?string
     {
-        return $this->videoMirant;
+        return $this->descMirantCab;
     }
 
-    public function setVideoMirant(string $videoMirant): self
+    public function setDescMirantCab(?string $descMirantCab): self
     {
-        $this->videoMirant = $videoMirant;
+        $this->descMirantCab = $descMirantCab;
 
         return $this;
     }
 
-    public function getIntroduccion(): ?introduccionMirant
+    public function getImgMirantCab(): ?string
     {
-        return $this->introduccion;
+        return $this->imgMirantCab;
     }
 
-    public function setIntroduccion(?introduccionMirant $introduccion): self
+    public function setImgMirantCab(?string $imgMirantCab): self
     {
-        $this->introduccion = $introduccion;
+        $this->imgMirantCab = $imgMirantCab;
+
+        return $this;
+    }
+
+    public function getSpotMirant(): ?string
+    {
+        return $this->spotMirant;
+    }
+
+    public function setSpotMirant(?string $spotMirant): self
+    {
+        $this->spotMirant = $spotMirant;
+
+        return $this;
+    }
+
+    public function getPelTitulo(): ?string
+    {
+        return $this->pelTitulo;
+    }
+
+    public function setPelTitulo(?string $pelTitulo): self
+    {
+        $this->pelTitulo = $pelTitulo;
+
+        return $this;
+    }
+
+    public function getPelTrailer(): ?string
+    {
+        return $this->pelTrailer;
+    }
+
+    public function setPelTrailer(?string $pelTrailer): self
+    {
+        $this->pelTrailer = $pelTrailer;
+
+        return $this;
+    }
+
+    public function getPelImg(): ?string
+    {
+        return $this->pelImg;
+    }
+
+    public function setPelImg(?string $pelImg): self
+    {
+        $this->pelImg = $pelImg;
 
         return $this;
     }

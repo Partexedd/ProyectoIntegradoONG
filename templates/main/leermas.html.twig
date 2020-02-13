@@ -5,109 +5,59 @@
 {% block titulo %}{% endblock %}
 {% block contenido %}
 <section class="container">
+
   <!-- Cards -->
   <article class="row">
-    <div class="col-lg-3 col-md-3 col-xs-6 col-12">
-      <div class="card">
-          <div class="card-body text-center" id="cards">
+
+    <div id="cartas" class="col-lg-3 col-md-6 col-xs-6 col-12">
+        <div class="card text-center">
+          <div class="card-body">
             <i id="i" class="fa fa-stethoscope"></i>
-            <h3 class="card-title mt-2"  style="height:60px">Salud Global</h3>
+            <h3 class="card-title mt-2" style="height:60px">Salud Global</h3>
             <hr>
             <p class="card-text" style="height:100px">Entendemos que la salud es un concepto global que no entiende de fronteras.</p>
-            <a type="button" class="btn btn-primary mt-2" href="#Salud">Leer más</a>
+            <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
+          </div>
         </div>
-      </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-xs-6 col-12">
-      <div class="card">
-          <div class="card-body text-center" id="cards">
-          <i id="i" class="fa fa-address-card"></i>
-          <h3 class="card-title mt-2" style="height:60px">Derecho a la Salud</h3>
-          <hr>
-          <p class="card-text" style="height:100px">Trabajamos por la defensa del derecho a la salud desde un paradigma holístico y global.</p>
-          <a type="button" class="btn btn-primary mt-2" href="#Derecho">Leer más</a>
+    <div id="cartas" class="col-lg-3 col-md-6 col-xs-6 col-12">
+        <div class="card text-center">
+          <div class="card-body">
+            <i id="i" class="fa fa-address-card"></i>
+            <h3 class="card-title mt-2" style="height:60px">Derecho a la Salud</h3>
+            <hr>
+            <p class="card-text" style="height:100px">Trabajamos por la defensa del derecho a la salud desde un paradigma holístico y global.</p>
+            <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
+          </div>
         </div>
-      </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-xs-6 col-12">
-      <div class="card">
-          <div class="card-body text-center" id="cards">
-          <i id="i" class="fa fa-globe" aria-hidden="true"></i>
-          <h3 class="card-title mt-2" style="height:60px">Cooperación al desarrollo</h3>
-          <hr>
-          <p class="card-text" style="height:100px">Apostamos por una cooperación construida bajo el enfoque de los derechos humanos.</p>
-          <a type="button" class="btn btn-primary mt-2" href="#Cooperacion">Leer más</a>
+    <div id="cartas" class="col-lg-3 col-md-6 col-xs-6 col-12">
+        <div class="card text-center">
+          <div class="card-body">
+            <i id="i" class="fa fa-globe" aria-hidden="true"></i>
+            <h3 class="card-title mt-2" style="height:60px">Cooperación al desarrollo</h3>
+            <hr>
+            <p class="card-text" style="height:100px">Apostamos por una cooperación construida bajo el enfoque de los derechos humanos.</p>
+            <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
+          </div>
         </div>
-      </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-xs-6 col-12">
-      <div class="card">
-          <div class="card-body text-center" id="cards">
-          <i id="i" class="fa fa-book"></i>
-          <h3 class="card-title mt-2" style="height:60px">Agenda 2030 ODS</h3>
-          <hr>
-          <p class="card-text" style="height:100px">Entendemos que la salud es un concepto global que no entiende de fronteras.</p>
-          <a type="button" class="btn btn-primary mt-2" href="#Agenda">Leer más</a>
-      </div>
+    <div id="cartas" class="col-lg-3 col-md-6 col-xs-6 col-12">
+        <div class="card text-center">
+          <div class="card-body">
+            <i id="i" class="fa fa-book"></i>
+            <h3 class="card-title mt-2" style="height:60px">Agenda 2030 ODS</h3>
+            <hr>
+            <p class="card-text" style="height:100px">Enfocamos nuestras acciones hacia el plan de acción a favor de las personas y el planeta.</p>
+            <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}">Leer más</a>
+          </div>
+        </div>
     </div>
+
   </article>
+
+  <article class="row">
+  </article>
+
 </section>
-<section id="Cooperacion" class="container">
-      <h3 id="titulo" class="col-12 text-justify text-grey"><b>3. Cooperación al desarrollo</b></h3>
-  </section>
-    <section class="container-fluid">
-      <article id="jumbotron-fluid" class="jumbotron d-flex align-items-center" style="background-image:url('mmc-2012-0018.jpg');background-position-y: center; background-repeat: no-repeat; height: 500px; background-size: cover;">
-      <div class="row">
-        <h1 id="titulo" class="col-12 text-center text-grey" style="color:white; text-align:center"><b>"El desarrollo humano es un proceso en el cual se amplían las oportunidades del ser humano."</b></h1>
-        <h5 class="col-12 text-center text-grey" style="color:white; text-align:center">Capítulo 1 del Informe de Desarrollo Humano de 1990.</h5>
-        </div>
-      </article>
-      </section>
-      <section class="container">
-      <article class="row">
-                <h1 class="col-12 text-center text-grey">Cooperación para el desarrollo sí, pero basada en los derechos humanos</h1>
-                <h5 class="col-10 offset-1 text-center">Según la Agencia Española de Cooperación Internacional para el Desarrollo (AECID), la Cooperación para el Desarrollo comprende el conjunto de actuaciones que contribuyen al desarrollo humano y sostenible, la disminución de la pobreza y el pleno ejercicio de los derechos en una sociedad más justa. <b>Las entidades de las Redes Sanitarias Solidarias apostamos por una cooperación para el desarrollo construida bajo el enfoque basado en derechos humanos,</b> tal y como lo recoge la Oficina del Alto Comisionado para los Derechos Humanos de Naciones Unidas: el EBDH es un marco conceptual del proceso de desarrollo humano que desde el punto de vista normativo está basado en las normas internacionales de derechos humanos y desde el punto de vista operativo está orientado a la promoción y la protección de los derechos humanos.</h5>
-      </article>
-    </section>
-    <section class="container-fluid">
-      <article id="jumbotron-fluid" class="jumbotron d-flex align-items-center" style="background-image:url('ECUADOR-HACIA-EL-BUEN-VIVIR-04-1024x819.jpg');background-position-y: center; background-repeat: no-repeat; height: 500px; background-size: cover;">
-      </article>
-    </section>
-    <section class="container">
-      <article class="row">
-                <h1 class="col-12 text-center text-center mt-8"><b>Los derechos humanos definen 3 roles</b></h1>
-
-                <h5 class="col-10 offset-1 text-center">El desarrollo se centra en el ser humano, pero hay un cambio en su rol.</h5>
-
-                <h3 id="titulo" class="col-10 offset-1 ext-center text-justify"><b>1. Los titulares de Derechos.</b></h3>
-                <h5 class="col-10 offset-1 text-justify mt-8">El ser humano pasa de ser un sujeto de necesidades que deben ser cubiertas, a ser un sujeto de derechos con capacidades para ejercerlos. Es sujeto activo del desarrollo, protagonista de los cambios y transformaciones de su comunidad.</h5>
-
-                <h3 id="titulo" class="col-10 offset-1 ext-center text-justify"><b>2. Los titulares de Obligaciones.</b></h3>
-                <h5 class="col-10 offset-1 text-justify mt-8">Desde el propio concepto de los derechos humanos, no existen derechos si no hay alguien que tiene obligación sobre ellos. El Estado pasa a ser el sujeto con obligaciones jurídicas y morales en relación con el cumplimiento y desarrollo efectivo de los derechos humanos.</h5>
-
-                <h3 id="titulo" class="col-10 offset-1 ext-center text-justify"><b>3. Los titulares de Responsabilidades.</b></h3>
-                <h5 class="col-10 offset-1 text-justify mt-8">El ser humano, al igual que tiene derechos, tiene responsabilidades
-                                                         relacionadas con el cumplimiento y desarrollo de los derechos humanos,
-                                                         por el hecho de formar parte de una sociedad. Esta nueva asunción de roles
-                                                         implica un cambio fundamental en las relaciones de poder entre ellos ya que
-                                                         los sitúa dentro del marco de los derechos humanos. Dota a los individuos del
-                                                         poder de la exigibilidad frente al resto de actores que deben estar obligados a
-                                                         cumplir con sus obligaciones y ser conscientes de sus responsabilidades.</h5>
-    </article>
-    </section>
-  <section class="container-fluid">
-    <article id="jumbotron-fluid" class="jumbotron d-flex align-items-center" style="background-image:url('P1010082_sensedata.jpg');background-position-y: center; background-repeat: no-repeat; height: 500px; background-size: cover;">
-      <div class="row">
-        <h1 id="titulo" class="col-12 text-center text-grey" style="color:white;"><b>Educación y Sensibilización para el desarrollo.</b></h1>
-        <h5 class="col-12 text-center text-grey" style="color:white;">Una de nuestras principales líneas en las que trabajamos.</h5>
-        </div>
-    </article>
-  </section>
-  <section class="container">
-    <article class="row">
-              <h5 id="titulo" class="col-10 offset-1 text-center">Además del trabajo que realizamos en los países empobrecidos, una de las principales líneas en las que trabajamos las entidades de las Redes Sanitarias Solidarias es la <b>Educación y Sensibilización para el desarrollo.</b></h5>
-              <h5 id="titulo" class="col-10 offset-1 text-center">La Estrategia de Educación para el Desarrollo (EpD) de la Cooperación Española define la EpD como: «Proceso educativo (formal, no formal e informal) constante encaminado, a través de conocimientos, actitudes y valores, a promover una ciudadanía global generadora de una cultura de la solidaridad comprometida en la lucha contra la pobreza y la exclusión, así como con la promoción del desarrollo humano y sostenible».</h5>
-              <h5 id="titulo" class="col-10 offset-1 text-center">De nada sirve hacer esfuerzos por cambiar el Sur sin el compromiso de transformar también el Norte, que es donde se encuentran gran parte de esos desequilibrios. Responsables políticos, instituciones y ONGD se manifiestan de acuerdo con esta idea. Las cuatro dimensiones, no excluyentes e interrelacionadas, a través de las que se desarrolla la Ep​D son: sensibilización, educación / formación, investigación y participación social / incidencia política.</h5>
-    </article>
-    </section>
 {% endblock %}
