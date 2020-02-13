@@ -7,7 +7,7 @@
  <!-- Sidebar  -->
       <nav id="sidebar">
          <div class="sidebar-header">
-            <h3><a href="{{ path('indexAdmin') }}"><img class="logo" src="img/logofondo.jpg" width="270"></a></h3>
+            <h3><a href="{{ path('indexAdmin') }}"><img class="logo" src="/img/logofondo.jpg" width="270"></a></h3>
             <strong>RE</strong>
          </div>
          <ul class="list-unstyled components">
@@ -24,12 +24,12 @@
                 <i class="fas fa-user-shield"></i>
                 Admin Panel
                 </a>
-                <a href="/qc">
+                {# <a href="/qc">
                     <i class="fas fa-user-check"></i>
                     Suscripción eventos
                     </a>
-            </li>
-            <li>
+            </li> #}
+            {# <li>
                 <a href="/cardboardStaging">
               <i class="fas fa-tools"></i>
                 Cardboard Staging
@@ -67,7 +67,7 @@
             </li>
             <li>
                <a href="#" class="article">About RETECH</a>
-            </li>
+            </li> #}
          </ul>
       </nav>
       <!-- /#sidebar-wrapper -->
@@ -88,9 +88,18 @@
                      <a class="nav-link" href="/logout"></a>
                   </li>
                </div>
-               
+                            <li class="nav-item dropdown">
+
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							            Hola	 {{ app.session.get("nombre_usuario") }}
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="{{ path('logOut') }}">Cerrar sesión</a>
+								<div class="dropdown-divider"></div>
+							</div>
+						</li>
             </ul>
-                             <p>Hola <a href="{{ path('logOut') }}"> {{ app.session.get("nombre_usuario") }}</a></p>
+
          </div>
       </nav>
 
