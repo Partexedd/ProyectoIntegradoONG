@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/indexadmin", name="admin_index", methods={"GET"})
+     * @Route("/indexadmin", name="admin_index", methods={"GET","POST"})
      */
     public function index(AdminRepository $adminRepository, Request $request, SessionInterface $session): Response
     {
@@ -25,6 +25,12 @@ class AdminController extends AbstractController
         $admin = new Admin();
         $form = $this->createForm(AdminType::class, $admin);
         $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_index');
+        }
         return $this->render('admin/index.html.twig', [
             'admins' => $adminRepository->findAll(),
             'admin' => $admin,
@@ -98,5 +104,21 @@ class AdminController extends AbstractController
         }
 
         return $this->redirectToRoute('admin_index');
+    }
+       /**
+     * @Route("/editpass", name="editpass")
+     */
+    public function editpass(Request $request, Admin $admin, SessionInterface $session): Response
+    {
+        $form = $this->createForm(AdminType::class, $admin);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_index');
+        }
+                return $this->redirectToRoute('admin_index');
+
     }
 }
