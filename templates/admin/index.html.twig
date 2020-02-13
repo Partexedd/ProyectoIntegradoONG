@@ -1,5 +1,87 @@
-{% extends "admin/layout.html.twig" %}
+{% extends "adminpage/layout.html.twig" %}
 
     {% block div %}
     
+<title>Admin index</title>
+    <h1>Admin index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for admin in admins %}
+            <tr>
+                <td>{{ admin.id }}</td>
+                <td>{{ admin.usuario }}</td>
+                <td>
+               <button class="btn" id="Mensaje"><i class="fas fa-minus-circle" style="font-size:20px; margin-top:10px"></i></button>
+               
+                    <a href="{{ path('editpass', {'id': admin.id}, {'button_label': 'Update'}) }}">edit</a>
+                </td>
+            </tr>
+                    <script>
+$("#Mensaje").click(function(){
+  swal.fire({
+  title: "<i>Title</i>", 
+  html: "{{include('admin/_form.html.twig', {'button_label': 'Update'})}}",
+}).then((result) => {
+  if (result.value) {
+    swalWithBootstrapButtons.fire(
+      'Borrado!',
+      'El mensaje ha sido borrado.',
+      'success'
+    )
+          document.getElementById('swal-input1').value,
+      document.getElementById('swal-input2').value
+    
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire(
+      'Cancelado',
+      'El mensaje no ha sido borrado',
+      'error'
+    )
+  }
+})
+
+});
+</script>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_new') }}">Create new</a>
 {% endblock %}
+
+
+
+{# const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
+
+swalWithBootstrapButtons.fire({
+  title: 'Estas seguro?',
+  text: "Estas seguro de que quieres borrar este mensaje",
+  icon: 'warning',
+  
+  showCancelButton: true,
+  confirmButtonText: 'Guardar!',
+  cancelButtonText: 'No guradar!',
+  reverseButtons: true,
+
+
+}). #}

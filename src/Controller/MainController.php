@@ -35,7 +35,7 @@ class MainController extends AbstractController
     {
         //$user1 = $session->get('nombre_usuario');
         return $this->render('main/nuestrapropuesta.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+          'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg'
         ]);
     }
 
@@ -55,7 +55,7 @@ class MainController extends AbstractController
             $entityManager->persist($contactoTo);
             $entityManager->flush();}
         return $this->render('main/contacto.html.twig', [
-          'imagenheader' => 'header-inicio.jpg',
+          'imagenheader' => 'Namuno.-Visita-seguiment-2-maig-2006.jpg',
             'form' => $form->CreateView()
         ]);
 
@@ -117,7 +117,7 @@ class MainController extends AbstractController
     }
 
      /**
-     * @Route("/admin", name="admin")
+     * @Route("/adminlogin", name="adminlogin")
      */
     public function loginadmin(Request $request, SessionInterface $session)
     {
@@ -128,7 +128,9 @@ class MainController extends AbstractController
         $usuarioBBDD=$this->getDoctrine()
         ->getRepository(Admin::class)
         ->findOneBy(['usuario' => $user]);
-
+if ($user1) {
+    return $this->redirectToRoute('indexAdmin');
+}
         if ($usuarioBBDD){
             if ($usuarioBBDD->getPassword()==$password) {
                 $session->set('nombre_usuario', $user);
@@ -141,7 +143,7 @@ class MainController extends AbstractController
 
         else{
 
-            return $this->render('admin/login.html.twig', [
+            return $this->render('adminpage/login.html.twig', [
 
                 'controller_name' => 'AdminController',
                 'user' =>"",
@@ -159,8 +161,8 @@ class MainController extends AbstractController
         $user1 = $session->get('nombre_usuario');
 
         if ( $user1=="") {
-            return $this->redirectToRoute('admin'); }
-        return $this->render('admin/index.html.twig', [
+            return $this->redirectToRoute('adminlogin'); }
+        return $this->render('adminpage/index.html.twig', [
             'controller_name' => 'AdminController',
             'user' => $user1,
             'contactars' => $contactarRepository->findAll(),]);
@@ -216,7 +218,7 @@ class MainController extends AbstractController
     {
         $session->clear();
         $session->invalidate();
-                return $this->redirectToRoute('admin');
+                return $this->redirectToRoute('adminlogin');
 
     }
 

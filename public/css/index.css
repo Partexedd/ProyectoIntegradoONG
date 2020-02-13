@@ -2,19 +2,29 @@ i#i{
   font-size:48px;
   color:lightgray;
 }
-  #jumbotron{
-    background-color:#00000063;
-    background-blend-mode:soft-light;
-  }
-  article{
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
+#cards:hover>i#i{
+  color: rgb(93, 93, 173);
+}
+#jumbotron{
+  background-color:#00000063;
+  background-blend-mode:soft-light;
+}
+article{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 
-  iframe{
+iframe{
       max-width: 100%;
       width: 100%;
       margin: 0;
       line-height: 1;
       border: none;
+      height: 500px !important;
+  }
+
+@media only screen and (max-width: 1000px){
+    iframe{
+      height: 250px !important;
+    }
   }

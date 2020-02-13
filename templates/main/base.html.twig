@@ -23,9 +23,10 @@
 	</head>
 
 	<body>
-
+  <!-- Back to top button -->
+  <a id="button"></a>
 		{% block body %}{% endblock %}
-        <script src="https://code.jquery.com/jquery-3.1.0.js" crossorigin="anonymous"></script>
+        <script src="{{ asset("jquery-3.1.0.js", "script") }}" crossorigin="anonymous"></script>
         <script src="{{ asset("scriptBackToTop.js", "script") }}"></script>
 	</body>
 
