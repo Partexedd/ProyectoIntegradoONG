@@ -13,7 +13,6 @@ article{
   margin-top: 5%;
   margin-bottom: 5%;
 }
-
 iframe{
       max-width: 100%;
       width: 100%;
@@ -22,8 +21,7 @@ iframe{
       border: none;
       height: 500px !important;
   }
-
-@media only screen and (max-width: 1000px){
+  @media only screen and (max-width: 1000px){
     iframe{
       height: 250px !important;
     }
