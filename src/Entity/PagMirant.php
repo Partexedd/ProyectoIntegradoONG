@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,21 +24,24 @@ class PagMirant
     private $titCabecera;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $videoMirant;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\PeliculasMirant", inversedBy="edicion")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToMany(targetEntity="App\Entity\peliculasMirant", mappedBy="edicion")
      */
     private $edicion;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $videoMirant;
+
+    /**
      * @ORM\OneToOne(targetEntity="App\Entity\introduccionMirant", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
      */
     private $introduccion;
+
+    public function __construct()
+    {
+        $this->edicion = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -55,26 +60,45 @@ class PagMirant
         return $this;
     }
 
+    /**
+     * @return Collection|peliculasMirant[]
+     */
+    public function getEdicion(): Collection
+    {
+        return $this->edicion;
+    }
+
+    public function addEdicion(peliculasMirant $edicion): self
+    {
+        if (!$this->edicion->contains($edicion)) {
+            $this->edicion[] = $edicion;
+            $edicion->setEdicion($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEdicion(peliculasMirant $edicion): self
+    {
+        if ($this->edicion->contains($edicion)) {
+            $this->edicion->removeElement($edicion);
+            // set the owning side to null (unless already changed)
+            if ($edicion->getEdicion() === $this) {
+                $edicion->setEdicion(null);
+            }
+        }
+
+        return $this;
+    }
+
     public function getVideoMirant(): ?string
     {
         return $this->videoMirant;
     }
 
-    public function setVideoMirant(?string $videoMirant): self
+    public function setVideoMirant(string $videoMirant): self
     {
         $this->videoMirant = $videoMirant;
-
-        return $this;
-    }
-
-    public function getEdicion(): ?PeliculasMirant
-    {
-        return $this->edicion;
-    }
-
-    public function setEdicion(?PeliculasMirant $edicion): self
-    {
-        $this->edicion = $edicion;
 
         return $this;
     }
@@ -84,7 +108,7 @@ class PagMirant
         return $this->introduccion;
     }
 
-    public function setIntroduccion(introduccionMirant $introduccion): self
+    public function setIntroduccion(?introduccionMirant $introduccion): self
     {
         $this->introduccion = $introduccion;
 

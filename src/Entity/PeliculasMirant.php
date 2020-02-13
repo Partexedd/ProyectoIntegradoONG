@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -17,11 +15,6 @@ class PeliculasMirant
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\pagMirant", mappedBy="edicion")
-     */
-    private $edicion;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -38,45 +31,14 @@ class PeliculasMirant
      */
     private $trailer;
 
-    public function __construct()
-    {
-        $this->edicion = new ArrayCollection();
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\PagMirant", inversedBy="edicion")
+     */
+    private $edicion;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return Collection|pagMirant[]
-     */
-    public function getEdicion(): Collection
-    {
-        return $this->edicion;
-    }
-
-    public function addEdicion(pagMirant $edicion): self
-    {
-        if (!$this->edicion->contains($edicion)) {
-            $this->edicion[] = $edicion;
-            $edicion->setEdicion($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEdicion(pagMirant $edicion): self
-    {
-        if ($this->edicion->contains($edicion)) {
-            $this->edicion->removeElement($edicion);
-            // set the owning side to null (unless already changed)
-            if ($edicion->getEdicion() === $this) {
-                $edicion->setEdicion(null);
-            }
-        }
-
-        return $this;
     }
 
     public function getTitulo(): ?string
@@ -111,6 +73,18 @@ class PeliculasMirant
     public function setTrailer(string $trailer): self
     {
         $this->trailer = $trailer;
+
+        return $this;
+    }
+
+    public function getEdicion(): ?PagMirant
+    {
+        return $this->edicion;
+    }
+
+    public function setEdicion(?PagMirant $edicion): self
+    {
+        $this->edicion = $edicion;
 
         return $this;
     }
