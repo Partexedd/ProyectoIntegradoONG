@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\PagEntidades;
+use App\Entity\PeliculasMirant;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method PagEntidades|null find($id, $lockMode = null, $lockVersion = null)
- * @method PagEntidades|null findOneBy(array $criteria, array $orderBy = null)
- * @method PagEntidades[]    findAll()
- * @method PagEntidades[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method PeliculasMirant|null find($id, $lockMode = null, $lockVersion = null)
+ * @method PeliculasMirant|null findOneBy(array $criteria, array $orderBy = null)
+ * @method PeliculasMirant[]    findAll()
+ * @method PeliculasMirant[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PagEntidadesRepository extends ServiceEntityRepository
+class PeliculasMirantRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, PagEntidades::class);
+        parent::__construct($registry, PeliculasMirant::class);
     }
 
     // /**
-    //  * @return PagEntidades[] Returns an array of PagEntidades objects
+    //  * @return PeliculasMirant[] Returns an array of PeliculasMirant objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class PagEntidadesRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?PagEntidades
+    public function findOneBySomeField($value): ?PeliculasMirant
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')

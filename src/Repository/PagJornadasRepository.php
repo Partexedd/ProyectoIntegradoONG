@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\PagJornadasFormativas;
+use App\Entity\PagJornadas;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method PagJornadasFormativas|null find($id, $lockMode = null, $lockVersion = null)
- * @method PagJornadasFormativas|null findOneBy(array $criteria, array $orderBy = null)
- * @method PagJornadasFormativas[]    findAll()
- * @method PagJornadasFormativas[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method PagJornadas|null find($id, $lockMode = null, $lockVersion = null)
+ * @method PagJornadas|null findOneBy(array $criteria, array $orderBy = null)
+ * @method PagJornadas[]    findAll()
+ * @method PagJornadas[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PagJornadasFormativasRepository extends ServiceEntityRepository
+class PagJornadasRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, PagJornadasFormativas::class);
+        parent::__construct($registry, PagJornadas::class);
     }
 
     // /**
-    //  * @return PagJornadasFormativas[] Returns an array of PagJornadasFormativas objects
+    //  * @return PagJornadas[] Returns an array of PagJornadas objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class PagJornadasFormativasRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?PagJornadasFormativas
+    public function findOneBySomeField($value): ?PagJornadas
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')
