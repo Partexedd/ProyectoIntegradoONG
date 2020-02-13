@@ -9,26 +9,15 @@
 {% block contenido %}
 	<section class="container">
 		<article class="row">
-			<h1 class="col text-center" id="tituloInicial">II EDICIÓN</h1>
+			<h1 class="col text-center" id="tituloInicial">{{ edicion }} EDICIÓN</h1>
 		</article>
 		<div class="row" id="contenido-mirant">
 			<div class="col-xl-6 text-center">
-				<h1 id="titulo-mirant">"Salud y Mujer, Necesidades y Desafios"</h1>
+				<h1 id="titulo-mirant">"{{ titMirantCab }}"</h1>
 			</div>
 			<div class="col-xl-7">
 				<p id="texto-mirant">
-					Mirant sale del juego con la contracción de las palabras Mostra ItineRANT. Pero también
-					significa mirando en valenciano. La primera de las acepciones del verbo mirar se refiere a
-					“Dirigir la vista hacia algo y fijar la atención en ello”. Eso es lo que esperamos conseguir con
-					esta Mostra de cine, que la gente dirija la vista y fije la atención hacia los problemas que se
-					están dando en la actualidad en todo el planeta sobre la salud global, desde enfoques de género,
-					medioambiente, derechos humanos… y entre todas, debatamos y reflexionemos de forma colectiva
-					para ver cuál es nuestro papel, y cómo podemos contribuir a lograr un mundo más sano, y más
-					justo. Este año, el lema elegido por las más de 40 entidades que formamos las RSS, ha sido
-					«Salud y Mujer, necesidades y desafios». Si te gusta la idea, selecciona tu provincia, infórmate
-					sobre las películas, reserva tu/s entrada/s… y guarda la fecha en tu agenda para asistir a la II
-					Mostra de Cinema Itinerant de Cinema y Salut Global de la Comunitat Valenciana. ¡Te esperamos en
-					Mirant!
+					{{ txtMirantCab }}
 				</p>
 			</div>
 
@@ -61,7 +50,7 @@
                 </div>
             </div>
 		</article>
-		<div id="peliculas" >
+		<div id="peliculas">
 		<article class="row" style="margin-top: 24px;">
 			<h1 class="col text-center" id="titulos-peliculas">Peliculas</h1>
 		</article>
@@ -69,25 +58,10 @@
 			<div class="Galeria-pelis row text-center">
 				<div class="col-xl-4">
 					<div class="thumb">
-						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt=""/></a>
+						<a class="lightbox" href="img/Carteles_mirant/{{ imgMirantPel[0] }}" title="Milk Splashes"><img src="img/Carteles_mirant/{{ imgMirantPel[0] }}" class="pelicula" alt=""/></a>
 					</div>
-					<h3 class="entry-title" id="titulos-peliculas">Comandante Arian</h3>
+					<h3 class="entry-title" id="titulos-peliculas">{{ titMirantPel[0] }}</h3>
 					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button" aria-pressed="true">Ver trailer</a>
-				</div>
-				<div class="col-xl-4">
-					<div class="thumb">
-						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt=""/></a>
-					</div>
-					<h3 class="entry-title" id="titulos-peliculas">La Manzana de Eva</h3>
-					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button" aria-pressed="true">Ver trailer</a>
-				</div>
-				<div class="col-xl-4">
-					<div class="thumb">
-						<a class="lightbox" href="img/Carteles_mirant/Comandante-arian-2018.jpg" title="Milk Splashes"><img src="img/Carteles_mirant/Comandante-arian-2018.jpg" class="pelicula" alt=""/></a>
-					</div>
-					<h3 class="entry-title" id="titulos-peliculas">Woman</h3>
-					<a href="#" class="btn btn-primary mb-5 btn-lg active" style="margin-left: 10px;" role="button" aria-pressed="true">Ver trailer</a>
-					</div>
 				</div>
 			</div>
 		</article>
