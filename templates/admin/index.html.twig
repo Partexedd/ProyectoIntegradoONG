@@ -4,7 +4,10 @@
     
 <title>Admin index</title>
     <h1>Admin index</h1>
-
+  <a href="{{ path('admin_new') }}" style="margin-left:10px" ><button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-plus"></i>
+            <span>Añadir nuevo</span>
+            </button></a>
     <table class="table" style="text-align: center">
         <thead>
             <tr>
@@ -61,7 +64,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_new') }}">Create new</a>
 {% endblock %}
 
 

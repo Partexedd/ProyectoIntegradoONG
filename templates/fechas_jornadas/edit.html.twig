@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit FechasJornadas</title>
+
+{% block body %}
+    <h1>Edit FechasJornadas</h1>
+
+    {{ include('fechas_jornadas/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('fechas_jornadas_index') }}">back to list</a>
+
+    {{ include('fechas_jornadas/_delete_form.html.twig') }}
+{% endblock %}

@@ -5,6 +5,10 @@
     {% block div %}
           <h1>PonenteJornada index</h1>
 <title>PonenteJornada index</title>
+   <a href="{{ path('ponente_jornada_new') }}" style="margin-left:10px" ><button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-plus"></i>
+            <span>Añadir nuevo</span>
+            </button></a>
     <table class="table" style="text-align:center;">
         <thead >
             <tr>
@@ -23,8 +27,8 @@
                 <td><img src="/img/jornadas/{{ ponente_jornada.img }}" width="130" ></td>
                 {# <td>{{ ponente_jornada.descripcion }}</td> #}
                 <td>
-                    <a href="{{ path('ponente_jornada_show', {'id': ponente_jornada.id}) }}" ><i class="fas fa-eye" style="margin-top: 56px;"></i>
-</p></a>
+                    <a href="{{ path('ponente_jornada_show', {'id': ponente_jornada.id}) }}" ><i class="fas fa-eye" style="margin-top: 56px;"></i></a>
+                    <br>
                     <a href="{{ path('ponente_jornada_edit', {'id': ponente_jornada.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>
             </tr>
@@ -36,7 +40,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('ponente_jornada_new') }}">Create new</a>
 
                    
 {% endblock %}

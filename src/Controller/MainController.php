@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\{Contactar , Admin};
+use App\Entity\{Contactar , Admin, PagMirant};
 use App\Repository\ContactarRepository;
 use App\Form\ContactarType;
 use Symfony\Component\HttpFoundation\Request;
@@ -65,11 +65,21 @@ class MainController extends AbstractController
      */
     public function mirant(SessionInterface $session)
     {
-        $mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
-        $imagenes=str_replace(" ","",$imagenes);
-        $img=explode(",",$imagenes);
+        // $mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
+        // $imagenes=str_replace(" ","");
+        // $img=explode(",",$imagenes);
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/mirant.html.twig', [
+          'imagenheader' => 'header-inicio.jpg'
+        ]);
+    }
+    /**
+     * @Route("/inscripcion_mirant", name="inscripcion_mirant")
+     */
+    public function inscripcion_mirant(SessionInterface $session)
+    {
+        $user1 = $session->get('nombre_usuario');
+        return $this->render('main/inscripcion_mirant.html.twig', [
           'imagenheader' => 'header-inicio.jpg'
         ]);
     }
