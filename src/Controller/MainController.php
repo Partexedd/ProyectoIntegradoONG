@@ -134,7 +134,7 @@ class MainController extends AbstractController
     public function expandido()
     {
         return $this->render('main/leermas.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+          'imagenheader' => 'CMM-mani-1024x653.jpg'
         ]);
     }
 
