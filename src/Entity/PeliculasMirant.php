@@ -17,22 +17,23 @@ class PeliculasMirant
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $titulo;
+    private $titPelicula;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $img;
+    private $trailerPelicula;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $trailer;
+    private $fotoPelicula;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\PagMirant", inversedBy="edicion")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $edicion;
 
@@ -41,38 +42,38 @@ class PeliculasMirant
         return $this->id;
     }
 
-    public function getTitulo(): ?string
+    public function getTitPelicula(): ?string
     {
-        return $this->titulo;
+        return $this->titPelicula;
     }
 
-    public function setTitulo(string $titulo): self
+    public function setTitPelicula(?string $titPelicula): self
     {
-        $this->titulo = $titulo;
+        $this->titPelicula = $titPelicula;
 
         return $this;
     }
 
-    public function getImg(): ?string
+    public function getTrailerPelicula(): ?string
     {
-        return $this->img;
+        return $this->trailerPelicula;
     }
 
-    public function setImg(string $img): self
+    public function setTrailerPelicula(?string $trailerPelicula): self
     {
-        $this->img = $img;
+        $this->trailerPelicula = $trailerPelicula;
 
         return $this;
     }
 
-    public function getTrailer(): ?string
+    public function getFotoPelicula(): ?string
     {
-        return $this->trailer;
+        return $this->fotoPelicula;
     }
 
-    public function setTrailer(string $trailer): self
+    public function setFotoPelicula(?string $fotoPelicula): self
     {
-        $this->trailer = $trailer;
+        $this->fotoPelicula = $fotoPelicula;
 
         return $this;
     }

@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\PagPropuesta;
+use App\Entity\PagEntidades;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method PagPropuesta|null find($id, $lockMode = null, $lockVersion = null)
- * @method PagPropuesta|null findOneBy(array $criteria, array $orderBy = null)
- * @method PagPropuesta[]    findAll()
- * @method PagPropuesta[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method PagEntidades|null find($id, $lockMode = null, $lockVersion = null)
+ * @method PagEntidades|null findOneBy(array $criteria, array $orderBy = null)
+ * @method PagEntidades[]    findAll()
+ * @method PagEntidades[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PagPropuestaRepository extends ServiceEntityRepository
+class PagEntidadesRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, PagPropuesta::class);
+        parent::__construct($registry, PagEntidades::class);
     }
 
     // /**
-    //  * @return PagPropuesta[] Returns an array of PagPropuesta objects
+    //  * @return PagEntidades[] Returns an array of PagEntidades objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class PagPropuestaRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?PagPropuesta
+    public function findOneBySomeField($value): ?PagEntidades
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')

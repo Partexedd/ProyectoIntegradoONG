@@ -17,74 +17,74 @@ class PagInicio
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\paginasONG", cascade={"persist", "remove"})
+     * @ORM\Column(type="string", length=255)
      */
     private $titCabecera;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $videoConocenos;
+    private $titInicio;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $linkSuplementoPDF;
+    private $subtInicio;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\spotInicio", cascade={"persist", "remove"})
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $spot;
+    private $imagenInicio;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitCabecera(): ?paginasONG
+    public function getTitCabecera(): ?string
     {
         return $this->titCabecera;
     }
 
-    public function setTitCabecera(?paginasONG $titCabecera): self
+    public function setTitCabecera(string $titCabecera): self
     {
         $this->titCabecera = $titCabecera;
 
         return $this;
     }
 
-    public function getVideoConocenos(): ?string
+    public function getTitInicio(): ?string
     {
-        return $this->videoConocenos;
+        return $this->titInicio;
     }
 
-    public function setVideoConocenos(string $videoConocenos): self
+    public function setTitInicio(?string $titInicio): self
     {
-        $this->videoConocenos = $videoConocenos;
+        $this->titInicio = $titInicio;
 
         return $this;
     }
 
-    public function getLinkSuplementoPDF(): ?string
+    public function getSubtInicio(): ?string
     {
-        return $this->linkSuplementoPDF;
+        return $this->subtInicio;
     }
 
-    public function setLinkSuplementoPDF(string $linkSuplementoPDF): self
+    public function setSubtInicio(?string $subtInicio): self
     {
-        $this->linkSuplementoPDF = $linkSuplementoPDF;
+        $this->subtInicio = $subtInicio;
 
         return $this;
     }
 
-    public function getSpot(): ?spotInicio
+    public function getImagenInicio(): ?string
     {
-        return $this->spot;
+        return $this->imagenInicio;
     }
 
-    public function setSpot(?spotInicio $spot): self
+    public function setImagenInicio(?string $imagenInicio): self
     {
-        $this->spot = $spot;
+        $this->imagenInicio = $imagenInicio;
 
         return $this;
     }

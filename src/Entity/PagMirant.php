@@ -19,24 +19,34 @@ class PagMirant
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\PaginasONG", cascade={"persist", "remove"})
+     * @ORM\Column(type="string", length=255)
      */
     private $titCabecera;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $titMirant;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $descripcionMirant;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $cartelMirant;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $videoSpotMirant;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\peliculasMirant", mappedBy="edicion")
      */
     private $edicion;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $videoMirant;
-
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\IntroduccionMirant", cascade={"persist", "remove"})
-     */
-    private $introduccion;
 
     public function __construct()
     {
@@ -48,14 +58,62 @@ class PagMirant
         return $this->id;
     }
 
-    public function getTitCabecera(): ?paginasONG
+    public function getTitCabecera(): ?string
     {
         return $this->titCabecera;
     }
 
-    public function setTitCabecera(?paginasONG $titCabecera): self
+    public function setTitCabecera(string $titCabecera): self
     {
         $this->titCabecera = $titCabecera;
+
+        return $this;
+    }
+
+    public function getTitMirant(): ?string
+    {
+        return $this->titMirant;
+    }
+
+    public function setTitMirant(string $titMirant): self
+    {
+        $this->titMirant = $titMirant;
+
+        return $this;
+    }
+
+    public function getDescripcionMirant(): ?string
+    {
+        return $this->descripcionMirant;
+    }
+
+    public function setDescripcionMirant(string $descripcionMirant): self
+    {
+        $this->descripcionMirant = $descripcionMirant;
+
+        return $this;
+    }
+
+    public function getCartelMirant(): ?string
+    {
+        return $this->cartelMirant;
+    }
+
+    public function setCartelMirant(string $cartelMirant): self
+    {
+        $this->cartelMirant = $cartelMirant;
+
+        return $this;
+    }
+
+    public function getVideoSpotMirant(): ?string
+    {
+        return $this->videoSpotMirant;
+    }
+
+    public function setVideoSpotMirant(string $videoSpotMirant): self
+    {
+        $this->videoSpotMirant = $videoSpotMirant;
 
         return $this;
     }
@@ -89,34 +147,5 @@ class PagMirant
         }
 
         return $this;
-    }
-
-    public function getVideoMirant(): ?string
-    {
-        return $this->videoMirant;
-    }
-
-    public function setVideoMirant(string $videoMirant): self
-    {
-        $this->videoMirant = $videoMirant;
-
-        return $this;
-    }
-
-    public function getIntroduccion(): ?introduccionMirant
-    {
-        return $this->introduccion;
-    }
-
-    public function setIntroduccion(?introduccionMirant $introduccion): self
-    {
-        $this->introduccion = $introduccion;
-
-        return $this;
-    }
-
-    public function __toString()
-    {
-        return $this->getEdicion();
     }
 }

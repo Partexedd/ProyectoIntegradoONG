@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\FechasJornadas;
+use App\Entity\FormContact;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method FechasJornadas|null find($id, $lockMode = null, $lockVersion = null)
- * @method FechasJornadas|null findOneBy(array $criteria, array $orderBy = null)
- * @method FechasJornadas[]    findAll()
- * @method FechasJornadas[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method FormContact|null find($id, $lockMode = null, $lockVersion = null)
+ * @method FormContact|null findOneBy(array $criteria, array $orderBy = null)
+ * @method FormContact[]    findAll()
+ * @method FormContact[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class FechasJornadasRepository extends ServiceEntityRepository
+class FormContactRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, FechasJornadas::class);
+        parent::__construct($registry, FormContact::class);
     }
 
     // /**
-    //  * @return FechasJornadas[] Returns an array of FechasJornadas objects
+    //  * @return FormContact[] Returns an array of FormContact objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class FechasJornadasRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?FechasJornadas
+    public function findOneBySomeField($value): ?FormContact
     {
         return $this->createQueryBuilder('f')
             ->andWhere('f.exampleField = :val')
