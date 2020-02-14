@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\PaginasONG;
+use App\Entity\PagMirant;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method PaginasONG|null find($id, $lockMode = null, $lockVersion = null)
- * @method PaginasONG|null findOneBy(array $criteria, array $orderBy = null)
- * @method PaginasONG[]    findAll()
- * @method PaginasONG[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method PagMirant|null find($id, $lockMode = null, $lockVersion = null)
+ * @method PagMirant|null findOneBy(array $criteria, array $orderBy = null)
+ * @method PagMirant[]    findAll()
+ * @method PagMirant[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PaginasONGRepository extends ServiceEntityRepository
+class PagMirantRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, PaginasONG::class);
+        parent::__construct($registry, PagMirant::class);
     }
 
     // /**
-    //  * @return PaginasONG[] Returns an array of PaginasONG objects
+    //  * @return PagMirant[] Returns an array of PagMirant objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class PaginasONGRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?PaginasONG
+    public function findOneBySomeField($value): ?PagMirant
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')

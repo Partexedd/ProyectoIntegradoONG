@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\PonenteJornada;
+use App\Entity\PagInicio;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method PonenteJornada|null find($id, $lockMode = null, $lockVersion = null)
- * @method PonenteJornada|null findOneBy(array $criteria, array $orderBy = null)
- * @method PonenteJornada[]    findAll()
- * @method PonenteJornada[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method PagInicio|null find($id, $lockMode = null, $lockVersion = null)
+ * @method PagInicio|null findOneBy(array $criteria, array $orderBy = null)
+ * @method PagInicio[]    findAll()
+ * @method PagInicio[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PonenteJornadaRepository extends ServiceEntityRepository
+class PagInicioRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, PonenteJornada::class);
+        parent::__construct($registry, PagInicio::class);
     }
 
     // /**
-    //  * @return PonenteJornada[] Returns an array of PonenteJornada objects
+    //  * @return PagInicio[] Returns an array of PagInicio objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class PonenteJornadaRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?PonenteJornada
+    public function findOneBySomeField($value): ?PagInicio
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')
