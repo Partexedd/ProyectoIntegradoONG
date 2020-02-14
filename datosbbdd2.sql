@@ -76,6 +76,11 @@ CREATE TABLE IF NOT EXISTS `entidades` (
 /*!40000 ALTER TABLE `entidades` DISABLE KEYS */;
 /*!40000 ALTER TABLE `entidades` ENABLE KEYS */;
 
+-- Volcando estructura para tabla datosbbdd.ent_detalle
+IF NOT EXISTS ;
+
+-- Volcando datos para la tabla datosbbdd.ent_detalle: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `ent_detalle` DISABLE KEYS */;
 -- Volcando estructura para tabla datosbbdd.fechas_jornadas
 CREATE TABLE IF NOT EXISTS `fechas_jornadas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -101,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `introduccion_mirant` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.introduccion_mirant: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla datosbbdd.introduccion_mirant: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `introduccion_mirant` DISABLE KEYS */;
 INSERT INTO `introduccion_mirant` (`id`, `edicion`, `titulo`, `descripcion`, `cartel_mirant`) VALUES
 	(1, 'I', 'Mostra Itinerant de Cinema i Salut Global', 'Mirant sale del juego con la contracción de las palabras Mostra ItineRANT. Pero también significa mirando en valenciano. La primera de las acepciones del verbo mirar se refiere a “Dirigir la vista hacia algo y fijar la atención en ello”. Eso es lo que esperamos conseguir con esta Mostra de cine, que la gente dirija la vista y fije la atención hacia los problemas que se están dando en la actualidad en todo el planeta sobre la salud global, desde enfoques de género, medioambiente, derechos humanos… y entre todas, una vez hayamos dirigido la mirada y fijado la atención en estos temas, debatamos y reflexionemos de forma colectiva para ver cuál es nuestro papel en todo esto, y cómo podemos contribuir a lograr un mundo más sano, y por lo tanto, más justo. Si te gusta la idea, selecciona tu provincia, infórmate sobre las películas, reserva tu/s entrada/s… y guarda la fecha en tu agenda para asistir a la I Mostra de Cinema Itinerant de Cinema y Salut Global de la Comunitat Valenciana. ¡Te esperamos en Mirant!', 'Cartel-mirant-i.png'),
@@ -120,7 +125,9 @@ CREATE TABLE IF NOT EXISTS `migration_versions` (
 INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 	('20200213094557', '2020-02-13 09:46:29'),
 	('20200213095100', '2020-02-13 09:51:08'),
-	('20200213112429', '2020-02-13 11:24:45');
+	('20200213112429', '2020-02-13 11:24:45'),
+	('20200214083302', '2020-02-14 08:33:08'),
+	('20200214090401', '2020-02-14 09:04:11');
 /*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
 
 -- Volcando estructura para tabla datosbbdd.paginas_ong
@@ -131,10 +138,10 @@ CREATE TABLE IF NOT EXISTS `paginas_ong` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.paginas_ong: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla datosbbdd.paginas_ong: ~8 rows (aproximadamente)
 /*!40000 ALTER TABLE `paginas_ong` DISABLE KEYS */;
 INSERT INTO `paginas_ong` (`id`, `nombre_pagina`, `tit_cabecera`) VALUES
-	(1, 'Inicio', NULL),
+	(1, 'Inicio', ''),
 	(2, 'Propuesta', NULL),
 	(3, 'Jornadas', NULL),
 	(4, 'Mirant i', NULL),
@@ -145,6 +152,29 @@ INSERT INTO `paginas_ong` (`id`, `nombre_pagina`, `tit_cabecera`) VALUES
 	(9, 'Mirant iii', NULL);
 /*!40000 ALTER TABLE `paginas_ong` ENABLE KEYS */;
 
+-- Volcando estructura para tabla datosbbdd.pag_contacto
+CREATE TABLE IF NOT EXISTS `pag_contacto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tit_cabecera_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_127609982BB870DE` (`tit_cabecera_id`),
+  CONSTRAINT `FK_127609982BB870DE` FOREIGN KEY (`tit_cabecera_id`) REFERENCES `paginas_ong` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla datosbbdd.pag_contacto: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `pag_contacto` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pag_contacto` ENABLE KEYS */;
+
+-- Volcando estructura para tabla datosbbdd.pag_entidades
+IF NOT EXISTS ;
+
+-- Volcando datos para la tabla datosbbdd.pag_entidades: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `pag_entidades` DISABLE KEYS */;
+-- Volcando estructura para tabla datosbbdd.pag_forma_parte
+IF NOT EXISTS ;
+
+-- Volcando datos para la tabla datosbbdd.pag_forma_parte: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `pag_forma_parte` DISABLE KEYS */;
 -- Volcando estructura para tabla datosbbdd.pag_inicio
 CREATE TABLE IF NOT EXISTS `pag_inicio` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -159,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `pag_inicio` (
   CONSTRAINT `FK_3D1CBE9C2DF1D37C` FOREIGN KEY (`spot_id`) REFERENCES `spot_inicio` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.pag_inicio: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla datosbbdd.pag_inicio: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `pag_inicio` DISABLE KEYS */;
 INSERT INTO `pag_inicio` (`id`, `tit_cabecera_id`, `spot_id`, `video_conocenos`, `link_suplemento_pdf`) VALUES
 	(1, 1, 1, 'https://www.youtube.com/watch?v=UI-CHyHa4VE', 'https://redsanitariasolidaria.org/wp-content/uploads/2019/08/Suplement_XarxaSanitat_web.pdf');
@@ -181,12 +211,17 @@ CREATE TABLE IF NOT EXISTS `pag_jornadas` (
   CONSTRAINT `FK_7586F3AEBF058448` FOREIGN KEY (`fechas_jornadas_id`) REFERENCES `fechas_jornadas` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.pag_jornadas: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla datosbbdd.pag_jornadas: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `pag_jornadas` DISABLE KEYS */;
 INSERT INTO `pag_jornadas` (`id`, `tit_cabecera_id`, `fechas_jornadas_id`, `carteles_jornadas_id`, `formulario_ins`) VALUES
 	(1, 3, 1, 1, 'https://www.encuestafacil.com/RespWeb/Qn.aspx?EID=2563232');
 /*!40000 ALTER TABLE `pag_jornadas` ENABLE KEYS */;
 
+-- Volcando estructura para tabla datosbbdd.pag_jornadas_formativas
+IF NOT EXISTS ;
+
+-- Volcando datos para la tabla datosbbdd.pag_jornadas_formativas: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `pag_jornadas_formativas` DISABLE KEYS */;
 -- Volcando estructura para tabla datosbbdd.pag_mirant
 CREATE TABLE IF NOT EXISTS `pag_mirant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -200,13 +235,18 @@ CREATE TABLE IF NOT EXISTS `pag_mirant` (
   CONSTRAINT `FK_55157B412BB870DE` FOREIGN KEY (`tit_cabecera_id`) REFERENCES `paginas_ong` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.pag_mirant: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla datosbbdd.pag_mirant: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `pag_mirant` DISABLE KEYS */;
 INSERT INTO `pag_mirant` (`id`, `tit_cabecera_id`, `video_mirant`, `introduccion_id`) VALUES
 	(1, 4, 'https://www.youtube.com/watch?v=qMh0LUtnjL4', 1),
 	(2, 8, 'https://www.youtube.com/watch?v=755APbFY-Ng', 2);
 /*!40000 ALTER TABLE `pag_mirant` ENABLE KEYS */;
 
+-- Volcando estructura para tabla datosbbdd.pag_nuestra_propuesta
+IF NOT EXISTS ;
+
+-- Volcando datos para la tabla datosbbdd.pag_nuestra_propuesta: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `pag_nuestra_propuesta` DISABLE KEYS */;
 -- Volcando estructura para tabla datosbbdd.pag_propuesta
 CREATE TABLE IF NOT EXISTS `pag_propuesta` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -234,7 +274,7 @@ CREATE TABLE IF NOT EXISTS `peliculas_mirant` (
   CONSTRAINT `FK_CE6FC05FD651B81E` FOREIGN KEY (`edicion_id`) REFERENCES `pag_mirant` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.peliculas_mirant: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla datosbbdd.peliculas_mirant: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `peliculas_mirant` DISABLE KEYS */;
 INSERT INTO `peliculas_mirant` (`id`, `titulo`, `img`, `trailer`, `edicion_id`) VALUES
 	(1, 'Comandante Arian', 'Comandante-arian-2018.jpg', 'https://www.youtube.com/watch?v=bTtNpcFYDUY', 2),

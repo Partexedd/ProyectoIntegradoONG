@@ -1,0 +1,47 @@
+{% extends "main/layout.html.twig" %}
+{% block head %}
+    <link rel="stylesheet" href="css/estilosInfoEntidades.css">
+{% endblock %}
+{% block titulo %}Informacion Entidad{% endblock %}
+{% block contenido %}
+    <br>
+    <section class="container">
+        <h1 class="text-center"><b>Informacion entidad</b></h1><br>
+        <img id="logo" width="250" height="250" src="img/Entidades/Valencia/Administraciones publicas/diputacio_valencia-.jpg" alt="logoInfo" class="border border-secondary">
+        <br>
+        <article id="desplegables">
+            <ul id="menu">
+                <input type="checkbox" name="list" id="nivel-1">
+                <label for="nivel-1"><b>Telefono</b></label>
+                <ul class="interior text-justify">
+                    <p>Buscamos a través del trabajo en red, la formación y la reflexión, un camino compartido por todas las entidades sobre la manera de entender la salud global, a través de la defensa del derecho a la salud, y de la cooperación al desarrollo bajo el enfoque de los derechos humanos.</p>
+                </ul>
+                </input>
+            </ul>
+            <hr>
+            <ul id="menu">
+                <input type="checkbox" name="list" id="nivel-2">
+                <label for="nivel-2"><b>Correo</b></label>
+                <ul class="interior text-justify">
+                    <p>Integrando en nuestras entidades enfoques y miradas compartidas para el desarrollo humano, la defensa de los derechos humanos, la equidad en diversidad y la sostenibilidad como ejes de nuestra formación y actuación en el campo de la salud.</p>
+                </ul>
+                </input>
+            </ul>
+        </article>
+    </section>
+    <section class="container-fluid">
+        <div class="google-maps">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1uKVDBlaFmrizerhTXUjNBX8mCj24FJPV" width="600" height="450" frameborder="0" style="border:0"></iframe>
+        </div> 
+    </section>
+    <section class="container">
+        <article>
+            <div class="row">
+                <div class="text-justify" id="primerTexto">
+                    <p>En el siguiente mapa podrás localizar las entidades que forman parte de las Redes Sanitarias Solidarias de las tres provincias de la Comunidad Valenciana. También podrás localizar (marcadores naranjas) otras entidades que no forman parte de las RSS, pero con las que compartimos objetivos y líneas de trabajo como la cooperación al desarrollo y la defensa del derecho a la salud.</p>
+                </div>
+            </div>
+            <br>
+        </article>
+    </section>
+{% endblock %}

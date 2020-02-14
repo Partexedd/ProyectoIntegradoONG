@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\PeliculasMirant;
+use App\Entity\PagMirant;
 use App\Form\PeliculasMirantType;
 use App\Repository\PeliculasMirantRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -38,7 +39,7 @@ class PeliculasMirantController extends AbstractController
         $peliculasMirant = new PeliculasMirant();
         $form = $this->createForm(PeliculasMirantType::class, $peliculasMirant);
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($peliculasMirant);

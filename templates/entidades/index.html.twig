@@ -1,0 +1,44 @@
+{% extends "adminpage/layout.html.twig" %}
+
+    {% block div %}
+    <title>Entidades index</title>
+        <h1>Entidades index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Logo</th>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>Localizacion</th>
+                <th>Descripcion</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entidade in entidades %}
+            <tr>
+                <td>{{ entidade.id }}</td>
+                <td>{{ entidade.logo }}</td>
+                <td>{{ entidade.nombre }}</td>
+                <td>{{ entidade.telefono }}</td>
+                <td>{{ entidade.correo }}</td>
+                <td>{{ entidade.localizacion }}</td>
+                <td>{{ entidade.descripcion }}</td>
+                <td>
+                    <a href="{{ path('entidades_show', {'id': entidade.id}) }}">show</a>
+                    <a href="{{ path('entidades_edit', {'id': entidade.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('entidades_new') }}">Create new</a>
+{% endblock %}
