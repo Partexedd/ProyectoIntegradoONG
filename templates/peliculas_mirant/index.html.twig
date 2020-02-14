@@ -1,33 +1,32 @@
-{% extends "adminpage/layout.html.twig" %}
+<!DOCTYPE html>
 
-    {% block div %}
-    <title>PeliculasMirant index</title>
+<title>PeliculasMirant index</title>
+
+{% block body %}
     <h1>PeliculasMirant index</h1>
-    <a href="{{ path('peliculas_mirant_new') }}" style="margin-left:10px" ><button type="button" id="sidebarCollapse" class="btn btn-info">
-            <i class="fas fa-plus"></i>
-            <span>Añadir nuevo</span>
-            </button></a>
-    <table class="table table-striped table-hover" style="text-align: center">
+
+    <table class="table">
         <thead>
             <tr>
-                <th>Img</th>
-                {# <th>Id</th> #}
-                <th>Titulo</th>
-                {# <th>Trailer</th>
-                <th>actions</th> #}
+                <th>Id</th>
+                <th>TitPelicula</th>
+                <th>TrailerPelicula</th>
+                <th>FotoPelicula</th>
+                <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for peliculas_mirant in peliculas_mirants %}
             <tr>
-                {# <td>{{ peliculas_mirant.id }}</td> #}
-                <td><a href="{{ path('peliculas_mirant_show', {'id': peliculas_mirant.id}) }}" ><img src="/img/Carteles_mirant/{{ peliculas_mirant.img }} "width="300"></a></td>
-                <td><p style="margin-top: 56px;">{{ peliculas_mirant.titulo }}</p></td>
-
-                {# <td>{{ peliculas_mirant.trailer }}</td> #}
+                <td>{{ peliculas_mirant.id }}</td>
+                <td>{{ peliculas_mirant.titPelicula }}</td>
+                <td>{{ peliculas_mirant.trailerPelicula }}</td>
+                <td>{{ peliculas_mirant.fotoPelicula }}</td>
+                <td>{{ peliculas_mirant.edicion.getEdicion()}}</td>
+                
                 <td>
-                    <a href="{{ path('peliculas_mirant_show', {'id': peliculas_mirant.id}) }}"><i class="fas fa-eye" style="margin-top: 56px;"></i></a><br>
-                    <a href="{{ path('peliculas_mirant_edit', {'id': peliculas_mirant.id}) }}"><i class="fas fa-edit"></i></a>
+                    <a href="{{ path('peliculas_mirant_show', {'id': peliculas_mirant.id}) }}">show</a>
+                    <a href="{{ path('peliculas_mirant_edit', {'id': peliculas_mirant.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -38,5 +37,5 @@
         </tbody>
     </table>
 
-
+    <a href="{{ path('peliculas_mirant_new') }}">Create new</a>
 {% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<title>PagMirant</title>
+
+{% block body %}
+    <h1>PagMirant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pag_mirant.id }}</td>
+            </tr>
+            <tr>
+                <th>TitCabecera</th>
+                <td>{{ pag_mirant.titCabecera }}</td>
+            </tr>
+            <tr>
+                <th>TitMirant</th>
+                <td>{{ pag_mirant.titMirant }}</td>
+            </tr>
+            <tr>
+                <th>DescripcionMirant</th>
+                <td>{{ pag_mirant.descripcionMirant }}</td>
+            </tr>
+            <tr>
+                <th>CartelMirant</th>
+                <td>{{ pag_mirant.cartelMirant }}</td>
+            </tr>
+            <tr>
+                <th>VideoSpotMirant</th>
+                <td>{{ pag_mirant.videoSpotMirant }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pag_mirant_index') }}">back to list</a>
+
+    <a href="{{ path('pag_mirant_edit', {'id': pag_mirant.id}) }}">edit</a>
+
+    {{ include('pag_mirant/_delete_form.html.twig') }}
+{% endblock %}

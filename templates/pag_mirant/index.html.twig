@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<title>PagMirant index</title>
+
+{% block body %}
+    <h1>PagMirant index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitCabecera</th>
+                <th>TitMirant</th>
+                <th>DescripcionMirant</th>
+                <th>CartelMirant</th>
+                <th>VideoSpotMirant</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pag_mirant in pag_mirants %}
+            <tr>
+                <td>{{ pag_mirant.id }}</td>
+                <td>{{ pag_mirant.titCabecera }}</td>
+                <td>{{ pag_mirant.titMirant }}</td>
+                <td>{{ pag_mirant.descripcionMirant }}</td>
+                <td>{{ pag_mirant.cartelMirant }}</td>
+                <td>{{ pag_mirant.videoSpotMirant }}</td>
+                <td>
+                    <a href="{{ path('pag_mirant_show', {'id': pag_mirant.id}) }}">show</a>
+                    <a href="{{ path('pag_mirant_edit', {'id': pag_mirant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pag_mirant_new') }}">Create new</a>
+{% endblock %}
