@@ -14,18 +14,18 @@
     <link rel="stylesheet" href="{{ asset("master.css", "estilos") }}">
     <script src="{{ asset("ad58fc7f24.js", "script") }}"></script>
     <link rel="icon" type="image/jpg" href="{{ asset("favicon.jpg", "imagen") }}">
-
-
 		{% block head %}{% endblock %}
-		<title>
-			{% block titulo %}{% endblock %}
-			- Red Sanitaria Solidaria Comunidad Valenciana</title>
+
+		<title>{% block titulo %}{% endblock %} - Red Sanitaria Solidaria Comunidad Valenciana</title>
+
 	</head>
 
 	<body>
   <!-- Back to top button -->
   <a id="button"></a>
+
 		{% block body %}{% endblock %}
+    
         <script src="{{ asset("jquery-3.1.0.js", "script") }}" crossorigin="anonymous"></script>
         <script src="{{ asset("scriptBackToTop.js", "script") }}"></script>
 	</body>
