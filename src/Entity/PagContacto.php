@@ -17,7 +17,7 @@ class PagContacto
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\OneToOne(targetEntity="App\Entity\paginasONG", cascade={"persist", "remove"})
      */
     private $titCabecera;
 
@@ -26,12 +26,12 @@ class PagContacto
         return $this->id;
     }
 
-    public function getTitCabecera(): ?string
+    public function getTitCabecera(): ?paginasONG
     {
         return $this->titCabecera;
     }
 
-    public function setTitCabecera(?string $titCabecera): self
+    public function setTitCabecera(?paginasONG $titCabecera): self
     {
         $this->titCabecera = $titCabecera;
 

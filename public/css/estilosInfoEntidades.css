@@ -1,0 +1,40 @@
+article#desplegables{
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 11%;
+    font-size: 18px;
+}
+
+
+/* Estilos y funcionamiento de los desplegables */
+
+#menu * { list-style:none;}
+#menu li{ line-height: 150%;}
+#menu li a{color:#222; text-decoration:none;}
+#menu li a:before{ content:"\025b8"; color:#ddd;}
+#menu input[name="list"] {position: absolute; left: -1000em;}
+#menu label:before{ content:"\025b8"; margin-right:4px;}
+#menu input:checked ~ label:before{ content:"\025be";}
+#menu label{ width: 100%; cursor: pointer; }
+#menu .interior{display: none;}
+#menu input:checked ~ ul{display:block;}
+#menu ul.interior{margin-right: 5%;}
+
+iframe{
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    line-height: 1;
+    border: none;
+}
+
+div#primerTexto{
+    margin-top: 2%;
+    margin-left: 14%;
+    margin-right: 14%;
+    font-size: 18px;
+}
+
+img#logo{
+    margin-left: 40%;
+}
