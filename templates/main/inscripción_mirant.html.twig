@@ -4,5 +4,39 @@
 {% endblock %}
 {% block titulo %}Inicio{% endblock %}
 {% block contenido %}
-
+{{form_start(form, {'attr':{'class':"col-8 offset-2", "action":""}})}}
+                <label for="nombre">Tu nombre (requerido)</label><br>
+                {# <input name="nombre" class="form-control" type="text"></input> #}
+                 {{form_widget(form.nombre, {'attr':{'class':'form-control', 'placeholder':'Nombre', 'required':''}})}}
+                <label for="email">Tu correo electrónico (requerido)</label><br>
+                {# <input name="email" class="form-control" type="text"></input> #}
+                {{form_widget(form.email, {'attr':{'class':'form-control', 'placeholder':'Email', 'required':''}})}}
+                <label for="rss">Selecciona la RSS de tu provincia</label><br>
+                {# <select class="custom-select" name="rss">
+                    <option value="rssc">RSS Castellón</option>
+                    <option value="rssv">RSS Valencia</option>
+                    <option value="rssa">RSS Alicante</option>
+                </select> #}
+                {{ form_widget(form.rssProvincia, {'attr':{'class':'custom-select', 'required':''}}) }}
+                <br>
+                <label for="selRSS">¿A quién representas?</label>
+                {# <select class="custom-select" id="selRSS">
+                    <option value="administracionPublica">Admnistración Pública</option>
+                    <option value="asociacion">Asociación</option>
+                    <option value="ong_d">ONG/ONGD</option>
+                    <option value="colegioProfesional">Colegio Profesional</option>
+                    <option value="universidades">Universidades</option>
+                    <option value="otra">Otra</option>
+                </select> #}
+                {{ form_widget(form.representa, {'attr':{'class':'custom-select', 'required':''}}) }}
+                <label for="asunto">Asunto</label><br>
+                {# <input name="asunto" class="form-control" type="text"></input> #}
+                {{form_widget(form.asunto, {'attr':{'class':'form-control', 'placeholder':'Asunto', 'required':''}})}}
+                <label for="mensaje">Tu mensaje</label><br>
+                {# <textarea name="mensaje" class="form-control" type="text" style="height:200px;resize:none;" cols="40" rows="20"></textarea><br> #}
+                 {{form_widget(form.mensaje, {'attr':{'class':'form-control', 'placeholder':'Mensaje', 'required':'', 'style':"height:200px;resize:none;", 'cols':"40", 'rows':"20"}})}}
+                {# <button class="btn boton">Enviar</button> #}
+                {{form_widget(form.send, {'attr':{'class':'btn bot', 'placeholder':'Enviar',  'type':'submit'}})}}
+            {# </form> #}
+                              {{form_end(form)}}
 {% endblock %}

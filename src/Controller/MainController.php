@@ -76,11 +76,21 @@ class MainController extends AbstractController
     /**
      * @Route("/inscripcion_mirant", name="inscripcion_mirant")
      */
-    public function inscripcion_mirant(SessionInterface $session)
+    public function inscripcion_mirant(Request $request, SessionInterface $session)
     {
+        $contactoTo=new Contactar();
+        $form=$this->CreateForm(EnvioContactoType::Class, $contactoTo);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $entityManager=$this->getDoctrine()->getManager();
+            $contactoTo->setFecha(new \DateTime('now'));
+            $entityManager->persist($contactoTo);
+            $entityManager->flush();}
         $user1 = $session->get('nombre_usuario');
-        return $this->render('main/inscripcion_mirant.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+        return $this->render('main/inscripción_mirant.html.twig', [
+            'imagenheader' => 'header-inicio.jpg',
+            'form' => $form->CreateView()
         ]);
     }
 

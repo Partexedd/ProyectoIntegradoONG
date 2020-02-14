@@ -114,6 +114,9 @@
     "ocramius/proxy-manager": {
         "version": "2.2.3"
     },
+    "php": {
+        "version": "7.4"
+    },
     "phpdocumentor/reflection-common": {
         "version": "2.0.0"
     },
@@ -506,6 +509,9 @@
     },
     "twig/twig": {
         "version": "v2.12.1"
+    },
+    "webimpress/safe-writer": {
+        "version": "2.0.0"
     },
     "webmozart/assert": {
         "version": "1.5.0"
