@@ -6,8 +6,8 @@ i#i{
   color: rgb(93, 93, 173);
 }
 #jumbotron{
-  background-color:#00000063;
-  background-blend-mode:soft-light;
+    background-color: #00000057;
+    background-blend-mode:soft-light;
 }
 article{
   margin-top: 5%;
@@ -25,4 +25,8 @@ iframe{
     iframe{
       height: 250px !important;
     }
+  }
+  #titulo{
+    margin-top: 21px;
+    margin-bottom: 31px;
   }
