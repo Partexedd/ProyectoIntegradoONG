@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<title>PagJornadas</title>
+
+{% block body %}
+    <h1>PagJornadas</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pag_jornada.id }}</td>
+            </tr>
+            <tr>
+                <th>TitCabecera</th>
+                <td>{{ pag_jornada.titCabecera }}</td>
+            </tr>
+            <tr>
+                <th>TitPonente</th>
+                <td>{{ pag_jornada.titPonente }}</td>
+            </tr>
+            <tr>
+                <th>FotoPonente</th>
+                <td>{{ pag_jornada.fotoPonente }}</td>
+            </tr>
+            <tr>
+                <th>DescPonente</th>
+                <td>{{ pag_jornada.descPonente }}</td>
+            </tr>
+            <tr>
+                <th>FechaPonenteV</th>
+                <td>{{ pag_jornada.fechaPonenteV ? pag_jornada.fechaPonenteV|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>FechaPonenteA</th>
+                <td>{{ pag_jornada.fechaPonenteA ? pag_jornada.fechaPonenteA|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>FechaPonenteC</th>
+                <td>{{ pag_jornada.fechaPonenteC ? pag_jornada.fechaPonenteC|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>CartelPonenteV</th>
+                <td>{{ pag_jornada.cartelPonenteV }}</td>
+            </tr>
+            <tr>
+                <th>CartelPonenteA</th>
+                <td>{{ pag_jornada.cartelPonenteA }}</td>
+            </tr>
+            <tr>
+                <th>CartelPonenteC</th>
+                <td>{{ pag_jornada.cartelPonenteC }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pag_jornadas_index') }}">back to list</a>
+
+    <a href="{{ path('pag_jornadas_edit', {'id': pag_jornada.id}) }}">edit</a>
+
+    {{ include('pag_jornadas/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<title>PagJornadas index</title>
+
+{% block body %}
+    <h1>PagJornadas index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitCabecera</th>
+                <th>TitPonente</th>
+                <th>FotoPonente</th>
+                <th>DescPonente</th>
+                <th>FechaPonenteV</th>
+                <th>FechaPonenteA</th>
+                <th>FechaPonenteC</th>
+                <th>CartelPonenteV</th>
+                <th>CartelPonenteA</th>
+                <th>CartelPonenteC</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pag_jornada in pag_jornadas %}
+            <tr>
+                <td>{{ pag_jornada.id }}</td>
+                <td>{{ pag_jornada.titCabecera }}</td>
+                <td>{{ pag_jornada.titPonente }}</td>
+                <td>{{ pag_jornada.fotoPonente }}</td>
+                <td>{{ pag_jornada.descPonente }}</td>
+                <td>{{ pag_jornada.fechaPonenteV ? pag_jornada.fechaPonenteV|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ pag_jornada.fechaPonenteA ? pag_jornada.fechaPonenteA|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ pag_jornada.fechaPonenteC ? pag_jornada.fechaPonenteC|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ pag_jornada.cartelPonenteV }}</td>
+                <td>{{ pag_jornada.cartelPonenteA }}</td>
+                <td>{{ pag_jornada.cartelPonenteC }}</td>
+                <td>
+                    <a href="{{ path('pag_jornadas_show', {'id': pag_jornada.id}) }}">show</a>
+                    <a href="{{ path('pag_jornadas_edit', {'id': pag_jornada.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pag_jornadas_new') }}">Create new</a>
+{% endblock %}

@@ -44,7 +44,7 @@ class PagMirant
     private $videoSpotMirant;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\peliculasMirant", mappedBy="edicion")
+     * @ORM\OneToMany(targetEntity="App\Entity\PeliculasMirant", mappedBy="edicion")
      */
     private $edicion;
 
@@ -148,4 +148,5 @@ class PagMirant
 
         return $this;
     }
+
 }

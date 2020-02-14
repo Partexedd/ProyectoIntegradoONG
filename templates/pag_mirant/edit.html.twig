@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit PagMirant</title>
+
+{% block body %}
+    <h1>Edit PagMirant</h1>
+
+    {{ include('pag_mirant/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('pag_mirant_index') }}">back to list</a>
+
+    {{ include('pag_mirant/_delete_form.html.twig') }}
+{% endblock %}
