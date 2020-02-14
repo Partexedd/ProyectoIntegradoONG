@@ -1,14 +1,13 @@
 {% extends "main/layout.html.twig" %}
 {% block head %}
-    <link rel="stylesheet" href="./css/estilosContacto.css">
-    <script src="./js/scriptContacto.js"></script>
+    <link rel="stylesheet" href="/css/estilosContacto.css">
 {% endblock %}
 {% block titulo %}Contacto{% endblock %}
 {% block contenido %}
     <!-- Section -->
     <section class="container">
     <!-- Descripción de contacto -->
-        <article class="row">
+        <article id="descripcion" class="row">
             <h1 class="col-12 text-center text-dark">Únete a la red</h1>
             <div class="pTexto text-justify text-dark">No importa si eres una asociación, una universidad, un colegio oficial 
             o una administración pública. Únete a la red sanitaria solidaria de tu provincia y ayudanos 
@@ -17,31 +16,31 @@
         <!-- Direcciones de las asociaciones -->
         <article id="direccion">
             <div class="direcciones row text-center">
-                <div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4">
+                <div id="divDir1" class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4">
                     <img src="img/castellon.png" alt="Castellón" class="dirFoto"><br>
                     <h2>Castellón</h2><br>
-                    <button class="btn bot collapsible" id="but1">Ver dirección</button>
-                    <div id="divDir1" class="col text-center content">
+                    <button class="collapsible1 btn bot" id="but1">Ver dirección</button>
+                    <div class="col text-center content1">
                     <p>C/Mayor 56, escalera 3, piso 8B.<br>
                     12001 - Castellón de la Plana<br>
                     964 222 020 - 601 187 746</p>
                     </div>
                 </div>
-                <div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4">
+                <div id="divDir2" class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4">
                     <img src="img/valencia.png" alt="Valencia" class="dirFoto"><br>
                     <h2>Valencia</h2><br>
-                    <button class="btn bot collapsible" id="but2">Ver dirección</button>
-                    <div id="divDir2" class="col text-center content">
+                    <button class="collapsible2 btn bot" id="but2">Ver dirección</button>
+                    <div class="col text-center content2">
                     <p>Carrer d'Utiel, 16<br>
                     46020 Valencia<br>
                     670 394 103</p>
                     </div>
                 </div>
-                <div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4">
+                <div id="divDir3" class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4">
                     <img src="img/alicante.png" alt="Alicante" class="dirFoto"><br>
                     <h2>Alicante</h2><br>
-                    <button class="btn bot collapsible" id="but3">Ver dirección</button>
-                    <div id="divDir3" class="col text-center content">
+                    <button class="collapsible3 btn bot" id="but3">Ver dirección</button>
+                    <div class="col text-center content3">
                     <p>Av. de Denia, 47<br>
                     03013 Alicante<br>
                     965 650 487 - 660 575 104</p>
@@ -50,7 +49,7 @@
             </div>
         </article>
         <!-- Formulario de contacto -->
-        <article class="row text-secondary">
+        <article id="formulario" class="row text-secondary">
             <h1 class="col-12 text-center h1Form text-dark">Formulario de contacto</h1>
             {# <form class="> #}
             {{form_start(form, {'attr':{'class':"col-8 offset-2", "action":""}})}}
@@ -90,10 +89,52 @@
                               {{form_end(form)}}
         </article>
         <!-- Modelo de adhesión de la RSS -->
-        <article class="row">
+        <article id="adhesionRSS" class="row">
             <div class="col-12 text-center text-dark">
                 <h1>Modelo de adhesión a la RSS de tu provincia</h1>
                 <a href="https://redsanitariasolidaria.org/wp-content/uploads/2018/10/MODELO-DOCUMENTO-ADHESIO%CC%81N-A-RSS.pdf" target="_blank"><button class="btn modelo bot mb-5">Ver modelo</button></a>
             </div>
     </section>
+    <script>
+            var coll1 = document.getElementsByClassName("collapsible1");
+            var coll2 = document.getElementsByClassName("collapsible2");
+            var coll3 = document.getElementsByClassName("collapsible3");
+            let h;
+            let y;
+            let w;
+
+            for (h = 0; h < coll1.length; h++) {
+                coll1[h].addEventListener("click", function() {
+                this.classList.toggle("active");
+                let content1 = this.nextElementSibling;
+                if (content1.style.maxHeight){
+                    content1.style.maxHeight = null;
+                } else {
+                    content1.style.maxHeight = content1.scrollHeight + "px";
+                } 
+            });
+            }
+            for (y = 0; y < coll2.length; y++) {
+                coll2[y].addEventListener("click", function() {
+                this.classList.toggle("active");
+                let content2 = this.nextElementSibling;
+                if (content2.style.maxHeight){
+                    content2.style.maxHeight = null;
+                } else {
+                    content2.style.maxHeight = content2.scrollHeight + "px";
+                } 
+            });
+            }
+            for (w = 0; w < coll3.length; w++) {
+                coll3[w].addEventListener("click", function() {
+                this.classList.toggle("active");
+                let content3 = this.nextElementSibling;
+                if (content3.style.maxHeight){
+                    content3.style.maxHeight = null;
+                } else {
+                    content3.style.maxHeight = content3.scrollHeight + "px";
+                } 
+            });
+            }
+    </script>
 {% endblock %}
