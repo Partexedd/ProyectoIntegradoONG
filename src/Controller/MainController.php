@@ -86,13 +86,25 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/entidades", name="entidades")
+     * @Route("/nuestraPropuesta/entidades", name="entidades")
      */
     public function entidades(SessionInterface $session)
     {
         //$user1 = $session->get('nombre_usuario');
         return $this->render('main/entidades.html.twig', [
           'imagenheader' => '/head\ fotos/fotoHeadEntidades.jpg'
+        ]);
+    }
+
+    
+    /**
+     * @Route("/infoEntidad", name="entidad")
+     */
+    public function infoEntidades(SessionInterface $session)
+    {
+        //$user1 = $session->get('nombre_usuario');
+        return $this->render('main/infoEntidad.html.twig', [
+          'imagenheader' => '/head\ fotos/fotoHeadNuestraPropuesta.jpg'
         ]);
     }
 
