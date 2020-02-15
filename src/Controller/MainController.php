@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\{Contactar , Admin, PagContacto};
+use App\Entity\{Contactar , Admin, PagContacto, PagInicio};
 use App\Repository\ContactarRepository;
 use App\Form\ContactarType;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,10 +20,12 @@ class MainController extends AbstractController
      */
     public function index(Request $request, SessionInterface $session)
     {
+        $indexBBDD=$this->getDoctrine()->getRepository(PagInicio::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
-            'imagenheader' => 'header-inicio.jpg'
+            'imagenheader' => 'header-inicio.jpg',
+            'indexbbdd' => $indexBBDD,
         ]);
     }
 
