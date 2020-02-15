@@ -8,19 +8,19 @@
 <section class="container">
 
   <article class="row">
-
+{% for contenido in indexbbdd %}
     <div class="col-12 text-center">
-      <h1><b>Este 2020 las RSS hablan de Salud y Cámbio Climático</b></h1>
+      <h1><b>{{ contenido.titInicio }}</b></h1>
     </div>
     <div class="col-12 text-center mt-5">
-      <h3>Infórmate, Inscríbete, Súmate</h1>
+      <h3>{{ contenido.subtInicio }}</h1>
     </div>
     <div class="col-12 text-center mt-5">
-      <img src="{{ asset("web-cartel.jpg", "imagen") }}" alt="cartel salud y cambio climático" style="width:90%">
+      <img src="{{ asset(contenido.imagenInicio, "imagen") }}" alt="cartel salud y cambio climático" style="width:90%">
     </div>
 
   </article>
-
+{% endfor %}
   <article class="row">
 
     <div class="col-12 text-center">

@@ -4,10 +4,11 @@
     <script src="./js/scriptJornadas.js"></script>
 {% endblock %}
 {% block titulo %}Jornadas Formativas{% endblock %}
+{% block TituloCabecera %}{% for cabeza in jornadasBBDD %}{{ cabeza.titCabecera }}{% endfor %}{% endblock %}
 {% block contenido %}
     <!-- Section -->
     <section class="container">
-    <!-- Descripción de contacto -->
+    <!-- Descripción de jornadas -->
         <article style="margin-top:4%;" class="text-center">
         <div class="row d-flex align-items-center">
             <div class="col-4">
@@ -44,41 +45,90 @@
         cuestionario y conoce cómo contribuimos a la Agenda 2030, y qué vamos a hacer para ayudar a las entidades 
         sanitarias valencianas a sumar cada día más por conseguir un mundo mejor.
         </div>
+        </article>
+        <article style="margin-top:4%;" class="text-center">
         <a href="https://www.encuestafacil.com/RespWeb/Qn.aspx?EID=2563232"><button class="btn boton">Formulario de Inscripción</button></a>
-        <h1><a href="https://carlosgomezgil.com/" target="_blank" class="linkh1">El ponente: Dr.Carlos Gomez Gil</a></h1><br>
-        <img src="img/jornadas/carlos-gomez-gil-150x150.jpg" class="imagen">
-        <div class="text-justify Ag30">Para estas jornadas contamos con la participación del Dr. En sociología de la Universidad de Alicante, Dr. Carlos Gomez Gil. 
-        Para conocer su extensa experiencia os recomendamos acudir a su blog <a href="https://carlosgomezgil.com/">aquí</a>. 
-        El Dr. Gomez Gil estará con nosotros los siguietes días en los que se realizará el taller:</div>
+        {% for jornadas in jornadasBBDD %}
+        <h1><a href="https://carlosgomezgil.com/" target="_blank" class="linkh1">El ponente: {{ jornadas.titPonente }}</a></h1><br>
+        <img src="/img/{{ jornadas.fotoPonente }}" class="imagen">
+        <div class="text-justify Ag30">{{ jornadas.descPonente }}</div>
         <ul class="text-left">    
-            <li>Valencia: 24 de septiembre, 18:00 horas en el Colegio Oficial de Ópticos-Optometristas de Valencia.</li>
-            <li>Alicante: 25 de septiembre, 18:00 horas en la Sede Universitaria Ciudad de Alicante.</li>
-            <li>Castellón: 26 de septiembre, 18:00 horas en el Menador Espai Cultural de Castelló.</li>
+            <li>Castellón: Ayer</li>
+            <li>Valencia: Hoy</li>
+            <li>Alicante: Mañana</li>
         </ul>
-        <p>Compartimos con vosotras los carteles de las tres ciudades, y esperamos contar con vuestra participación.</p>
         <div class="row">
-            <img class="col-md-4 col-sm-12 carteles" id="myImg" src="img/jornadas/ODS-Castellon.jpg"><br>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                    <span class="close">&times;</span>
+            <img class="col-md-4 col-sm-12 carteles" id="myImg1" src="/img/{{ jornadas.cartelPonenteC }}"><br>
+                <div id="myModal1" class="modal">
+                    <span class="close1">&times;</span>
                     <img class="modal-content" id="img01">
                     <div id="caption"></div>
                 </div>
-            <img class="col-md-4 col-sm-12 carteles" id="myImg" src="img/jornadas/ODS-Valencia.jpg"><br>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                    <span class="close">&times;</span>
+            <img class="col-md-4 col-sm-12 carteles" id="myImg2" src="/img/{{ jornadas.cartelPonenteV }}"><br>
+                <div id="myModal2" class="modal">
+                    <span class="close2">&times;</span>
                     <img class="modal-content" id="img02">
                     <div id="caption"></div>
                 </div>
-            <img class="col-md-4 col-sm-12 carteles" id="myImg" src="img/jornadas/ODS-Alicante.jpg"><br>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                    <span class="close">&times;</span>
+            <img class="col-md-4 col-sm-12 carteles" id="myImg3" src="/img/{{ jornadas.cartelPonenteA }}"><br>
+                <div id="myModal3" class="modal">
+                    <span class="close3">&times;</span>
                     <img class="modal-content" id="img03">
                     <div id="caption"></div>
                 </div>
             </div>
         </article>
+        {% endfor %}
     </section>
+    <script>
+var modal1 = document.getElementById("myModal1");
+var modal2 = document.getElementById("myModal2");
+var modal3 = document.getElementById("myModal3");
+var img1 = document.getElementById("myImg1");
+var img2 = document.getElementById("myImg2");
+var img3 = document.getElementById("myImg3");
+var modalImg1 = document.getElementById("img01");
+var modalImg2 = document.getElementById("img02");
+var modalImg3 = document.getElementById("img03");
+
+img1.onclick = function(){
+  modal1.style.display = "block";
+  modalImg1.src = this.src;
+  document.body.style = "overflow: hidden;"
+}
+
+var span1 = document.getElementsByClassName("close1")[0];
+
+span1.onclick = function() { 
+  modal1.style.display = "none";
+  document.body.style = "overflow: show;"
+}
+
+img2.onclick = function(){
+  modal2.style.display = "block";
+  modalImg2.src = this.src;
+  document.body.style = "overflow: hidden;"
+}
+
+var span2 = document.getElementsByClassName("close2")[0];
+
+span2.onclick = function() { 
+  modal2.style.display = "none";
+  document.body.style = "overflow: show;"
+}
+
+img3.onclick = function(){
+  modal3.style.display = "block";
+  modalImg3.src = this.src;
+  document.body.style = "overflow: hidden;"
+}
+
+var span3 = document.getElementsByClassName("close3")[0];
+
+span3.onclick = function() { 
+  modal3.style.display = "none";
+  document.body.style = "overflow: show;"
+}
+
+    </script>
 {% endblock %}

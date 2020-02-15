@@ -2,6 +2,7 @@
 {% block head %}
     <link rel="stylesheet" href="css/estilosNuestraPropuesta.css">
 {% endblock %}
+{% block TituloCabecera %}{% for cabeza in nuestraPropuestaBBDD %}{{ cabeza.titCabecera }}{% endfor %}{% endblock %}
 {% block titulo %}Nuestra Propuesta{% endblock %}
 {% block contenido %}
     <section class="container">

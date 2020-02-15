@@ -34,9 +34,11 @@ class MainController extends AbstractController
      */
     public function nuestraPropuesta(SessionInterface $session)
     {
+        $nuestraPropuestaBBDD=$this->getDoctrine()->getRepository(PagNuestraPropuesta::Class)->findAll();
         //$user1 = $session->get('nombre_usuario');
         return $this->render('main/nuestrapropuesta.html.twig', [
-            'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg'
+            'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg',
+            'nuestraPropuestaBBDD' => $nuestraPropuestaBBDD,
         ]);
     }
 
@@ -69,12 +71,13 @@ class MainController extends AbstractController
      */
     public function mirant(SessionInterface $session)
     {
-        $mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
+        $mirantBBDD=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         $imagenes=str_replace(" ","",$imagenes);
         $img=explode(",",$imagenes);
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/mirant.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+          'imagenheader' => 'header-inicio.jpg',
+          'mirantBBDD' => $mirantBBDD,
         ]);
     }
 
@@ -83,9 +86,11 @@ class MainController extends AbstractController
      */
     public function jornadas(SessionInterface $session)
     {
+        $jornadasBBDD=$this->getDoctrine()->getRepository(PagJornadas::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/jornadas.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+          'imagenheader' => 'header-inicio.jpg',
+          'jornadasBBDD' => $jornadasBBDD,
         ]);
     }
 
