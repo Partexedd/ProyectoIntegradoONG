@@ -76,7 +76,10 @@ class PagContacto
 
         return $this;
     }
+    public function __toString(){
+        return $this->getDireccionC();
 
+    }
     public function getDireccionC(): ?string
     {
         return $this->direccionC;

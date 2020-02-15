@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit PagJornadas</title>
+
+{% block body %}
+    <h1>Edit PagJornadas</h1>
+
+    {{ include('pag_jornadas/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('pag_jornadas_index') }}">back to list</a>
+
+    {{ include('pag_jornadas/_delete_form.html.twig') }}
+{% endblock %}

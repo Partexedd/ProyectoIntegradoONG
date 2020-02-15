@@ -36,9 +36,11 @@ class PeliculasMirant
      * @ORM\JoinColumn(nullable=false)
      */
     private $edicion;
+    
 
     public function getId(): ?int
     {
+
         return $this->id;
     }
 
@@ -89,4 +91,5 @@ class PeliculasMirant
 
         return $this;
     }
+
 }

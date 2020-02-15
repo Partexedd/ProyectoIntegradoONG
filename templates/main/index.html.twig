@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="{{ asset("index.css", "estilos") }}">
 {% endblock %}
 {% block titulo %}Inicio{% endblock %}
+{% block TituloCabecera %}{% for cabeza in indexbbdd %}{{ cabeza.titCabecera }}{% endfor %}{% endblock %}
 {% block contenido %}
 <section class="container">
 
@@ -104,7 +105,9 @@
 
   </article>
 </section>
-<section id="jumbotron-fluid" class="jumbotron d-flex align-items-center" style="background-image:url('{{ asset('index-image.jpg', 'imagen') }}'); background-repeat: no-repeat; height: 600px; background-size: cover;">
+<section id="jumbotron-fluid" class="jumbotron d-flex align-items-center" style="background-image:url('{{ asset('index-image.jpg', 'imagen') }}'); background-repeat: no-repeat; height: 600px; background-size: cover; background-color:
+#00000082;
+background-blend-mode: soft-light;">
 
   <article class="container-fluid d-flex justify-content-center">
     <h3 class="text-light text-center" style="font-size: 39px; font-weight: bold;">La sociedad reclama un cambio de paradigma en la forma de entender la salud.</h3>

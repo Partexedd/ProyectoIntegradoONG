@@ -20,10 +20,12 @@ class MainController extends AbstractController
      */
     public function index(Request $request, SessionInterface $session)
     {
+        $indexBBDD=$this->getDoctrine()->getRepository(PagInicio::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
-            'imagenheader' => 'header-inicio.jpg'
+            'imagenheader' => 'header-inicio.jpg',
+            'indexbbdd' => $indexBBDD,
         ]);
     }
 
@@ -34,7 +36,7 @@ class MainController extends AbstractController
     {
         //$user1 = $session->get('nombre_usuario');
         return $this->render('main/nuestrapropuesta.html.twig', [
-          'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg'
+            'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg'
         ]);
     }
 
@@ -43,6 +45,7 @@ class MainController extends AbstractController
      */
     public function contacto(Request $request, SessionInterface $session)
     {
+        $contactoBBDD=$this->getDoctrine()->getRepository(PagContacto::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
         $contactoTo=new Contactar();
         $form=$this->CreateForm(EnvioContactoType::Class, $contactoTo);
@@ -54,8 +57,9 @@ class MainController extends AbstractController
             $entityManager->persist($contactoTo);
             $entityManager->flush();}
         return $this->render('main/contacto.html.twig', [
-          'imagenheader' => 'Namuno.-Visita-seguiment-2-maig-2006.jpg',
-            'form' => $form->CreateView()
+            'imagenheader' => 'Namuno.-Visita-seguiment-2-maig-2006.jpg',
+            'form' => $form->CreateView(),
+            'contactobbdd' => $contactoBBDD,
         ]);
 
     }

@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="/css/estilosContacto.css">
 {% endblock %}
 {% block titulo %}Contacto{% endblock %}
+{% block TituloCabecera %}{% for cabeza in contactobbdd %}{{ cabeza.titCabecera }}{% endfor %}{% endblock %}
 {% block contenido %}
     <!-- Section -->
     <section class="container">
@@ -14,16 +15,15 @@
             a hacer desde la comunidad valenciana un mundo y una sociedad más sanos.</div>
         </article>
         <!-- Direcciones de las asociaciones -->
+        {% for direccion in contactobbdd %}
         <article id="direccion">
             <div class="direcciones row text-center">
-                <div id="divDir1" class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4">
+                <div id="divDir1" class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4 ">
                     <img src="img/castellon.png" alt="Castellón" class="dirFoto"><br>
                     <h2>Castellón</h2><br>
                     <button class="collapsible1 btn bot" id="but1">Ver dirección</button>
                     <div class="col text-center content1">
-                    <p>C/Mayor 56, escalera 3, piso 8B.<br>
-                    12001 - Castellón de la Plana<br>
-                    964 222 020 - 601 187 746</p>
+                    <p style="margin-bottom:43px">{{ direccion.direccionC }}</p>
                     </div>
                 </div>
                 <div id="divDir2" class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4">
@@ -31,9 +31,7 @@
                     <h2>Valencia</h2><br>
                     <button class="collapsible2 btn bot" id="but2">Ver dirección</button>
                     <div class="col text-center content2">
-                    <p>Carrer d'Utiel, 16<br>
-                    46020 Valencia<br>
-                    670 394 103</p>
+                    <p>{{ direccion.direccionV }}</p>
                     </div>
                 </div>
                 <div id="divDir3" class="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4">
@@ -41,13 +39,12 @@
                     <h2>Alicante</h2><br>
                     <button class="collapsible3 btn bot" id="but3">Ver dirección</button>
                     <div class="col text-center content3">
-                    <p>Av. de Denia, 47<br>
-                    03013 Alicante<br>
-                    965 650 487 - 660 575 104</p>
+                    <p style="margin-bottom:43px ">{{ direccion.direccionA }}</p>
                     </div>
                 </div>
             </div>
         </article>
+        {% endfor %}
         <!-- Formulario de contacto -->
         <article id="formulario" class="row text-secondary">
             <h1 class="col-12 text-center h1Form text-dark">Formulario de contacto</h1>
