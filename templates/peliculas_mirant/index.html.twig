@@ -38,7 +38,7 @@
                 <td>{{ peliculas_mirant.titPelicula }}</td>
                 <td>{{ peliculas_mirant.trailerPelicula }}</td>
                 <td>{{ peliculas_mirant.fotoPelicula }}</td>
-                <td>{{peliculas_mirant.getEdicion()}}</td>
+                <td>{{peliculas_mirant.edicion.getEdicion()[0]}}</td>
                 <td>
                     <a href="{{ path('peliculas_mirant_show', {'id': peliculas_mirant.id}) }}">show</a>
                     <a href="{{ path('peliculas_mirant_edit', {'id': peliculas_mirant.id}) }}">edit</a>

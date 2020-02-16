@@ -27,11 +27,13 @@
 								Mirant
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Mirant I</a>
+							{% for edicion in EdicionMirant %}
+								<a class="dropdown-item" href="{{ path('mirant' ,{'edicion':edicion.getId()}) }}">Mirant {{edicion.id}}</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{{ path('mirant') }}">Mirant II</a>
+								{# <a class="dropdown-item" href="{{ path('mirant') }}">Mirant II</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Mirant III</a>
+								<a class="dropdown-item" href="#">Mirant III</a> #}
+								{% endfor %}
 							</div>
 						</li>
 						<li class="nav-item">

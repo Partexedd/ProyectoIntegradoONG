@@ -149,5 +149,8 @@ class PagMirant
 
         return $this;
     }
-
+    public function __toString()
+    {
+        return $this->getTitMirant();
+    }
 }
