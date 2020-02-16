@@ -24,3 +24,5 @@ framework:
                 base_path: '/img'
             cartelMirant:
                 base_path: '/img/Carteles_mirant/'
+            peliculasMirant:
+                base_path: '/img/Carteles_mirant/'

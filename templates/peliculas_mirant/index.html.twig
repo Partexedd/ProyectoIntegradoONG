@@ -1,16 +1,21 @@
+{% extends "adminpage/layout.html.twig" %}
 
-{% block body %}
-<title>PeliculasMirant index</title>
+    {% block div %}
+ <title>PeliculasMirant index</title>
     <h1>PeliculasMirant index</h1>
-
-    <table class="table">
+ <a href="{{ path('peliculas_mirant_new') }}" style="margin-left:10px" ><button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-plus"></i>
+            <span>Añadir nuevo</span>
+            </button></a>
+    <table class="table" style="text-align:center">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>TitPelicula</th>
-                <th>TrailerPelicula</th>
-                <th>FotoPelicula</th>
-                <th>actions</th>
+                {# <th>Id</th> #}
+                <th>Título Película</th>
+                {# <th>TrailerPelicula</th> #}
+                <th>Imagen película</th>
+                <th>Edición</th>
+                {# <th>actions</th> #}
             </tr>
         </thead>
         <tbody>
@@ -34,23 +39,27 @@
                 {% endif %}
 			{% endfor %} #}
             <tr>
-                <td>{{ peliculas_mirant.id }}</td>
+                {# <td>{{ peliculas_mirant.id }}</td> #}
                 <td>{{ peliculas_mirant.titPelicula }}</td>
-                <td>{{ peliculas_mirant.trailerPelicula }}</td>
+                {# <td>{{ peliculas_mirant.trailerPelicula }}</td> #}
                 <td>{{ peliculas_mirant.fotoPelicula }}</td>
-                <td>{{peliculas_mirant.edicion.getEdicion()[0]}}</td>
+                {% for mirant in mirantBBDD %}
+               {% if peliculas_mirant.edicion == mirant.getTitMirant() %}
+                <td>{{mirant.id}}</td>
+                {% endif %}
+                {% endfor %}
+                {# <td>{{peliculas_mirant.edicion}}</td> #}
                 <td>
                     <a href="{{ path('peliculas_mirant_show', {'id': peliculas_mirant.id}) }}">show</a>
                     <a href="{{ path('peliculas_mirant_edit', {'id': peliculas_mirant.id}) }}">edit</a>
                 </td>
             </tr>
-        {# {% else %} #}
+        {% else %}
             <tr>
                 <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('peliculas_mirant_new') }}">Create new</a>
+             
 {% endblock %}

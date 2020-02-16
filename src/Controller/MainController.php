@@ -78,11 +78,18 @@ class MainController extends AbstractController
     public function mirant($edicion, SessionInterface $session)
     {
         $mirantBBDD=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
+        $edicionFiltro=$this->getDoctrine()
+        ->getRepository(PagMirant::Class)
+        ->findOneBy(
+            ['id' => $edicion], 
+            ['id' => 'ASC']
+          );
         $peliculasBBDD=$this->getDoctrine()->getRepository(PeliculasMirant::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
         $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         return $this->render('main/mirant.html.twig', [
           'imagenheader' => 'header-inicio.jpg',
+          'edicionFiltro' =>$edicionFiltro,
           'mirantBBDD' => $mirantBBDD,
           'peliculasBBDD' => $peliculasBBDD,
           'EdicionMirant' => $Mirant, 
@@ -173,7 +180,6 @@ if ($user1) {
 
                 'controller_name' => 'AdminController',
                 'user' =>"",
-                'EdicionMirant' => $Mirant, 
                 ]);
             }
     }
