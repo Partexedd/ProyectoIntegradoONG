@@ -72,12 +72,12 @@ class MainController extends AbstractController
     public function mirant(SessionInterface $session)
     {
         $mirantBBDD=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
-        $imagenes=str_replace(" ","",$imagenes);
-        $img=explode(",",$imagenes);
+        $peliculasBBDD=$this->getDoctrine()->getRepository(PeliculasMirant::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/mirant.html.twig', [
           'imagenheader' => 'header-inicio.jpg',
           'mirantBBDD' => $mirantBBDD,
+          'peliculasBBDD' => $peliculasBBDD,
         ]);
     }
 
