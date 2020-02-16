@@ -20,8 +20,6 @@ class PeliculasMirantController extends AbstractController
      */
     public function index(PeliculasMirantRepository $peliculasMirantRepository): Response
     {
-        // $dolor=$this->getDoctrine()->getRepository(PagMirant::Class)->findOneBy(['id' => '1']);
-        // var_dump($dolor);
         return $this->render('peliculas_mirant/index.html.twig', [
             'peliculas_mirants' => $peliculasMirantRepository->findAll(),
         ]);

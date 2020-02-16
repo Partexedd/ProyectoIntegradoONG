@@ -30,5 +30,6 @@ class PagJornadasType extends AbstractType
         $resolver->setDefaults([
             'data_class' => PagJornadas::class,
         ]);
+        
     }
 }

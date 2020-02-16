@@ -37,6 +37,11 @@ class PeliculasMirant
      */
     private $edicion;
     
+public function __toString(): ?PagMirant
+{
+    return $this->edicion;
+
+}
 
     public function getId(): ?int
     {

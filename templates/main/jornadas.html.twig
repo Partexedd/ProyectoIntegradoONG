@@ -52,10 +52,10 @@
         <h1><a href="https://carlosgomezgil.com/" target="_blank" class="linkh1">El ponente: {{ jornadas.titPonente }}</a></h1><br>
         <img src="/img/{{ jornadas.fotoPonente }}" class="imagen">
         <div class="text-justify Ag30">{{ jornadas.descPonente }}</div>
-        <ul class="text-left">    
-            <li>Castellón: Ayer</li>
-            <li>Valencia: Hoy</li>
-            <li>Alicante: Mañana</li>
+        <ul class="text-left">		  
+            <li>Castellón:{{jornadas.getFechaPonenteC()|date("m/d/y")}}</li>
+            <li>Valencia:{{jornadas.getFechaPonenteV()|date("m/d/y")}}</li>
+            <li>Alicante: {{jornadas.getFechaPonenteA()|date("m/d/y")}}</li>
         </ul>
         <div class="row">
             <img class="col-md-4 col-sm-12 carteles" id="myImg1" src="/img/{{ jornadas.cartelPonenteC }}"><br>
