@@ -6,7 +6,7 @@ use App\Entity\PagJornadas;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
+use Symfony\Component\Form\Extension\Core\Type\{SubmitType, DateTimeType};
 class PagJornadasType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -16,12 +16,13 @@ class PagJornadasType extends AbstractType
             ->add('titPonente')
             ->add('fotoPonente')
             ->add('descPonente')
-            ->add('fechaPonenteV')
+            ->add('fechaPonenteV', DateTimeType::Class )
             ->add('fechaPonenteA')
             ->add('fechaPonenteC')
             ->add('cartelPonenteV')
             ->add('cartelPonenteA')
             ->add('cartelPonenteC')
+            ->add('send', SubmitType::Class)
         ;
     }
 

@@ -26,3 +26,5 @@ framework:
                 base_path: '/img/Carteles_mirant/'
             peliculasMirant:
                 base_path: '/img/Carteles_mirant/'
+            cartelesJornadas:
+                base_path: '/img/jornadas/'

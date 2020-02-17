@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 
-<title>PagJornadas</title>
+{% extends "adminpage/layout.html.twig" %}
 
-{% block body %}
-    <h1>PagJornadas</h1>
+    {% block div %}
+     <h1>PagJornadas</h1>
 
     <table class="table">
         <tbody>
@@ -12,51 +11,108 @@
                 <td>{{ pag_jornada.id }}</td>
             </tr>
             <tr>
-                <th>TitCabecera</th>
+                <th>Título de la cabecera</th>
                 <td>{{ pag_jornada.titCabecera }}</td>
             </tr>
             <tr>
-                <th>TitPonente</th>
+                <th>Nombre del ponente</th>
                 <td>{{ pag_jornada.titPonente }}</td>
             </tr>
             <tr>
-                <th>FotoPonente</th>
+                <th>Foto del ponente</th>
                 <td>{{ pag_jornada.fotoPonente }}</td>
             </tr>
             <tr>
-                <th>DescPonente</th>
+                <th>Descripción del ponente</th>
                 <td>{{ pag_jornada.descPonente }}</td>
             </tr>
             <tr>
-                <th>FechaPonenteV</th>
+                <th>Fecha de la jornada en Valencia</th>
                 <td>{{ pag_jornada.fechaPonenteV ? pag_jornada.fechaPonenteV|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>FechaPonenteA</th>
+                <th>Fecha de la jornada en Alicante</th>
                 <td>{{ pag_jornada.fechaPonenteA ? pag_jornada.fechaPonenteA|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>FechaPonenteC</th>
+                <th>Fecha de la jornada en Castellón</th>
                 <td>{{ pag_jornada.fechaPonenteC ? pag_jornada.fechaPonenteC|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>CartelPonenteV</th>
-                <td>{{ pag_jornada.cartelPonenteV }}</td>
+                <th>Cartel jornada Valencia</th>
+                <td><img src={{asset(pag_jornada.cartelPonenteV, 'cartelesJornadas') }} width="300"></td>
+                <th>Cartel jornada Alicante</th>
+                <td><img src={{asset(pag_jornada.cartelPonenteA, 'cartelesJornadas') }} width="300"></td>
+                <th>Cartel jornada Castellón</th>
+                <td><img src={{ asset(pag_jornada.cartelPonenteC , 'cartelesJornadas') }} width="300"></td>
             </tr>
-            <tr>
+            {# <tr>
                 <th>CartelPonenteA</th>
                 <td>{{ pag_jornada.cartelPonenteA }}</td>
-            </tr>
-            <tr>
+            </tr> #}
+            {# <tr>
                 <th>CartelPonenteC</th>
                 <td>{{ pag_jornada.cartelPonenteC }}</td>
-            </tr>
+            </tr> #}
         </tbody>
     </table>
 
-    <a href="{{ path('pag_jornadas_index') }}">back to list</a>
+ <a href="{{ path('pag_jornadas_index') }}" style="margin-left:10px" ><button type="button" id="sidebarCollapse" class="btn btn-info">
+           <i class="fas fa-angle-left"></i>
+            <span>Volver</span>
+            </button></a>
+        <a href="{{ path('pag_jornadas_edit', {'id': pag_jornada.id}) }}"><button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-edit"></i>
+            <span>Editar</span>
+            </button></a>
+<form method="post" action="{{ path('pag_jornadas_delete', {'id': pag_jornada.id}) }}">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ pag_jornada.id) }}">
+    <button type="button" id="sidebarCollapse" onclick="validarForm();" style="margin-top: 12px;margin-left:10px;" class="btn btn-danger">
+           <i class="fas fa-trash-alt"></i>
+            <span>Eliminar</span>
+            </button></a>
+</form>
+<script>
+function validarForm(sender){
 
-    <a href="{{ path('pag_jornadas_edit', {'id': pag_jornada.id}) }}">edit</a>
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
 
-    {{ include('pag_jornadas/_delete_form.html.twig') }}
+swalWithBootstrapButtons.fire({
+ title: 'Estas seguro?',
+ text: "Estas seguro de que quieres borrar este mensaje",
+  icon: 'warning',
+ showCancelButton: true,
+  confirmButtonText: 'Sí, borrar!',
+  cancelButtonText: 'No, cancelar!',
+  reverseButtons: true
+ }).then((result) => {
+ if (result.value) {
+   swalWithBootstrapButtons.fire(
+     'Borrado!',
+     'El mensaje ha sido borrado.',
+     'success'
+    )
+            form = document.getElementById('miformulario');
+       form.submit();
+  } else if (
+    /* Read more about handling dismissals below */
+  result.dismiss === Swal.DismissReason.cancel
+  ) {
+  swalWithBootstrapButtons.fire(
+      'Cancelado',
+     'El mensaje no ha sido borrado',
+      'error'
+    )
+  }
+})
+
+};
+</script>
 {% endblock %}

@@ -4,6 +4,7 @@
     <h1>PeliculasMirant</h1>
 
     <table class="table">
+    <div class="container">
         <tbody>
             <tr>
                 <th>Titulo de la Pelicula</th>
@@ -26,6 +27,7 @@
                 {% endfor %}</td>
             </tr>
         </tbody>
+        </div>
     </table>
  <a href="{{ path('peliculas_mirant_index') }}" style="margin-left:10px" ><button type="button" id="sidebarCollapse" class="btn btn-info">
            <i class="fas fa-angle-left"></i>
@@ -45,6 +47,7 @@
             <span>Eliminar</span>
             </button></a>
 </form>
+
 <script>
 function validarForm(sender){
 

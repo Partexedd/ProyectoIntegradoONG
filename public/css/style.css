@@ -456,6 +456,8 @@ body {
 
   .form-control{
 
-    width: 23% !important;
+    width: 68% !important;
     margin-left: 50px !important;
   }
+  .table{width: 74% !important;}
+  #Fecha{display: flex !important;}

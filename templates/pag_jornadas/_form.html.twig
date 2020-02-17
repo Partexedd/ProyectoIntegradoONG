@@ -1,4 +1,73 @@
-{{ form_start(form) }}
+{# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{{ form_end(form) }} #}
+
+{% extends "adminpage/layout.html.twig" %}
+
+    {% block div %}
+
+<div class="container">
+    <div class="col-12 offset-1">
+                 {{form_start(form, {'attr':{'id':'contactform' }})}}
+                    <div>
+                    <h1>Crear película nueva</h1>
+                    </div>
+
+                        <div class="form-group">
+                     <label for="formGroupExampleInput">Título película <span class="required">*</span></label>
+                    {{form_widget(form.titCabecera, {'attr':{'id':'titulo', 'class':'form-control', 'placeholder':'Título película', 'required':''}})}}
+                    </div>
+                        <br>
+                    <div>
+                    <label>Imagen Película<span class="required">*</span></label>
+                    {{form_widget(form.titPonente, {'attr':{'id':'img', 'class':'form-control', 'placeholder':'Inserte una imagen', 'required':''}})}}
+                    </div>
+ <br>
+                    <div>
+                    <label>Trailer de la Pelicula</label>
+                    {{form_widget(form.fotoPonente, {'attr':{'id':'trailer', 'class':'form-control', 'placeholder':'Trailer película', 'required':''}})}}
+                    </div>
+ <br>
+                    <div>
+                    <label>Edicion de Mirant</label>
+                    {{form_widget(form.descPonente, {'attr':{'id':'Edicion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    </div>
+                    <div>
+
+                    <label>Edicion de Mirant</label>
+                    {{form_widget(form.fechaPonenteV, {'attr':{'id':'datetimepicker2', 'required':''}})}}
+                    </div>
+                    <div>
+                    <label>Edicion de Mirant</label>
+                    {{form_widget(form.fechaPonenteA, {'attr':{'id':'Edicion', 'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    </div>
+                    <div>
+                    <label>Edicion de Mirant</label>
+                    {{form_widget(form.fechaPonenteC, {'attr':{'id':'Edicion',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    </div>
+                                        <div>
+                    <label>Edicion de Mirant</label>
+                    {{form_widget(form.cartelPonenteV, {'attr':{'id':'Edicion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    </div>
+                    <div>
+                    <label>Edicion de Mirant</label>
+                    {{form_widget(form.cartelPonenteA, {'attr':{'id':'Edicion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    </div>
+                    <div>
+                    <label>Edicion de Mirant</label>
+                    {{form_widget(form.cartelPonenteC, {'attr':{'id':'Edicion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    </div>                     
+ <br>
+
+                    <div class="col-12 offset-4">
+					{{form_widget(form.send, {'attr':{'class':'btn btn-info', 'placeholder':'Enviar',  'type':'submit'}})}}
+         			<input type="reset" value="Reset" class="btn btn-warning">
+					</div>
+
+
+                    {{form_end(form)}}
+            </div>
+    </div>
+    
+            {% endblock %}
