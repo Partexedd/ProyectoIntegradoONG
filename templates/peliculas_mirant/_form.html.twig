@@ -1,4 +1,44 @@
-{{ form_start(form) }}
+{# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{{ form_end(form) }} #}
+{% extends "adminpage/layout.html.twig" %}
+
+    {% block div %}
+
+<div class="container justify-content-center">
+                 {{form_start(form, {'attr':{'id':'contactform' }})}}
+                    <div>
+                    <p>Escribe un mensaje</p>
+                    </div>
+
+                        <div class="form-group">
+                     <label for="formGroupExampleInput">Título película <span class="required">*</span></label>
+                    {{form_widget(form.titPelicula, {'attr':{'id':'titulo', 'class':'form-control', 'placeholder':'Título película', 'required':''}})}}
+                    </div>
+
+                    <div>
+                    <label>Imagen Película<span class="required">*</span></label>
+                    {{form_widget(form.fotoPelicula, {'attr':{'id':'img', 'class':'form-control', 'placeholder':'Inserte una imagen', 'required':''}})}}
+                    </div>
+
+                    <div>
+                    <label>Trailer de la Pelicula</label>
+                    {{form_widget(form.trailerPelicula, {'attr':{'id':'trailer', 'class':'form-control', 'placeholder':'Trailer película', 'required':''}})}}
+                    </div>
+
+                    <div>
+                    <label>Edicion de Mirant</label>
+                    {{form_widget(form.edicion, {'attr':{'id':'Edicion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    </div>
+
+
+                    <div>
+					{{form_widget(form.send, {'attr':{'class':'button', 'placeholder':'Enviar',  'type':'submit'}})}}
+         			<input type="reset" value="Reset" class="button">
+					</div>
+
+
+                    {{form_end(form)}}
+            </div>
+            {% endblock %}

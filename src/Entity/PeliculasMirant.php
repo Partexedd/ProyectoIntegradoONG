@@ -94,6 +94,7 @@ class PeliculasMirant
     public function __toString()
     {
         return $this->getTitPelicula();
+        return $this->getFotoPelicula();
     }
     
 
