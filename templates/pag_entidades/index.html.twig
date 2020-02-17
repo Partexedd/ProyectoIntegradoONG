@@ -18,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for entidade in entidades %}
+        {% for pag_entidade in pag_entidades %}
             <tr>
                 <td>{{ entidade.id }}</td>
                 <td>{{ entidade.logo }}</td>
@@ -40,5 +40,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('entidades_new') }}">Create new</a>
+    <a href="{{ path('pag_entidades_new') }}">Create new</a>
 {% endblock %}

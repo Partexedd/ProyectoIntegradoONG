@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit PagEntidades</title>
+
+{% block body %}
+    <h1>Edit PagEntidades</h1>
+
+    {{ include('pag_entidades/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('pag_entidades_index') }}">back to list</a>
+
+    {{ include('pag_entidades/_delete_form.html.twig') }}
+{% endblock %}

@@ -15,13 +15,13 @@
                     </div>
 
                         <div class="form-group">
-                     <label for="formGroupExampleInput">Título película <span class="required">*</span></label>
-                    {{form_widget(form.titCabecera, {'attr':{'id':'titulo', 'class':'form-control', 'placeholder':'Título película', 'required':''}})}}
+                     <label for="formGroupExampleInput">Título de la cabecera <span class="required">*</span></label>
+                    {{form_widget(form.titCabecera, {'attr':{'id':'titulo', 'class':'form-control', 'placeholder':'Título cabecera', 'required':''}})}}
                     </div>
                         <br>
                     <div>
-                    <label>Imagen Película<span class="required">*</span></label>
-                    {{form_widget(form.titPonente, {'attr':{'id':'img', 'class':'form-control', 'placeholder':'Inserte una imagen', 'required':''}})}}
+                    <label>Título del ponente<span class="required">*</span></label>
+                    {{form_widget(form.titPonente, {'attr':{'id':'tit', 'class':'form-control', 'placeholder':'Título ponente', 'required':''}})}}
                     </div>
  <br>
                     <div>
@@ -30,33 +30,33 @@
                     </div>
  <br>
                     <div>
-                    <label>Edicion de Mirant</label>
-                    {{form_widget(form.descPonente, {'attr':{'id':'Edicion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    <label>Descripción del ponente</label>
+                    {{form_widget(form.descPonente, {'attr':{'id':'descripcion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
                     </div>
                     <div>
 
-                    <label>Edicion de Mirant</label>
-                    {{form_widget(form.fechaPonenteV, {'attr':{'id':'datetimepicker2', 'required':''}})}}
+                    <label>Fecha jornada Valencia</label>
+                    {{form_widget(form.fechaPonenteV, {'attr':{'id':'fecha',  'placeholder':'Fecha del evento en Valencia', 'required':''}})}}
                     </div>
                     <div>
-                    <label>Edicion de Mirant</label>
-                    {{form_widget(form.fechaPonenteA, {'attr':{'id':'Edicion', 'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    <label>Fecha jornada Alicante</label>
+                    {{form_widget(form.fechaPonenteA, {'attr':{'id':'fecha', 'placeholder':'Fecha del evento en Alicante', 'required':''}})}}
                     </div>
                     <div>
-                    <label>Edicion de Mirant</label>
-                    {{form_widget(form.fechaPonenteC, {'attr':{'id':'Edicion',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    <label>Fecha jornada Castellón</label>
+                    {{form_widget(form.fechaPonenteC, {'attr':{'id':'fecha',  'placeholder':'Fecha del evento en Castellón', 'required':''}})}}
                     </div>
                                         <div>
-                    <label>Edicion de Mirant</label>
-                    {{form_widget(form.cartelPonenteV, {'attr':{'id':'Edicion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    <label>Cartel jornada Valencia</label>
+                    {{form_widget(form.cartelPonenteV, {'attr':{'id':'cartel', 'class':'form-control',  'placeholder':'Nombre de la imagen', 'required':''}})}}
                     </div>
                     <div>
-                    <label>Edicion de Mirant</label>
-                    {{form_widget(form.cartelPonenteA, {'attr':{'id':'Edicion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    <label>Cartel jornada Alicante</label>
+                    {{form_widget(form.cartelPonenteA, {'attr':{'id':'cartel', 'class':'form-control',  'placeholder':'Nombre de la imagen', 'required':''}})}}
                     </div>
                     <div>
-                    <label>Edicion de Mirant</label>
-                    {{form_widget(form.cartelPonenteC, {'attr':{'id':'Edicion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    <label>Cartel jornada Castellón</label>
+                    {{form_widget(form.cartelPonenteC, {'attr':{'id':'cartel', 'class':'form-control',  'placeholder':'Nombre de la imagen', 'required':''}})}}
                     </div>                     
  <br>
 
@@ -64,8 +64,6 @@
 					{{form_widget(form.send, {'attr':{'class':'btn btn-info', 'placeholder':'Enviar',  'type':'submit'}})}}
          			<input type="reset" value="Reset" class="btn btn-warning">
 					</div>
-
-
                     {{form_end(form)}}
             </div>
     </div>

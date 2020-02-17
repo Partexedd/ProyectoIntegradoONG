@@ -1,4 +1,55 @@
-{{ form_start(form) }}
+{# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{{ form_end(form) }} #}
+
+{% extends "adminpage/layout.html.twig" %}
+
+    {% block div %}
+
+<div class="container">
+    <div class="col-12 offset-1">
+                 {{form_start(form, {'attr':{'id':'contactform' }})}}
+                    <div>
+                    <h1>Crear película nueva</h1>
+                    </div>
+
+                        <div class="form-group">
+                     <label for="formGroupExampleInput">Título de la cabecera <span class="required">*</span></label>
+                    {{form_widget(form.titCabecera, {'attr':{'id':'cabecera', 'class':'form-control', 'placeholder':'Título cabecera', 'required':''}})}}
+                    </div>
+                        <br>
+                    <div>
+                    <label>Título de la edicion de mirant<span class="required">*</span></label>
+                    {{form_widget(form.titMirant, {'attr':{'id':'titulo', 'class':'form-control', 'placeholder':'Título de mirant', 'required':''}})}}
+                    </div>
+ <br>
+                    <div>
+                    <label>Descripción de mirant</label>
+                    {{form_widget(form.descripcionMirant, {'attr':{'id':'trailer', 'class':'form-control', 'placeholder':'descripción mirant', 'required':''}})}}
+                    </div>
+ <br>
+                    <div>
+                    <label>Cartel de mirant</label>
+                    {{form_widget(form.cartelMirant, {'attr':{'id':'cartel', 'class':'form-control',  'placeholder':'Imagen carte mirant', 'required':''}})}}
+                    </div>
+                    <div>
+
+                    <label>Video mirant</label>
+                    {{form_widget(form.videoSpotMirant, {'attr':{'id':'Video',  'class':'form-control', 'required':''}})}}
+                    </div>
+                    <div>
+                          
+ <br>
+
+                    <div class="col-12 offset-4">
+					{{form_widget(form.send, {'attr':{'class':'btn btn-info', 'placeholder':'Enviar',  'type':'submit'}})}}
+         			<input type="reset" value="Reset" class="btn btn-warning">
+					</div>
+
+
+                    {{form_end(form)}}
+            </div>
+    </div>
+    
+            {% endblock %}

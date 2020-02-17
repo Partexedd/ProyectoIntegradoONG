@@ -1,34 +1,37 @@
-<!DOCTYPE html>
+{% extends "adminpage/layout.html.twig" %}
 
-<title>PagMirant index</title>
-
-{% block body %}
+    {% block div %}
+   <a href="{{ path('pag_mirant_new') }}" style="margin-left:10px" ><button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-plus"></i>
+            <span>Añadir nuevo</span>
+            </button></a>
     <h1>PagMirant index</h1>
 
-    <table class="table">
+    <table class="table" style="text-align:center" align="center">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>TitCabecera</th>
-                <th>TitMirant</th>
-                <th>DescripcionMirant</th>
+                <th>Edición</th>
+                {# <th>TitCabecera</th> #}
+                <th>Título Mirant</th>
+                {# <th>DescripcionMirant</th> #}
                 <th>CartelMirant</th>
-                <th>VideoSpotMirant</th>
-                <th>actions</th>
+                {# <th>VideoSpotMirant</th>
+                <th>actions</th> #}
             </tr>
         </thead>
         <tbody>
         {% for pag_mirant in pag_mirants %}
             <tr>
                 <td>{{ pag_mirant.id }}</td>
-                <td>{{ pag_mirant.titCabecera }}</td>
+                {# <td>{{ pag_mirant.titCabecera }}</td> #}
                 <td>{{ pag_mirant.titMirant }}</td>
-                <td>{{ pag_mirant.descripcionMirant }}</td>
+                {# <td>{{ pag_mirant.descripcionMirant }}</td>
                 <td>{{ pag_mirant.cartelMirant }}</td>
-                <td>{{ pag_mirant.videoSpotMirant }}</td>
+                <td>{{ pag_mirant.videoSpotMirant }}</td> #}
                 <td>
-                    <a href="{{ path('pag_mirant_show', {'id': pag_mirant.id}) }}">show</a>
-                    <a href="{{ path('pag_mirant_edit', {'id': pag_mirant.id}) }}">edit</a>
+                    <a href="{{path('pag_mirant_show', {'id': pag_mirant.id}) }}" ><i class="fas fa-eye" ></i></a>
+                    <br>
+                    <a href="{{path('pag_mirant_edit', {'id': pag_mirant.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -38,6 +41,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('pag_mirant_new') }}">Create new</a>
 {% endblock %}
