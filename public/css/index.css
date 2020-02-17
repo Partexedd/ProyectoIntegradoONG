@@ -9,21 +9,48 @@ i#i{
     background-color: #00000057;
     background-blend-mode:soft-light;
 }
+p{
+
+}
 article{
   margin-top: 5%;
   margin-bottom: 5%;
 }
-iframe{
+.youtube{
       max-width: 100%;
-      width: 100%;
-      margin: 0;
+      width: 75% !important;
+      margin: 0 !important;
       line-height: 1;
       border: none;
-      height: 500px !important;
-  }
+      height: 700px !important;
+}
+.cartb{
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  border:0 !important;
+}
+.mapa{
+  max-width: 100%;
+  width: 100% !important;
+  margin: 0 !important;
+  line-height: 1;
+  border: none;
+  height: 500px !important;
+}
   @media only screen and (max-width: 1000px){
-    iframe{
+    .youtube{
       height: 250px !important;
+      width: 100% !important;
+    }
+    .mapa{
+      height: 300px !important;
+    }
+    .cartb{
+      margin: 0 auto; /* Added */
+      margin-top: 2%;
+      margin-bottom: 2%;
+      text-align: center;
+      width: 70% !important;
     }
   }
   #titulo{

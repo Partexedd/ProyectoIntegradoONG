@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New PagNuestraPropuesta</title>
+
+{% block body %}
+    <h1>Create new PagNuestraPropuesta</h1>
+
+    {{ include('pag_nuestra_propuesta/_form.html.twig') }}
+
+    <a href="{{ path('pag_nuestra_propuesta_index') }}">back to list</a>
+{% endblock %}

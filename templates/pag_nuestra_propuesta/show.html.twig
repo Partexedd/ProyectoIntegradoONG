@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<title>PagNuestraPropuesta</title>
+
+{% block body %}
+    <h1>PagNuestraPropuesta</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pag_nuestra_propuestum.id }}</td>
+            </tr>
+            <tr>
+                <th>TitCabecera</th>
+                <td>{{ pag_nuestra_propuestum.titCabecera }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pag_nuestra_propuesta_index') }}">back to list</a>
+
+    <a href="{{ path('pag_nuestra_propuesta_edit', {'id': pag_nuestra_propuestum.id}) }}">edit</a>
+
+    {{ include('pag_nuestra_propuesta/_delete_form.html.twig') }}
+{% endblock %}

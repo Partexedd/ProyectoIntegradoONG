@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<title>PagInicio index</title>
+
+{% block body %}
+    <h1>PagInicio index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitCabecera</th>
+                <th>TitInicio</th>
+                <th>SubtInicio</th>
+                <th>ImagenInicio</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pag_inicio in pag_inicios %}
+            <tr>
+                <td>{{ pag_inicio.id }}</td>
+                <td>{{ pag_inicio.titCabecera }}</td>
+                <td>{{ pag_inicio.titInicio }}</td>
+                <td>{{ pag_inicio.subtInicio }}</td>
+                <td>{{ pag_inicio.imagenInicio }}</td>
+                <td>
+                    <a href="{{ path('pag_inicio_show', {'id': pag_inicio.id}) }}">show</a>
+                    <a href="{{ path('pag_inicio_edit', {'id': pag_inicio.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pag_inicio_new') }}">Create new</a>
+{% endblock %}

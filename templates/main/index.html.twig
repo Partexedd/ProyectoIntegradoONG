@@ -18,20 +18,22 @@
     <div class="col-12 text-center mt-5">
       <img src="{{ asset(contenido.imagenInicio, "imagen") }}" alt="cartel salud y cambio climático" style="width:90%">
     </div>
-
-  </article>
 {% endfor %}
+  </article>
+</section>
+<section class="container-fluid">
   <article class="row">
 
     <div class="col-12 text-center">
       <h1>Conócenos</h1>
     </div>
     <div class="col-12 text-center">
-      <iframe src="https://www.youtube.com/embed/UI-CHyHa4VE" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="youtube" src="https://www.youtube.com/embed/UI-CHyHa4VE" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
   </article>
-
+</section>
+<section class="container">
   <article class="row">
 
     <div class="col-12 text-center">
@@ -42,9 +44,7 @@
     </div>
 
     <!-- Cards -->
-    <article class="row">
-      <div class="col-lg-3 col-md-3 col-xs-6 col-12">
-        <div class="card">
+        <div class="card col-lg-3 col-md-3 col-sm-12 cartb">
             <div class="card-body text-center" id="cards">
               <i id="i" class="fa fa-stethoscope"></i>
               <h3 class="card-title mt-2"  style="height:60px">Salud Global</h3>
@@ -53,9 +53,7 @@
               <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}#Salud">Leer más</a>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-xs-6 col-12">
-        <div class="card">
+        <div class="card col-lg-3 col-md-3 col-sm-12 cartb">
             <div class="card-body text-center" id="cards">
             <i id="i" class="fa fa-address-card"></i>
             <h3 class="card-title mt-2" style="height:60px">Derecho a la Salud</h3>
@@ -64,9 +62,7 @@
             <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}#Derecho">Leer más</a>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-xs-6 col-12">
-        <div class="card">
+        <div class="card col-lg-3 col-md-3 col-sm-12 cartb">
             <div class="card-body text-center" id="cards">
             <i id="i" class="fa fa-globe" aria-hidden="true"></i>
             <h3 class="card-title mt-2" style="height:60px">Cooperación al desarrollo</h3>
@@ -75,9 +71,7 @@
             <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}#Cooperacion">Leer más</a>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-xs-6 col-12">
-        <div class="card">
+        <div class="card col-lg-3 col-md-3 col-sm-12 cartb">
             <div class="card-body text-center" id="cards">
             <i id="i" class="fa fa-book"></i>
             <h3 class="card-title mt-2" style="height:60px">Agenda 2030 ODS</h3>
@@ -85,18 +79,16 @@
             <p class="card-text" style="height:100px">Entendemos que la salud es un concepto global que no entiende de fronteras.</p>
             <a type="button" class="btn btn-primary mt-2" href="{{ path('expandido') }}#Agenda">Leer más</a>
         </div>
-      </div>
-    </article>
 </section>
 <section class="container">
   <article class="row justify-content-center">
 
-    <h4 class="text-secondary">¿Quieres conocer mejor el proyecto?</h4>
+    <h5 class="text-secondary text-center">¿Quieres conocer mejor el proyecto?</h4>
 
   </article>
   <article class="row justify-content-center">
 
-    <h4 class="text-secondary col-xl-12 col-md-10 col-xs-8 col-4">Descárgate el suplemento sobre las Redes Sanitarias Solidarias que editó La Directa.</h4>
+    <h5 class="text-secondary text-center">Descárgate el suplemento sobre las Redes Sanitarias Solidarias que editó La Directa.</h4>
 
   </article>
   <article class="row justify-content-center">
@@ -115,8 +107,8 @@ background-blend-mode: soft-light;">
 
 </section>
 
-<section class="container">
-  <article class="row">
+<section class="container-fluid">
+  <article class="row justify-content-center">
 
     <p class="text-secondary text-justify">Porque estar sano no es solo no estar enfermo, porque la salud no entiende de fronteras, porque la salud de las personas es una cuestión de <b>justicia social</b>.</p>
 
@@ -130,11 +122,15 @@ background-blend-mode: soft-light;">
 
   <article class="row justify-content-center">
 
-    <iframe src="https://www.google.com/maps/d/embed?mid=1uKVDBlaFmrizerhTXUjNBX8mCj24FJPV" width="600" height="450" frameborder="0" style="border:0"></iframe>
-    <a type="button" class="btn btn-primary mt-5" href="{{ path('entidades') }}"><i class="fa fa-group mr-2"></i>Conócenos mejor, visita los perfiles de cada entidad</a>
+    <iframe class="mapa" src="https://www.google.com/maps/d/embed?mid=1uKVDBlaFmrizerhTXUjNBX8mCj24FJPV" height="450" frameborder="0" style="border:0"></iframe><br>
 
   </article>
+  <article class="row justify-content-center">
+    <a type="button" class="btn btn-primary col-8 col-md-3 mt-5" href="{{ path('entidades') }}"><i class="fa fa-group mr-2"></i>Conócenos mejor, visita los perfiles de cada entidad</a>
 
+  </article>
+</section>
+<section class="container">
   <article class="row justify-content-center">
 
     <h4>Proyecto coordinado por</h4>

@@ -1,0 +1,55 @@
+{% extends "main/layout.html.twig" %}
+{% block head %}
+    <link rel="stylesheet" href="/css/estilosContacto.css">
+{% endblock %}
+{% block titulo %}Contacto{% endblock %}
+{% block contenido %}
+        {% endfor %}
+        <!-- Formulario de contacto -->
+        <article id="formulario" class="row text-secondary">
+            <h1 class="col-12 text-center h1Form text-dark">Formulario de inscripción Mirant</h1>
+            {# <form class="> #}
+            {{form_start(form, {'attr':{'class':"col-8 offset-2", "action":""}})}}
+                <label for="nombre">Tu nombre (requerido)</label><br>
+                {# <input name="nombre" class="form-control" type="text"></input> #}
+                 {{form_widget(form.nombre, {'attr':{'class':'form-control', 'placeholder':'Nombre', 'required':''}})}}
+                <label for="email">Tu correo electrónico (requerido)</label><br>
+                {# <input name="email" class="form-control" type="text"></input> #}
+                {{form_widget(form.email, {'attr':{'class':'form-control', 'placeholder':'Email', 'required':''}})}}
+                <label for="rss">Selecciona la RSS de tu provincia</label><br>
+                {# <select class="custom-select" name="rss">
+                    <option value="rssc">RSS Castellón</option>
+                    <option value="rssv">RSS Valencia</option>
+                    <option value="rssa">RSS Alicante</option>
+                </select> #}
+                {{ form_widget(form.rssProvincia, {'attr':{'class':'custom-select', 'required':''}}) }}
+                <br>
+                <label for="selRSS">¿A quién representas?</label>
+                {# <select class="custom-select" id="selRSS">
+                    <option value="administracionPublica">Admnistración Pública</option>
+                    <option value="asociacion">Asociación</option>
+                    <option value="ong_d">ONG/ONGD</option>
+                    <option value="colegioProfesional">Colegio Profesional</option>
+                    <option value="universidades">Universidades</option>
+                    <option value="otra">Otra</option>
+                </select> #}
+                {{ form_widget(form.representa, {'attr':{'class':'custom-select', 'required':''}}) }}
+                <label for="asunto">Asunto</label><br>
+                {# <input name="asunto" class="form-control" type="text"></input> #}
+                {{form_widget(form.asunto, {'attr':{'class':'form-control', 'placeholder':'Asunto', 'required':''}})}}
+                <label for="mensaje">Tu mensaje</label><br>
+                {# <textarea name="mensaje" class="form-control" type="text" style="height:200px;resize:none;" cols="40" rows="20"></textarea><br> #}
+                 {{form_widget(form.mensaje, {'attr':{'class':'form-control', 'placeholder':'Mensaje', 'required':'', 'style':"height:200px;resize:none;", 'cols':"40", 'rows':"20"}})}}
+                {# <button class="btn boton">Enviar</button> #}
+                {{form_widget(form.send, {'attr':{'class':'btn bot', 'placeholder':'Enviar',  'type':'submit'}})}}
+            {# </form> #}
+                              {{form_end(form)}}
+        </article>
+        <!-- Modelo de adhesión de la RSS -->
+        <article id="adhesionRSS" class="row">
+            <div class="col-12 text-center text-dark">
+                <h1>Modelo de adhesión a la RSS de tu provincia</h1>
+                <a href="https://redsanitariasolidaria.org/wp-content/uploads/2018/10/MODELO-DOCUMENTO-ADHESIO%CC%81N-A-RSS.pdf" target="_blank"><button class="btn modelo bot mb-5">Ver modelo</button></a>
+            </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<title>PagInicio</title>
+
+{% block body %}
+    <h1>PagInicio</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pag_inicio.id }}</td>
+            </tr>
+            <tr>
+                <th>TitCabecera</th>
+                <td>{{ pag_inicio.titCabecera }}</td>
+            </tr>
+            <tr>
+                <th>TitInicio</th>
+                <td>{{ pag_inicio.titInicio }}</td>
+            </tr>
+            <tr>
+                <th>SubtInicio</th>
+                <td>{{ pag_inicio.subtInicio }}</td>
+            </tr>
+            <tr>
+                <th>ImagenInicio</th>
+                <td>{{ pag_inicio.imagenInicio }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pag_inicio_index') }}">back to list</a>
+
+    <a href="{{ path('pag_inicio_edit', {'id': pag_inicio.id}) }}">edit</a>
+
+    {{ include('pag_inicio/_delete_form.html.twig') }}
+{% endblock %}
