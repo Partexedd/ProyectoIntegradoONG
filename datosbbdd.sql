@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-02-2020 a las 23:23:37
+-- Tiempo de generación: 17-02-2020 a las 23:44:57
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -155,7 +155,7 @@ CREATE TABLE `pag_forma_parte` (
 --
 
 INSERT INTO `pag_forma_parte` (`id`, `tit_cabecera`) VALUES
-(1, 'Forma parte ');
+(1, 'Es vital que avancemos en la defensa, en todo el mundo');
 
 -- --------------------------------------------------------
 
@@ -176,7 +176,7 @@ CREATE TABLE `pag_inicio` (
 --
 
 INSERT INTO `pag_inicio` (`id`, `tit_cabecera`, `tit_inicio`, `subt_inicio`, `imagen_inicio`) VALUES
-(1, 'Si', 'Hola', 'Buenos', 'web-cartel.jpg');
+(1, 'Juntas somos más fuertes.', 'Este 2020 las RSS hablan de Salud y Cámbio Climático', 'Infórmate, Inscríbete, Súmate', 'web-cartel.jpg');
 
 -- --------------------------------------------------------
 
@@ -226,7 +226,7 @@ CREATE TABLE `pag_mirant` (
 
 INSERT INTO `pag_mirant` (`id`, `tit_cabecera`, `tit_mirant`, `descripcion_mirant`, `cartel_mirant`, `video_spot_mirant`) VALUES
 (1, 'I Mostra Itinerant de Cinema i Salut Global', 'I Mostra Itinerant de Cinema i Salut Global', 'Mirant sale del juego con la contracción de las palabras Mostra ItineRANT. Pero también significa mirando en valenciano. La primera de las acepciones del verbo mirar se refiere a “Dirigir la vista hacia algo y fijar la atención en ello”. Eso es lo que esperamos conseguir con esta Mostra de cine, que la gente dirija la vista y fije la atención hacia los problemas que se están dando en la actualidad en todo el planeta sobre la salud global, desde enfoques de género, medioambiente, derechos humanos… y entre todas, una vez hayamos dirigido la mirada y fijado la atención en estos temas, debatamos y reflexionemos de forma colectiva para ver cuál es nuestro papel en todo esto, y cómo podemos contribuir a lograr un mundo más sano, y por lo tanto, más justo. Si te gusta la idea, selecciona tu provincia, infórmate sobre las películas, reserva tu/s entrada/s… y guarda la fecha en tu agenda para asistir a la I Mostra de Cinema Itinerant de Cinema y Salut Global de la Comunitat Valenciana. ¡Te esperamos en Mirant!', 'Cartel-mirant-i.png', 'https://youtu.be/TAaZ9OhbdlA'),
-(2, 'Segunda edición', '\"Salud y Mujer, Necesidades y Desafios\"', 'Mirant sale del juego con la contracción de las palabras Mostra ItineRANT. Pero también significa mirando en valenciano. La primera de las acepciones del verbo mirar se refiere a “Dirigir la vista hacia algo y fijar la atención en ello”. Eso es lo que esperamos conseguir con esta Mostra de cine, que la gente dirija la vista y fije la atención hacia los problemas que se están dando en la actualidad en todo el planeta sobre la salud global, desde enfoques de género, medioambiente, derechos humanos… y entre todas, debatamos y reflexionemos de forma colectiva para ver cuál es nuestro papel, y cómo podemos contribuir a lograr un mundo más sano, y más justo. Este año, el lema elegido por las más de 40 entidades que formamos las RSS, ha sido «Salud y Mujer, necesidades y desafios». Si te gusta la idea, selecciona tu provincia, infórmate sobre las películas, reserva tu/s entrada/s… y guarda la fecha en tu agenda para asistir a la II Mostra de Cinema Itinerant de Cinema y Salut Global de la Comunitat Valenciana. ¡Te esperamos en Mirant!', 'Cartel-IMP_page-0001.jpg', 'https://youtu.be/755APbFY-Ng');
+(2, '\"Salud y Mujer, Necesidades y Desafios\"', '\"Salud y Mujer, Necesidades y Desafios\"', 'Mirant sale del juego con la contracción de las palabras Mostra ItineRANT. Pero también significa mirando en valenciano. La primera de las acepciones del verbo mirar se refiere a “Dirigir la vista hacia algo y fijar la atención en ello”. Eso es lo que esperamos conseguir con esta Mostra de cine, que la gente dirija la vista y fije la atención hacia los problemas que se están dando en la actualidad en todo el planeta sobre la salud global, desde enfoques de género, medioambiente, derechos humanos… y entre todas, debatamos y reflexionemos de forma colectiva para ver cuál es nuestro papel, y cómo podemos contribuir a lograr un mundo más sano, y más justo. Este año, el lema elegido por las más de 40 entidades que formamos las RSS, ha sido «Salud y Mujer, necesidades y desafios». Si te gusta la idea, selecciona tu provincia, infórmate sobre las películas, reserva tu/s entrada/s… y guarda la fecha en tu agenda para asistir a la II Mostra de Cinema Itinerant de Cinema y Salut Global de la Comunitat Valenciana. ¡Te esperamos en Mirant!', 'Cartel-IMP_page-0001.jpg', 'https://youtu.be/755APbFY-Ng');
 
 -- --------------------------------------------------------
 
@@ -244,7 +244,7 @@ CREATE TABLE `pag_nuestra_propuesta` (
 --
 
 INSERT INTO `pag_nuestra_propuesta` (`id`, `tit_cabecera`) VALUES
-(1, 'Yessssss');
+(1, 'compromiso con la formación de profesionales y estudiantes');
 
 -- --------------------------------------------------------
 

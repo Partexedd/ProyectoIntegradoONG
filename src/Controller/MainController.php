@@ -142,10 +142,12 @@ class MainController extends AbstractController
     public function formaParte(SessionInterface $session)
     {
         $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
+        $FormaBBDD=$this->getDoctrine()->getRepository(PagFormaParte::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/forma_parte.html.twig', [
           'imagenheader' => '1690.jpg',
-          'EdicionMirant' => $Mirant, 
+          'EdicionMirant' => $Mirant,
+          'formabbdd' => $FormaBBDD
         ]);
     }
 

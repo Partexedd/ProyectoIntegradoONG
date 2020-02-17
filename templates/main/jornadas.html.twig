@@ -58,19 +58,19 @@
             <li>Alicante: {{jornadas.getFechaPonenteA()|date("m/d/y")}}</li>
         </ul>
         <div class="row">
-            <img class="col-md-4 col-sm-12 carteles" id="myImg1" src="/img/{{ jornadas.cartelPonenteC }}"><br>
+            <img class="col-md-4 col-sm-12 carteles" id="myImg1" src="{{asset( jornadas.cartelPonenteC, 'cartelesJornadas') }}"><br>
                 <div id="myModal1" class="modal">
                     <span class="close1">&times;</span>
                     <img class="modal-content" id="img01">
                     <div id="caption"></div>
                 </div>
-            <img class="col-md-4 col-sm-12 carteles" id="myImg2" src="/img/{{ jornadas.cartelPonenteV }}"><br>
+            <img class="col-md-4 col-sm-12 carteles" id="myImg2" src="{{asset( jornadas.cartelPonenteV, 'cartelesJornadas') }}"><br>
                 <div id="myModal2" class="modal">
                     <span class="close2">&times;</span>
                     <img class="modal-content" id="img02">
                     <div id="caption"></div>
                 </div>
-            <img class="col-md-4 col-sm-12 carteles" id="myImg3" src="/img/{{ jornadas.cartelPonenteA }}"><br>
+            <img class="col-md-4 col-sm-12 carteles" id="myImg3" src="{{asset( jornadas.cartelPonenteA, 'cartelesJornadas') }}"><br>
                 <div id="myModal3" class="modal">
                     <span class="close3">&times;</span>
                     <img class="modal-content" id="img03">

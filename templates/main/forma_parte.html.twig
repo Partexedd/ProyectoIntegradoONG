@@ -3,6 +3,7 @@
 {% block head %}
 <link rel="stylesheet" href="./css/forma_parte.css">
 {% endblock %}
+{% block TituloCabecera %}{% for cabeza in formabbdd %}{{ cabeza.titCabecera }}{% endfor %}{% endblock %}
 {% block contenido %}
 <section class="container-fluid">
     <article class="row">
