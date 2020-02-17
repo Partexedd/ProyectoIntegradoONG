@@ -32,7 +32,7 @@ class MainController extends AbstractController
         ]);
     }
 
-       /**
+    /**
      * @Route("/nuestraPropuesta", name="nuestraPropuesta")
      */
     public function nuestraPropuesta(SessionInterface $session)
@@ -254,6 +254,18 @@ if ($user1) {
         $session->invalidate();
                 return $this->redirectToRoute('adminlogin');
 
+    }
+
+    /**
+    * @Route("/formularioInscripcion", name="formularioInscripcion")
+    */
+    public function formularioInscripcion(SessionInterface $session)
+    {
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
+        return $this->render('main/formularioInscripcionMirant.html.twig', [
+            'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg',
+            'EdicionMirant' => $Mirant, 
+        ]);
     }
 
 }
