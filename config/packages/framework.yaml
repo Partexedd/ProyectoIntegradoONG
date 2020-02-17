@@ -28,3 +28,9 @@ framework:
                 base_path: '/img/Carteles_mirant/'
             cartelesJornadas:
                 base_path: '/img/jornadas/'
+            entidadesVal:
+                base_path: '/img/entidades/Valencia'
+            entidadesCast:
+                base_path: '/img/entidades/Castellon'
+            entidadesAlic:
+                base_path: '/img/entidades/Alicante'

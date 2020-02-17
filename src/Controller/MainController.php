@@ -10,7 +10,6 @@ use App\Form\ContactarType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\EnvioContactoType;
 use Symfony\Component\HttpFoundation\Response;
-
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class MainController extends AbstractController
@@ -161,10 +160,9 @@ class MainController extends AbstractController
         $usuarioBBDD=$this->getDoctrine()
         ->getRepository(Admin::class)
         ->findOneBy(['usuario' => $user]);
-if ($user1) {
-    return $this->redirectToRoute('indexAdmin');
-}
-        if ($usuarioBBDD){
+            if ($user1) {
+             return $this->redirectToRoute('indexAdmin');}
+            if ($usuarioBBDD){
             if ($usuarioBBDD->getPassword()==$password) {
                 $session->set('nombre_usuario', $user);
                 $session->set('password', $password);

@@ -1,276 +1,435 @@
--- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Versión del servidor:         10.1.40-MariaDB - mariadb.org binary distribution
--- SO del servidor:              Win64
--- HeidiSQL Versión:             10.1.0.5464
--- --------------------------------------------------------
+-- phpMyAdmin SQL Dump
+-- version 5.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 17-02-2020 a las 23:23:37
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Base de datos: `datosbbdd`
+--
 
--- Volcando estructura de base de datos para datosbbdd
-CREATE DATABASE IF NOT EXISTS `datosbbdd` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `datosbbdd`;
+-- --------------------------------------------------------
 
--- Volcando estructura para tabla datosbbdd.admin
-CREATE TABLE IF NOT EXISTS `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estructura de tabla para la tabla `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
   `usuario` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.admin: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+--
+-- Volcado de datos para la tabla `admin`
+--
 
--- Volcando estructura para tabla datosbbdd.carteles_jornadas
-CREATE TABLE IF NOT EXISTS `carteles_jornadas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `img_valencia` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `img_alicante` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `img_castellon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `admin` (`id`, `usuario`, `password`) VALUES
+(1, 'admin', 'admin');
 
--- Volcando datos para la tabla datosbbdd.carteles_jornadas: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `carteles_jornadas` DISABLE KEYS */;
-INSERT INTO `carteles_jornadas` (`id`, `img_valencia`, `img_alicante`, `img_castellon`) VALUES
-	(1, 'ODS-Valencia.jpg', 'ODS-Alicante.jpg', 'ODS-Castellon.jpg');
-/*!40000 ALTER TABLE `carteles_jornadas` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- Volcando estructura para tabla datosbbdd.contactar
-CREATE TABLE IF NOT EXISTS `contactar` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estructura de tabla para la tabla `contactar`
+--
+
+CREATE TABLE `contactar` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `rss_provincia` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `representa` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `asunto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mensaje` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fecha` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.contactar: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `contactar` DISABLE KEYS */;
-/*!40000 ALTER TABLE `contactar` ENABLE KEYS */;
+--
+-- Volcado de datos para la tabla `contactar`
+--
 
--- Volcando estructura para tabla datosbbdd.entidades
-CREATE TABLE IF NOT EXISTS `entidades` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `logo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+INSERT INTO `contactar` (`id`, `nombre`, `email`, `rss_provincia`, `representa`, `asunto`, `mensaje`, `fecha`) VALUES
+(1, 'AWDaw', 'holabuenas@gmail.com', 'rssc', 'administracionPublica', '123', '123123123', '2020-02-15 17:05:41');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `form_contact`
+--
+
+CREATE TABLE `form_contact` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `telefono` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `correo` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `localizacion` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descripcion` longtext COLLATE utf8mb4_unicode_ci,
-  PRIMARY KEY (`id`)
+  `correo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `provincia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `representacion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `asunto` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mensaje` longtext COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.entidades: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `entidades` DISABLE KEYS */;
-/*!40000 ALTER TABLE `entidades` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- Volcando estructura para tabla datosbbdd.fechas_jornadas
-CREATE TABLE IF NOT EXISTS `fechas_jornadas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `valencia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `alicante` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `castellon` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+--
+-- Estructura de tabla para la tabla `migration_versions`
+--
 
--- Volcando datos para la tabla datosbbdd.fechas_jornadas: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `fechas_jornadas` DISABLE KEYS */;
-INSERT INTO `fechas_jornadas` (`id`, `valencia`, `alicante`, `castellon`) VALUES
-	(1, '24 de septiembre, 18:00 horas en el Colegio Oficial de Ópticos-Optometristas de Valencia.', '25 de septiembre, 18:00 horas en la Sede Universitaria Ciudad de Alicante.', '26 de septiembre, 18:00 horas en el Menador Espai Cultural de Castelló.');
-/*!40000 ALTER TABLE `fechas_jornadas` ENABLE KEYS */;
-
--- Volcando estructura para tabla datosbbdd.introduccion_mirant
-CREATE TABLE IF NOT EXISTS `introduccion_mirant` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `edicion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `titulo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` longtext COLLATE utf8mb4_unicode_ci,
-  `cartel_mirant` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Volcando datos para la tabla datosbbdd.introduccion_mirant: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `introduccion_mirant` DISABLE KEYS */;
-INSERT INTO `introduccion_mirant` (`id`, `edicion`, `titulo`, `descripcion`, `cartel_mirant`) VALUES
-	(1, 'I', 'Mostra Itinerant de Cinema i Salut Global', 'Mirant sale del juego con la contracción de las palabras Mostra ItineRANT. Pero también significa mirando en valenciano. La primera de las acepciones del verbo mirar se refiere a “Dirigir la vista hacia algo y fijar la atención en ello”. Eso es lo que esperamos conseguir con esta Mostra de cine, que la gente dirija la vista y fije la atención hacia los problemas que se están dando en la actualidad en todo el planeta sobre la salud global, desde enfoques de género, medioambiente, derechos humanos… y entre todas, una vez hayamos dirigido la mirada y fijado la atención en estos temas, debatamos y reflexionemos de forma colectiva para ver cuál es nuestro papel en todo esto, y cómo podemos contribuir a lograr un mundo más sano, y por lo tanto, más justo. Si te gusta la idea, selecciona tu provincia, infórmate sobre las películas, reserva tu/s entrada/s… y guarda la fecha en tu agenda para asistir a la I Mostra de Cinema Itinerant de Cinema y Salut Global de la Comunitat Valenciana. ¡Te esperamos en Mirant!', 'Cartel-mirant-i.png'),
-	(2, 'II', '"Salud y Mujer, Necesidades y Desafios"', 'Mirant sale del juego con la contracción de las palabras Mostra ItineRANT. Pero también significa mirando en valenciano. La primera de las acepciones del verbo mirar se refiere a “Dirigir la vista hacia algo y fijar la atención en ello”. Eso es lo que esperamos conseguir con esta Mostra de cine, que la gente dirija la vista y fije la atención hacia los problemas que se están dando en la actualidad en todo el planeta sobre la salud global, desde enfoques de género, medioambiente, derechos humanos… y entre todas, debatamos y reflexionemos de forma colectiva para ver cuál es nuestro papel, y cómo podemos contribuir a lograr un mundo más sano, y más justo. Este año, el lema elegido por las más de 40 entidades que formamos las RSS, ha sido «Salud y Mujer, necesidades y desafios». Si te gusta la idea, selecciona tu provincia, infórmate sobre las películas, reserva tu/s entrada/s… y guarda la fecha en tu agenda para asistir a la II Mostra de Cinema Itinerant de Cinema y Salut Global de la Comunitat Valenciana. ¡Te esperamos en Mirant!', 'Cartel-IMP_page-0001.jpg');
-/*!40000 ALTER TABLE `introduccion_mirant` ENABLE KEYS */;
-
--- Volcando estructura para tabla datosbbdd.migration_versions
-CREATE TABLE IF NOT EXISTS `migration_versions` (
+CREATE TABLE `migration_versions` (
   `version` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `executed_at` datetime NOT NULL COMMENT '(DC2Type:datetime_immutable)',
-  PRIMARY KEY (`version`)
+  `executed_at` datetime NOT NULL COMMENT '(DC2Type:datetime_immutable)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.migration_versions: ~3 rows (aproximadamente)
-/*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
+--
+-- Volcado de datos para la tabla `migration_versions`
+--
+
 INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
-	('20200213094557', '2020-02-13 09:46:29'),
-	('20200213095100', '2020-02-13 09:51:08'),
-	('20200213112429', '2020-02-13 11:24:45');
-/*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
+('20200214184540', '2020-02-14 18:46:01');
 
--- Volcando estructura para tabla datosbbdd.paginas_ong
-CREATE TABLE IF NOT EXISTS `paginas_ong` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_pagina` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tit_cabecera` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- --------------------------------------------------------
 
--- Volcando datos para la tabla datosbbdd.paginas_ong: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `paginas_ong` DISABLE KEYS */;
-INSERT INTO `paginas_ong` (`id`, `nombre_pagina`, `tit_cabecera`) VALUES
-	(1, 'Inicio', NULL),
-	(2, 'Propuesta', NULL),
-	(3, 'Jornadas', NULL),
-	(4, 'Mirant i', NULL),
-	(5, 'Forma Parte', NULL),
-	(6, 'Entidades', NULL),
-	(7, 'Contacto', NULL),
-	(8, 'Mirant ii', NULL),
-	(9, 'Mirant iii', NULL);
-/*!40000 ALTER TABLE `paginas_ong` ENABLE KEYS */;
+--
+-- Estructura de tabla para la tabla `pag_contacto`
+--
 
--- Volcando estructura para tabla datosbbdd.pag_inicio
-CREATE TABLE IF NOT EXISTS `pag_inicio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tit_cabecera_id` int(11) DEFAULT NULL,
-  `spot_id` int(11) DEFAULT NULL,
-  `video_conocenos` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `link_suplemento_pdf` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_3D1CBE9C2BB870DE` (`tit_cabecera_id`),
-  UNIQUE KEY `UNIQ_3D1CBE9C2DF1D37C` (`spot_id`),
-  CONSTRAINT `FK_3D1CBE9C2BB870DE` FOREIGN KEY (`tit_cabecera_id`) REFERENCES `paginas_ong` (`id`),
-  CONSTRAINT `FK_3D1CBE9C2DF1D37C` FOREIGN KEY (`spot_id`) REFERENCES `spot_inicio` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `pag_contacto` (
+  `id` int(11) NOT NULL,
+  `tit_cabecera` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `direccion_v` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `direccion_a` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `direccion_c` longtext COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.pag_inicio: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `pag_inicio` DISABLE KEYS */;
-INSERT INTO `pag_inicio` (`id`, `tit_cabecera_id`, `spot_id`, `video_conocenos`, `link_suplemento_pdf`) VALUES
-	(1, 1, 1, 'https://www.youtube.com/watch?v=UI-CHyHa4VE', 'https://redsanitariasolidaria.org/wp-content/uploads/2019/08/Suplement_XarxaSanitat_web.pdf');
-/*!40000 ALTER TABLE `pag_inicio` ENABLE KEYS */;
+--
+-- Volcado de datos para la tabla `pag_contacto`
+--
 
--- Volcando estructura para tabla datosbbdd.pag_jornadas
-CREATE TABLE IF NOT EXISTS `pag_jornadas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tit_cabecera_id` int(11) DEFAULT NULL,
-  `fechas_jornadas_id` int(11) DEFAULT NULL,
-  `carteles_jornadas_id` int(11) DEFAULT NULL,
-  `formulario_ins` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_7586F3AE2BB870DE` (`tit_cabecera_id`),
-  UNIQUE KEY `UNIQ_7586F3AEBF058448` (`fechas_jornadas_id`),
-  UNIQUE KEY `UNIQ_7586F3AE9EB52D87` (`carteles_jornadas_id`),
-  CONSTRAINT `FK_7586F3AE2BB870DE` FOREIGN KEY (`tit_cabecera_id`) REFERENCES `paginas_ong` (`id`),
-  CONSTRAINT `FK_7586F3AE9EB52D87` FOREIGN KEY (`carteles_jornadas_id`) REFERENCES `carteles_jornadas` (`id`),
-  CONSTRAINT `FK_7586F3AEBF058448` FOREIGN KEY (`fechas_jornadas_id`) REFERENCES `fechas_jornadas` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `pag_contacto` (`id`, `tit_cabecera`, `direccion_v`, `direccion_a`, `direccion_c`) VALUES
+(1, 'Contacto', 'C/Mayor 56, escalera 3, piso 8B.<br>12001 - Castellón de la Plana<br> 964 222 020 - 601 187 746', 'Carrer d\'Utiel, 16<br> 46020 Valencia<br> 670 394 103', 'Av. de Denia, 47<br> 03013 Alicante<br> 965 650 487 - 660 575 104');
 
--- Volcando datos para la tabla datosbbdd.pag_jornadas: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `pag_jornadas` DISABLE KEYS */;
-INSERT INTO `pag_jornadas` (`id`, `tit_cabecera_id`, `fechas_jornadas_id`, `carteles_jornadas_id`, `formulario_ins`) VALUES
-	(1, 3, 1, 1, 'https://www.encuestafacil.com/RespWeb/Qn.aspx?EID=2563232');
-/*!40000 ALTER TABLE `pag_jornadas` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- Volcando estructura para tabla datosbbdd.pag_mirant
-CREATE TABLE IF NOT EXISTS `pag_mirant` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tit_cabecera_id` int(11) DEFAULT NULL,
-  `video_mirant` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `introduccion_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_55157B4125AB11E9` (`introduccion_id`),
-  UNIQUE KEY `UNIQ_55157B412BB870DE` (`tit_cabecera_id`),
-  CONSTRAINT `FK_55157B4125AB11E9` FOREIGN KEY (`introduccion_id`) REFERENCES `introduccion_mirant` (`id`),
-  CONSTRAINT `FK_55157B412BB870DE` FOREIGN KEY (`tit_cabecera_id`) REFERENCES `paginas_ong` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+--
+-- Estructura de tabla para la tabla `pag_entidades`
+--
 
--- Volcando datos para la tabla datosbbdd.pag_mirant: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `pag_mirant` DISABLE KEYS */;
-INSERT INTO `pag_mirant` (`id`, `tit_cabecera_id`, `video_mirant`, `introduccion_id`) VALUES
-	(1, 4, 'https://www.youtube.com/watch?v=qMh0LUtnjL4', 1),
-	(2, 8, 'https://www.youtube.com/watch?v=755APbFY-Ng', 2);
-/*!40000 ALTER TABLE `pag_mirant` ENABLE KEYS */;
+CREATE TABLE `pag_entidades` (
+  `id` int(11) NOT NULL,
+  `tit_cabecera` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comunidad` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `localizacion_maps` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `correo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telefono` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `descripcion` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando estructura para tabla datosbbdd.pag_propuesta
-CREATE TABLE IF NOT EXISTS `pag_propuesta` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tit_cabecera_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_451673512BB870DE` (`tit_cabecera_id`),
-  CONSTRAINT `FK_451673512BB870DE` FOREIGN KEY (`tit_cabecera_id`) REFERENCES `paginas_ong` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- --------------------------------------------------------
 
--- Volcando datos para la tabla datosbbdd.pag_propuesta: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `pag_propuesta` DISABLE KEYS */;
-INSERT INTO `pag_propuesta` (`id`, `tit_cabecera_id`) VALUES
-	(1, 2);
-/*!40000 ALTER TABLE `pag_propuesta` ENABLE KEYS */;
+--
+-- Estructura de tabla para la tabla `pag_forma_parte`
+--
 
--- Volcando estructura para tabla datosbbdd.peliculas_mirant
-CREATE TABLE IF NOT EXISTS `peliculas_mirant` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `trailer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `edicion_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_CE6FC05FD651B81E` (`edicion_id`),
-  CONSTRAINT `FK_CE6FC05FD651B81E` FOREIGN KEY (`edicion_id`) REFERENCES `pag_mirant` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `pag_forma_parte` (
+  `id` int(11) NOT NULL,
+  `tit_cabecera` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla datosbbdd.peliculas_mirant: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `peliculas_mirant` DISABLE KEYS */;
-INSERT INTO `peliculas_mirant` (`id`, `titulo`, `img`, `trailer`, `edicion_id`) VALUES
-	(1, 'Comandante Arian', 'Comandante-arian-2018.jpg', 'https://www.youtube.com/watch?v=bTtNpcFYDUY', 2),
-	(2, 'La Manzana de Eva', 'http://localhost:8001/img/Carteles_mirant/la-manzana-de-eva-2017.png', '', NULL);
-/*!40000 ALTER TABLE `peliculas_mirant` ENABLE KEYS */;
+--
+-- Volcado de datos para la tabla `pag_forma_parte`
+--
 
--- Volcando estructura para tabla datosbbdd.ponente_jornada
-CREATE TABLE IF NOT EXISTS `ponente_jornada` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` longtext COLLATE utf8mb4_unicode_ci,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `pag_forma_parte` (`id`, `tit_cabecera`) VALUES
+(1, 'Forma parte ');
 
--- Volcando datos para la tabla datosbbdd.ponente_jornada: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `ponente_jornada` DISABLE KEYS */;
-INSERT INTO `ponente_jornada` (`id`, `titulo`, `img`, `descripcion`) VALUES
-	(1, 'El ponente: Dr.Carlos Gomez Gil', 'carlos-gomez-gil-150x150.jpg', 'Para estas jornadas contamos con la participación del Dr. En sociología de la Universidad de Alicante, Dr. Carlos Gomez Gil. Para conocer su extensa experiencia os recomendamos acudir a su blog aquí. El Dr. Gomez Gil estará con nosotros los siguietes días en los que se realizará el taller:');
-/*!40000 ALTER TABLE `ponente_jornada` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- Volcando estructura para tabla datosbbdd.spot_inicio
-CREATE TABLE IF NOT EXISTS `spot_inicio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subtitulo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `img` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+--
+-- Estructura de tabla para la tabla `pag_inicio`
+--
 
--- Volcando datos para la tabla datosbbdd.spot_inicio: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `spot_inicio` DISABLE KEYS */;
-INSERT INTO `spot_inicio` (`id`, `titulo`, `subtitulo`, `img`) VALUES
-	(1, 'Este 2020 las RSS hablan de Salud y Cámbio Climático', 'Infórmate, Inscríbete, Súmate', 'web-cartel.jpg');
-/*!40000 ALTER TABLE `spot_inicio` ENABLE KEYS */;
+CREATE TABLE `pag_inicio` (
+  `id` int(11) NOT NULL,
+  `tit_cabecera` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tit_inicio` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subt_inicio` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `imagen_inicio` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+--
+-- Volcado de datos para la tabla `pag_inicio`
+--
+
+INSERT INTO `pag_inicio` (`id`, `tit_cabecera`, `tit_inicio`, `subt_inicio`, `imagen_inicio`) VALUES
+(1, 'Si', 'Hola', 'Buenos', 'web-cartel.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pag_jornadas`
+--
+
+CREATE TABLE `pag_jornadas` (
+  `id` int(11) NOT NULL,
+  `tit_cabecera` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tit_ponente` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `foto_ponente` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `desc_ponente` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fecha_ponente_v` datetime DEFAULT NULL,
+  `fecha_ponente_a` datetime DEFAULT NULL,
+  `fecha_ponente_c` datetime DEFAULT NULL,
+  `cartel_ponente_v` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cartel_ponente_a` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cartel_ponente_c` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `pag_jornadas`
+--
+
+INSERT INTO `pag_jornadas` (`id`, `tit_cabecera`, `tit_ponente`, `foto_ponente`, `desc_ponente`, `fecha_ponente_v`, `fecha_ponente_a`, `fecha_ponente_c`, `cartel_ponente_v`, `cartel_ponente_a`, `cartel_ponente_c`) VALUES
+(1, 'Jornadas Formativas 2020', 'Dr.Carlos Gomez Gil', 'carlos-gomez-gil-150x150.jpg', 'Para estas jornadas contamos con la participación del Dr. En sociología de la Universidad de Alicante, Dr. Carlos Gomez Gil. Para conocer su extensa experiencia os recomendamos acudir a su blog. El Dr. Gomez Gil estará con nosotros los siguietes días en los que se realizará el taller:', '2019-09-24 00:00:00', '2019-08-25 00:00:00', '2019-08-26 00:00:00', 'ODS-Castellon.jpg', 'ODS-Valencia.jpg', 'ODS-Alicante.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pag_mirant`
+--
+
+CREATE TABLE `pag_mirant` (
+  `id` int(11) NOT NULL,
+  `tit_cabecera` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tit_mirant` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion_mirant` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cartel_mirant` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `video_spot_mirant` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `pag_mirant`
+--
+
+INSERT INTO `pag_mirant` (`id`, `tit_cabecera`, `tit_mirant`, `descripcion_mirant`, `cartel_mirant`, `video_spot_mirant`) VALUES
+(1, 'I Mostra Itinerant de Cinema i Salut Global', 'I Mostra Itinerant de Cinema i Salut Global', 'Mirant sale del juego con la contracción de las palabras Mostra ItineRANT. Pero también significa mirando en valenciano. La primera de las acepciones del verbo mirar se refiere a “Dirigir la vista hacia algo y fijar la atención en ello”. Eso es lo que esperamos conseguir con esta Mostra de cine, que la gente dirija la vista y fije la atención hacia los problemas que se están dando en la actualidad en todo el planeta sobre la salud global, desde enfoques de género, medioambiente, derechos humanos… y entre todas, una vez hayamos dirigido la mirada y fijado la atención en estos temas, debatamos y reflexionemos de forma colectiva para ver cuál es nuestro papel en todo esto, y cómo podemos contribuir a lograr un mundo más sano, y por lo tanto, más justo. Si te gusta la idea, selecciona tu provincia, infórmate sobre las películas, reserva tu/s entrada/s… y guarda la fecha en tu agenda para asistir a la I Mostra de Cinema Itinerant de Cinema y Salut Global de la Comunitat Valenciana. ¡Te esperamos en Mirant!', 'Cartel-mirant-i.png', 'https://youtu.be/TAaZ9OhbdlA'),
+(2, 'Segunda edición', '\"Salud y Mujer, Necesidades y Desafios\"', 'Mirant sale del juego con la contracción de las palabras Mostra ItineRANT. Pero también significa mirando en valenciano. La primera de las acepciones del verbo mirar se refiere a “Dirigir la vista hacia algo y fijar la atención en ello”. Eso es lo que esperamos conseguir con esta Mostra de cine, que la gente dirija la vista y fije la atención hacia los problemas que se están dando en la actualidad en todo el planeta sobre la salud global, desde enfoques de género, medioambiente, derechos humanos… y entre todas, debatamos y reflexionemos de forma colectiva para ver cuál es nuestro papel, y cómo podemos contribuir a lograr un mundo más sano, y más justo. Este año, el lema elegido por las más de 40 entidades que formamos las RSS, ha sido «Salud y Mujer, necesidades y desafios». Si te gusta la idea, selecciona tu provincia, infórmate sobre las películas, reserva tu/s entrada/s… y guarda la fecha en tu agenda para asistir a la II Mostra de Cinema Itinerant de Cinema y Salut Global de la Comunitat Valenciana. ¡Te esperamos en Mirant!', 'Cartel-IMP_page-0001.jpg', 'https://youtu.be/755APbFY-Ng');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pag_nuestra_propuesta`
+--
+
+CREATE TABLE `pag_nuestra_propuesta` (
+  `id` int(11) NOT NULL,
+  `tit_cabecera` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `pag_nuestra_propuesta`
+--
+
+INSERT INTO `pag_nuestra_propuesta` (`id`, `tit_cabecera`) VALUES
+(1, 'Yessssss');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `peliculas_mirant`
+--
+
+CREATE TABLE `peliculas_mirant` (
+  `id` int(11) NOT NULL,
+  `edicion_id` int(11) NOT NULL,
+  `tit_pelicula` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trailer_pelicula` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `foto_pelicula` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `peliculas_mirant`
+--
+
+INSERT INTO `peliculas_mirant` (`id`, `edicion_id`, `tit_pelicula`, `trailer_pelicula`, `foto_pelicula`) VALUES
+(11, 2, 'Comandante Arian', 'https://youtu.be/bTtNpcFYDUY', 'Comandante-arian-2018.jpg'),
+(12, 2, 'La manzana de Eva', 'https://youtu.be/a9Wxg5AFzHU', 'la-manzana-de-eva-2017.png'),
+(13, 2, 'Woman', 'https://youtu.be/F7IaBuUzzK8', 'woman-2019.png'),
+(14, 1, 'Sonita', 'https://youtu.be/B47MbpPuz7A', 'mirant-1.png'),
+(15, 1, 'Thank you for the rain', 'https://youtu.be/PO1-Z7kEyzo', 'mirant-1-2.png'),
+(16, 1, 'La salud en mi comunidad', 'https://youtu.be/VjqzBg32N8I', 'mirant-1-3.png');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `contactar`
+--
+ALTER TABLE `contactar`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `form_contact`
+--
+ALTER TABLE `form_contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `migration_versions`
+--
+ALTER TABLE `migration_versions`
+  ADD PRIMARY KEY (`version`);
+
+--
+-- Indices de la tabla `pag_contacto`
+--
+ALTER TABLE `pag_contacto`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pag_entidades`
+--
+ALTER TABLE `pag_entidades`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pag_forma_parte`
+--
+ALTER TABLE `pag_forma_parte`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pag_inicio`
+--
+ALTER TABLE `pag_inicio`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pag_jornadas`
+--
+ALTER TABLE `pag_jornadas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pag_mirant`
+--
+ALTER TABLE `pag_mirant`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pag_nuestra_propuesta`
+--
+ALTER TABLE `pag_nuestra_propuesta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `peliculas_mirant`
+--
+ALTER TABLE `peliculas_mirant`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_CE6FC05FD651B81E` (`edicion_id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `contactar`
+--
+ALTER TABLE `contactar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `form_contact`
+--
+ALTER TABLE `form_contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pag_contacto`
+--
+ALTER TABLE `pag_contacto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `pag_entidades`
+--
+ALTER TABLE `pag_entidades`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pag_forma_parte`
+--
+ALTER TABLE `pag_forma_parte`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `pag_inicio`
+--
+ALTER TABLE `pag_inicio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `pag_jornadas`
+--
+ALTER TABLE `pag_jornadas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `pag_mirant`
+--
+ALTER TABLE `pag_mirant`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `pag_nuestra_propuesta`
+--
+ALTER TABLE `pag_nuestra_propuesta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `peliculas_mirant`
+--
+ALTER TABLE `peliculas_mirant`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `peliculas_mirant`
+--
+ALTER TABLE `peliculas_mirant`
+  ADD CONSTRAINT `FK_CE6FC05FD651B81E` FOREIGN KEY (`edicion_id`) REFERENCES `pag_mirant` (`id`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

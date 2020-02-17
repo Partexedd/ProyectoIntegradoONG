@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-
-<title>Edit PeliculasMirant</title>
-
 {% block body %}
-    <h1>Edit PeliculasMirant</h1>
 
     {{ include('peliculas_mirant/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('peliculas_mirant_index') }}">back to list</a>
 
 {% endblock %}

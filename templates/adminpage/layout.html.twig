@@ -17,7 +17,7 @@
                 Incoming
                </a> -->
                <a aria-expanded="false"  href="{{ path('contactar_index') }}">
-                <i class="fas fa-layer-group"></i>
+<i class="fas fa-envelope"></i>
                  Mensajes Contacto
                 </a>
                <a href="{{ path('admin_index')}}">
@@ -48,36 +48,28 @@
                 <i class="fas fa-globe"></i>
                  Entidades
                </a>
-               <!-- <a href="/admin">
-               <i class="fas fa-user-shield"></i>
-               Admin Panel
-               </a> -->
+               <a href="{{path('pag_contacto_index')}}">
+<i class="fas fa-address-card"></i>
+               Página contacto
+               </a> 
              
             </li>
-              {#             <li><a href="/customer">
-                 <i class="fas fa-truck"></i>
-                 Customer Order
+            <li><a href="{{path('pag_inicio_index')}}">
+<i class="fas fa-home"></i>
+                 Página Inicio
+               </a></li>
+               <li><a href="{{path('pag_forma_parte_index')}}">
+<i class="fas fa-file-signature"></i>
+              Forma parte
+               </a></li>
+  
+            </li>
+            <li>
+               <a href="{{path('pag_nuestra_propuesta_index')}}">
+               <i class="fas fa-journal-whills"></i>
+               Nuestra propuesta
                </a>
-               <!-- <a href="/admin">
-               <i class="fas fa-user-shield"></i>
-               Admin Panel
-               </a> -->
-             
-            </li>
-            <li>
-               <a href="/contact-admin">
-               <i class="fas fa-paper-plane"></i>
-               Contact Admin
-               </a>
-            </li>
-         </ul>
-         <ul class="list-unstyled CTAs">
-            <li>
-               <a href="#" class="download" style="color:#7386D5">Exception Reports</a>
-            </li>
-            <li>
-               <a href="#" class="article">About RETECH</a>
-            </li> #}
+            </li> 
          </ul>
       </nav>
       <!-- /#sidebar-wrapper -->

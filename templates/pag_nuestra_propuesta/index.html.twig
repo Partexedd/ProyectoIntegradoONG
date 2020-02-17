@@ -1,12 +1,9 @@
-<!DOCTYPE html>
+{% extends "adminpage/layout.html.twig" %}
 
-<title>PagNuestraPropuesta index</title>
+    {% block div %}
 
-{% block body %}
-    <h1>PagNuestraPropuesta index</h1>
-
-    <table class="table">
-        <thead>
+    <table class="table" style="text-align:center" align="center">
+              <thead>
             <tr>
                 <th>Id</th>
                 <th>TitCabecera</th>
@@ -31,5 +28,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('pag_nuestra_propuesta_new') }}">Create new</a>
+
 {% endblock %}

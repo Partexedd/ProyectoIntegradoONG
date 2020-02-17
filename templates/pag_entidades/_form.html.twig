@@ -1,4 +1,70 @@
-{{ form_start(form) }}
+{# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{{ form_end(form) }} #}
+{% extends "adminpage/layout.html.twig" %}
+
+    {% block div %}
+
+<div class="container">
+    <div class="col-12 offset-1">
+                 {{form_start(form, {'attr':{'id':'contactform' }})}}
+                    <div>
+                    <h1>Crear película nueva</h1>
+                    </div>
+                    <div>
+                    <label>Título de la cabecera <span class="required">*</span></label>
+                    {{form_widget(form.titCabecera, {'attr':{'id':'logo', 'class':'form-control', 'placeholder':'Logo entidad', 'required':''}})}}
+                    </div>
+                        <br>
+                        <div>
+                    <label>Comunidad de la entidad <span class="required">*</span></label>
+                    {{form_widget(form.comunidad, {'attr':{'id':'logo', 'class':'form-control', 'placeholder':'Logo entidad', 'required':''}})}}
+                    </div>
+                        <br>
+                        <div>
+                    <label>Tipo de entidad<span class="required">*</span></label>
+                    {{form_widget(form.tipo, {'attr':{'id':'logo', 'class':'form-control', 'placeholder':'Logo entidad', 'required':''}})}}
+                    </div>
+                        <br>
+                        <div class="form-group">
+                     <label for="formGroupExampleInput">Logo de la entidad <span class="required">*</span></label>
+                    {{form_widget(form.logo, {'attr':{'id':'logo', 'class':'form-control', 'placeholder':'Logo entidad', 'required':''}})}}
+                    </div>
+                        <br>
+                    <div>
+                    <label>Nombre de la entidad<span class="required">*</span></label>
+                    {{form_widget(form.nombre, {'attr':{'id':'nombre', 'class':'form-control', 'placeholder':'Título ponente', 'required':''}})}}
+                    </div>
+ <br>
+                    <div>
+                    <label>Teléfono de la entidad</label>
+                    {{form_widget(form.telefono, {'attr':{'id':'trailer', 'class':'form-control', 'placeholder':'Trailer película', 'required':''}})}}
+                    </div>
+ <br>
+                    <div>
+                    <label>Correo de la entidad</label>
+                    {{form_widget(form.correo, {'attr':{'id':'descripcion', 'class':'form-control',  'placeholder':'Elige la edicion de Mirant', 'required':''}})}}
+                    </div>
+                    <div>
+
+                    <label>Localización de la entidad</label>
+                    {{form_widget(form.localizacionMaps, {'attr':{'id':'fecha', 'class':'form-control', 'placeholder':'Fecha del evento en Valencia', 'required':''}})}}
+                    </div>
+                    <div>
+                    <label>Descripción de la entidad</label>
+                    {{form_widget(form.descripcion, {'attr':{'id':'fecha', 'class':'form-control', 'placeholder':'Fecha del evento en Alicante', 'required':''}})}}
+                    </div>
+ <br>
+
+                    <div class="col-12 offset-4">
+					{{form_widget(form.send, {'attr':{'class':'btn btn-info', 'placeholder':'Enviar',  'type':'submit'}})}}
+         			<input type="reset" value="Reset" class="btn btn-warning">
+					</div>
+           
+    {{form_end(form)}}
+
+            </div>
+    </div>
+    
+            {% endblock %}

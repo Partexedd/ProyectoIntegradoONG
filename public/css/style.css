@@ -459,5 +459,6 @@ body {
     width: 68% !important;
     margin-left: 50px !important;
   }
-  .table{width: 74% !important;}
+  .table{width: 74% !important;
+  }
   #fecha{display: flex !important;}

@@ -20,7 +20,8 @@ class PagEntidadesController extends AbstractController
      */
     public function index(PagEntidadesRepository $pagEntidadesRepository, SessionInterface $session): Response
     {
-                $user1 = $session->get('nombre_usuario');
+        $user1 = $session->get('nombre_usuario');
+
         return $this->render('pag_entidades/index.html.twig', [
             'pag_entidades' => $pagEntidadesRepository->findAll(),
             'user' => $user1,
@@ -30,12 +31,12 @@ class PagEntidadesController extends AbstractController
     /**
      * @Route("/new", name="pag_entidades_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SessionInterface $session): Response
     {
         $pagEntidade = new PagEntidades();
         $form = $this->createForm(PagEntidadesType::class, $pagEntidade);
         $form->handleRequest($request);
-
+        $user1 = $session->get('nombre_usuario');
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($pagEntidade);
@@ -47,14 +48,16 @@ class PagEntidadesController extends AbstractController
         return $this->render('pag_entidades/new.html.twig', [
             'pag_entidade' => $pagEntidade,
             'form' => $form->createView(),
+            'user' => $user1,
         ]);
     }
 
     /**
      * @Route("/{id}", name="pag_entidades_show", methods={"GET"})
      */
-    public function show(PagEntidades $pagEntidade): Response
+    public function show(PagEntidades $pagEntidade, SessionInterface $session): Response
     {
+        $user1 = $session->get('nombre_usuario');
         return $this->render('pag_entidades/show.html.twig', [
             'pag_entidade' => $pagEntidade,
         ]);
@@ -63,8 +66,9 @@ class PagEntidadesController extends AbstractController
     /**
      * @Route("/{id}/edit", name="pag_entidades_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, PagEntidades $pagEntidade): Response
+    public function edit(Request $request, PagEntidades $pagEntidade, SessionInterface $session): Response
     {
+        $user1 = $session->get('nombre_usuario');
         $form = $this->createForm(PagEntidadesType::class, $pagEntidade);
         $form->handleRequest($request);
 
@@ -77,13 +81,14 @@ class PagEntidadesController extends AbstractController
         return $this->render('pag_entidades/edit.html.twig', [
             'pag_entidade' => $pagEntidade,
             'form' => $form->createView(),
+            'user' => $user1,
         ]);
     }
 
     /**
      * @Route("/{id}", name="pag_entidades_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, PagEntidades $pagEntidade): Response
+    public function delete(Request $request, PagEntidades $pagEntidade, SessionInterface $session): Response
     {
         if ($this->isCsrfTokenValid('delete'.$pagEntidade->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
