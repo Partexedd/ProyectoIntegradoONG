@@ -2,54 +2,94 @@
 {% block head %}
     <link rel="stylesheet" href="/css/estilosContacto.css">
 {% endblock %}
-{% block titulo %}Contacto{% endblock %}
+{% block titulo %}Formulario Inscripcion Mirant{% endblock %}
 {% block contenido %}
-        {% endfor %}
+    <section class="container">
         <!-- Formulario de contacto -->
         <article id="formulario" class="row text-secondary">
             <h1 class="col-12 text-center h1Form text-dark">Formulario de inscripción Mirant</h1>
-            {# <form class="> #}
-            {{form_start(form, {'attr':{'class':"col-8 offset-2", "action":""}})}}
-                <label for="nombre">Tu nombre (requerido)</label><br>
-                {# <input name="nombre" class="form-control" type="text"></input> #}
-                 {{form_widget(form.nombre, {'attr':{'class':'form-control', 'placeholder':'Nombre', 'required':''}})}}
-                <label for="email">Tu correo electrónico (requerido)</label><br>
-                {# <input name="email" class="form-control" type="text"></input> #}
-                {{form_widget(form.email, {'attr':{'class':'form-control', 'placeholder':'Email', 'required':''}})}}
-                <label for="rss">Selecciona la RSS de tu provincia</label><br>
-                {# <select class="custom-select" name="rss">
-                    <option value="rssc">RSS Castellón</option>
-                    <option value="rssv">RSS Valencia</option>
-                    <option value="rssa">RSS Alicante</option>
-                </select> #}
-                {{ form_widget(form.rssProvincia, {'attr':{'class':'custom-select', 'required':''}}) }}
-                <br>
-                <label for="selRSS">¿A quién representas?</label>
-                {# <select class="custom-select" id="selRSS">
-                    <option value="administracionPublica">Admnistración Pública</option>
-                    <option value="asociacion">Asociación</option>
-                    <option value="ong_d">ONG/ONGD</option>
-                    <option value="colegioProfesional">Colegio Profesional</option>
-                    <option value="universidades">Universidades</option>
-                    <option value="otra">Otra</option>
-                </select> #}
-                {{ form_widget(form.representa, {'attr':{'class':'custom-select', 'required':''}}) }}
-                <label for="asunto">Asunto</label><br>
-                {# <input name="asunto" class="form-control" type="text"></input> #}
-                {{form_widget(form.asunto, {'attr':{'class':'form-control', 'placeholder':'Asunto', 'required':''}})}}
-                <label for="mensaje">Tu mensaje</label><br>
-                {# <textarea name="mensaje" class="form-control" type="text" style="height:200px;resize:none;" cols="40" rows="20"></textarea><br> #}
-                 {{form_widget(form.mensaje, {'attr':{'class':'form-control', 'placeholder':'Mensaje', 'required':'', 'style':"height:200px;resize:none;", 'cols':"40", 'rows':"20"}})}}
-                {# <button class="btn boton">Enviar</button> #}
-                {{form_widget(form.send, {'attr':{'class':'btn bot', 'placeholder':'Enviar',  'type':'submit'}})}}
-            {# </form> #}
-                              {{form_end(form)}}
+            <form class="form-group">
+
+                <label for="nombre">Nombre (requerido)</label><br>
+                <input name="nombre" class="form-control" type="text"></input>
+
+                <label for="papellido">Primer apellido (requerido)</label><br>
+                <input name="papellido" class="form-control" type="text"></input>
+
+                <label for="sapellido">Segundo apellido (requerido)</label><br>
+                <input name="sapellido" class="form-control" type="text"></input>
+
+                <label for="dni">DNI (requerido)</label><br>
+                <input name="dni" class="form-control" type="text"></input>
+
+                <label for="telefono">Telefono (requerido)</label><br>
+                <input name="telefono" class="form-control" type="text"></input>
+
+                <label for="email">Email (requerido)</label><br>
+                <input name="email" class="form-control" type="text"></input>
+
+                <label for="profesion">Profesión (requerido)</label><br>
+                <input name="profesion" class="form-control" type="text"></input>
+
+                <label for="radios">¿Perteneces a alguna de las entidades que forma parte de la Red Sanitaria Solidaria de Alicante?  (requerido)</label><br>
+                <input type="radio" id="rssSi" name="PertenecesRadio" value="rssSi">
+                <label for="rssSi">Si</label><br>
+                <input type="radio" id="rssNo" name="PertenecesRadio" value="rssNo">
+                <label for="rssNo">No</label><br>
+
+                <label for="selRSS">En caso afirmativo... ¿A cuál?</label>
+                <select class="custom-select" id="selRSS">
+                    <option value="ACOEC">ACOEC</option>
+                    <option value="AyuntamientoDeValencia">Ayuntamiento de Valencia</option>
+                    <option value="CODNCV">Colegio Oficial de Dietistas y Nutricionistas de la C.Valenciana</option>
+                    <option value="COEV">Colegio Oficial de Enfermería de Valencia</option>
+                    <option value="COMV">Colegio Oficial de Médicos de Valencia</option>
+                    <option value="COFV">Colegio Oficial de Farmacéuticos de Valencia</option>
+                    <option value="COOO">Colegio Oficial de Ópticos-Optometristas</option>
+                    <option value="COP">Colegio Oficial de Psicología</option>
+                    <option value="DiputaciónValencia">Diputación de Valencia</option>
+                    <option value="Farmamundi">Farmamundi</option>
+                    <option value="MedicusMundiMediterrània">Medicus Mundi Mediterrània</option>
+                    <option value="UniversidadCardenalHerreraCEU">Universidad Cardenal Herrera CEU</option>
+                    <option value="UniversidadValencia">Universidad de Valencia</option>
+                    <option value="NoFormoParte">No formo parte de ninguna de estas entidades</option>
+                </select>
+
+                <label for="radios2">En caso de formar parte de alguna de las entidades anteriores, lo haces en calidad de</label><br>
+                <input type="radio" id="tecnico" name="ocupacion" value="tecnico">
+                <label for="tecnico">Técnico/a / Funcionario/a</label><br>
+                <input type="radio" id="politico" name="ocupacion" value="politico">
+                <label for="politico">Cargo político</label><br>
+                <input type="radio" id="profesor" name="ocupacion" value="profesor">
+                <label for="profesor">Profesor/a</label><br>
+                <input type="radio" id="estudiante" name="ocupacion" value="estudiante">
+                <label for="estudiante">Estudiante</label><br>
+                <input type="radio" id="colegiado" name="ocupacion" value="colegiado">
+                <label for="colegiado">Colegiado/a</label><br>
+                <input type="radio" id="juntaDirectiva" name="ocupacion" value="juntaDirectiva">
+                <label for="juntaDirectiva">Junta Directiva</label><br>
+                <input type="radio" id="socio" name="ocupacion" value="socio">
+                <label for="socio">Socio/a</label><br>
+                <input type="radio" id="voluntario" name="ocupacion" value="voluntario">
+                <label for="voluntario">Voluntario/a</label><br>
+                <input type="radio" id="otros" name="ocupacion" value="otros">
+                <label for="otros">Otros</label><br>
+
+                <label for="radio3">¿Perteneces a alguna entidad que no forme parte de la Red Sanitaria Solidaria? (requerido)</label><br>
+                <input type="radio" id="entidadRssSi" name="pertenecesRadio" value="entidadRssSi">
+                <label for="entidadRssSi">Si</label><br>
+                <input type="radio" id="entidadRssNo" name="pertenecesRadio" value="entidadRssNo">
+                <label for="entidadRssNo">No</label><br>
+
+                <label for="ProfesionSiNo">En caso de respuesta afirmativa a la pregunta anterior , ¿a qué entidad perteneces?</label><br>
+                <input name="ProfesionSiNo" class="form-control" type="text"></input>
+
+                <label for="radio4">¿Quieres recibir el certificado de asistencia al finalizar las jornadas? (requerido)</label><br>
+                <input type="radio" id="recibirSi" name="recibirCertRadio" value="recibirSi">
+                <label for="recibirSi">Si</label><br>
+                <input type="radio" id="recibirNo" name="recibirCertRadio" value="recibirNo">
+                <label for="recibirNo">No</label><br>
+            </form>
         </article>
-        <!-- Modelo de adhesión de la RSS -->
-        <article id="adhesionRSS" class="row">
-            <div class="col-12 text-center text-dark">
-                <h1>Modelo de adhesión a la RSS de tu provincia</h1>
-                <a href="https://redsanitariasolidaria.org/wp-content/uploads/2018/10/MODELO-DOCUMENTO-ADHESIO%CC%81N-A-RSS.pdf" target="_blank"><button class="btn modelo bot mb-5">Ver modelo</button></a>
-            </div>
     </section>
 {% endblock %}
