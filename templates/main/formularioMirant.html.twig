@@ -1,0 +1,65 @@
+{% extends "main/layout.html.twig" %}
+{% block head %}
+    <link rel="stylesheet" href="/css/estilosContacto.css">
+{% endblock %}
+{% block titulo %}Formulario Inscripcion Mirant{% endblock %}
+{% block contenido %}
+    <section class="container">
+        <!-- Formulario de inscripcion -->
+        <article id="formulario" class="row text-secondary">
+            <h1 class="col-12 text-center h1Form text-dark">Formulario de inscripción Mirant</h1>
+            <form class="form-group">
+
+                <label for="nombre">Nombre (requerido)</label><br>
+                <input name="nombre" class="form-control" type="text"></input>
+
+                <label for="papellido">Primer apellido (requerido)</label><br>
+                <input name="papellido" class="form-control" type="text"></input>
+
+                <label for="sapellido">Segundo apellido (requerido)</label><br>
+                <input name="sapellido" class="form-control" type="text"></input>
+
+                <label for="municipio">Municipio (requerido)</label><br>
+                <input name="municipio" class="form-control" type="text"></input>
+
+                <label for="email">Email (requerido)</label><br>
+                <input name="email" class="form-control" type="text"></input>
+
+                <label for="selRSS">Indique si pertenece a alguna de las entidades que forma parte de la RSS de Valencia</label>
+                <select class="custom-select" id="selRSS">
+                    <option value="ACOEC">ACOEC</option>
+                    <option value="AyuntamientoDeValencia">Ayuntamiento de Valencia</option>
+                    <option value="CODNCV">Colegio Oficial de Dietistas y Nutricionistas de la C.Valenciana</option>
+                    <option value="COEV">Colegio Oficial de Enfermería de Valencia</option>
+                    <option value="COMV">Colegio Oficial de Médicos de Valencia</option>
+                    <option value="COFV">Colegio Oficial de Farmacéuticos de Valencia</option>
+                    <option value="COOO">Colegio Oficial de Ópticos-Optometristas</option>
+                    <option value="COP">Colegio Oficial de Psicología</option>
+                    <option value="DiputaciónValencia">Diputación de Valencia</option>
+                    <option value="Farmamundi">Farmamundi</option>
+                    <option value="Alana">Asociación Alana</option>
+                    <option value="SOEPIC">SOEPIC</option>
+                    <option value="OdontologiaSolidaria">Odontología Solidaria</option>
+                    <option value="MedicusMundiMediterrània">Medicus Mundi Mediterrània</option>
+                    <option value="UniversidadCardenalHerreraCEU">Universidad Cardenal Herrera CEU</option>
+                    <option value="UniversidadValencia">Universidad de Valencia</option>
+                    <option value="NoFormoParte">No formo parte de ninguna de estas entidades</option>
+                </select>
+
+                <label for="checkSesion">A qué sesiones quiere acudir (puede marcar más de una)</label><br>
+                <input type="checkbox" id="pelicula1" name="pelicula1" value="Woman">
+                <label for="pelicula1">Woman: 21 de noviembre a las 19:00 horas</label><br>
+                <input type="checkbox" id="pelicula2" name="pelicula2" value="ComandanteArian">
+                <label for="pelicula2">Comandante Arian: 22 de noviembre a las 19:00 horas</label><br>
+                <input type="checkbox" id="pelicula3" name="pelicula3" value="ManzanaEva">
+                <label for="pelicula3">La Manzana de Eva: 23 de noviembre a las 11:30 horas</label><br>
+
+                <label for="radio1">Si tiene previsto acudir a las tres sesiones, y quiere que le enviemos un certificado de asistencia, marque la siguiente casilla.</label><br>
+                <input type="radio" id="envioSi" name="pertenecesRadio" value="envioSi">
+                <label for="envioSi">Si quiero que me envíen el certificado de asistencia </label><br>
+                <input type="radio" id="envioNo" name="pertenecesRadio" value="envioNo">
+                <label for="envioNo">No quiero que me envíen el certificado de asistencia </label><br>
+            </form>
+        </article>
+    </section>
+{% endblock %}
