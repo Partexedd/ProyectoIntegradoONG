@@ -257,12 +257,24 @@ if ($user1) {
     }
 
     /**
-    * @Route("/formularioInscripcion", name="formularioInscripcion")
+    * @Route("/formularioJornadas", name="formularioJornadas")
     */
-    public function formularioInscripcion(SessionInterface $session)
+    public function formularioJornadas(SessionInterface $session)
     {
         $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
-        return $this->render('main/formularioInscripcionMirant.html.twig', [
+        return $this->render('main/formularioJornada.html.twig', [
+            'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg',
+            'EdicionMirant' => $Mirant, 
+        ]);
+    }
+
+    /**
+    * @Route("/formularioMirant", name="formularioMirant")
+    */
+    public function formularioMirant(SessionInterface $session)
+    {
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
+        return $this->render('main/formularioMirant.html.twig', [
             'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg',
             'EdicionMirant' => $Mirant, 
         ]);
