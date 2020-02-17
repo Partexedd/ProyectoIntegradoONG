@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit PagContacto</title>
+
+{% block body %}
+    <h1>Edit PagContacto</h1>
+
+    {{ include('pag_contacto/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('pag_contacto_index') }}">back to list</a>
+
+    {{ include('pag_contacto/_delete_form.html.twig') }}
+{% endblock %}

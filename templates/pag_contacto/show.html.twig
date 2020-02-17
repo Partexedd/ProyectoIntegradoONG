@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<title>PagContacto</title>
+
+{% block body %}
+    <h1>PagContacto</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pag_contacto.id }}</td>
+            </tr>
+            <tr>
+                <th>TitCabecera</th>
+                <td>{{ pag_contacto.titCabecera }}</td>
+            </tr>
+            <tr>
+                <th>DireccionV</th>
+                <td>{{ pag_contacto.direccionV }}</td>
+            </tr>
+            <tr>
+                <th>DireccionA</th>
+                <td>{{ pag_contacto.direccionA }}</td>
+            </tr>
+            <tr>
+                <th>DireccionC</th>
+                <td>{{ pag_contacto.direccionC }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pag_contacto_index') }}">back to list</a>
+
+    <a href="{{ path('pag_contacto_edit', {'id': pag_contacto.id}) }}">edit</a>
+
+    {{ include('pag_contacto/_delete_form.html.twig') }}
+{% endblock %}

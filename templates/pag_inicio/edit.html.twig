@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit PagInicio</title>
+
+{% block body %}
+    <h1>Edit PagInicio</h1>
+
+    {{ include('pag_inicio/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('pag_inicio_index') }}">back to list</a>
+
+    {{ include('pag_inicio/_delete_form.html.twig') }}
+{% endblock %}

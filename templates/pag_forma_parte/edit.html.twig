@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit PagFormaParte</title>
+
+{% block body %}
+    <h1>Edit PagFormaParte</h1>
+
+    {{ include('pag_forma_parte/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('pag_forma_parte_index') }}">back to list</a>
+
+    {{ include('pag_forma_parte/_delete_form.html.twig') }}
+{% endblock %}

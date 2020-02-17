@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<title>PagNuestraPropuesta index</title>
+
+{% block body %}
+    <h1>PagNuestraPropuesta index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitCabecera</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pag_nuestra_propuestum in pag_nuestra_propuestas %}
+            <tr>
+                <td>{{ pag_nuestra_propuestum.id }}</td>
+                <td>{{ pag_nuestra_propuestum.titCabecera }}</td>
+                <td>
+                    <a href="{{ path('pag_nuestra_propuesta_show', {'id': pag_nuestra_propuestum.id}) }}">show</a>
+                    <a href="{{ path('pag_nuestra_propuesta_edit', {'id': pag_nuestra_propuestum.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pag_nuestra_propuesta_new') }}">Create new</a>
+{% endblock %}

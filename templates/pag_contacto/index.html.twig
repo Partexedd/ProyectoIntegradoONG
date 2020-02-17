@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<title>PagContacto index</title>
+
+{% block body %}
+    <h1>PagContacto index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitCabecera</th>
+                <th>DireccionV</th>
+                <th>DireccionA</th>
+                <th>DireccionC</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pag_contacto in pag_contactos %}
+            <tr>
+                <td>{{ pag_contacto.id }}</td>
+                <td>{{ pag_contacto.titCabecera }}</td>
+                <td>{{ pag_contacto.direccionV }}</td>
+                <td>{{ pag_contacto.direccionA }}</td>
+                <td>{{ pag_contacto.direccionC }}</td>
+                <td>
+                    <a href="{{ path('pag_contacto_show', {'id': pag_contacto.id}) }}">show</a>
+                    <a href="{{ path('pag_contacto_edit', {'id': pag_contacto.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pag_contacto_new') }}">Create new</a>
+{% endblock %}
