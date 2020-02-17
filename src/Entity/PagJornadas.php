@@ -118,7 +118,10 @@ class PagJornadas
 
         return $this;
     }
+    public function __toString(){
 
+        return $this->fechaPonenteV;
+    }
     public function getFechaPonenteV(): ?\DateTimeInterface
     {
         return $this->fechaPonenteV;

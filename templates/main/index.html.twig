@@ -8,7 +8,8 @@
 <section class="container">
 
   <article class="row">
-{% for contenido in indexbbdd %}
+{% for contenido in first1 %}
+  {% if loop.index0<3 %}
     <div class="col-12 text-center">
       <h1><b>{{ contenido.titInicio }}</b></h1>
     </div>
@@ -18,6 +19,7 @@
     <div class="col-12 text-center mt-5">
       <img src="{{ asset(contenido.imagenInicio, "imagen") }}" alt="cartel salud y cambio climático" style="width:90%">
     </div>
+  {% endif %}
 {% endfor %}
   </article>
 </section>

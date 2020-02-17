@@ -20,8 +20,10 @@ class PagMirantController extends AbstractController
      */
     public function index(PagMirantRepository $pagMirantRepository): Response
     {
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         return $this->render('pag_mirant/index.html.twig', [
             'pag_mirants' => $pagMirantRepository->findAll(),
+            'EdicionMirant' => $Mirant, 
         ]);
     }
 

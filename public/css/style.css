@@ -452,3 +452,10 @@ body {
   }
   .dropadmin{width: 126px !important;
               list-style: none !important;}
+  /*Formulario añadir a base de datos*/
+
+  .form-control{
+
+    width: 23% !important;
+    margin-left: 50px !important;
+  }

@@ -21,11 +21,14 @@ class MainController extends AbstractController
     public function index(Request $request, SessionInterface $session)
     {
         $indexBBDD=$this->getDoctrine()->getRepository(PagInicio::Class)->findAll();
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
             'imagenheader' => 'header-inicio.jpg',
             'indexbbdd' => $indexBBDD,
+            'EdicionMirant' => $Mirant, 
+            'first1' => array_slice(array_reverse($indexBBDD),0,1),
         ]);
     }
 
@@ -35,10 +38,12 @@ class MainController extends AbstractController
     public function nuestraPropuesta(SessionInterface $session)
     {
         $nuestraPropuestaBBDD=$this->getDoctrine()->getRepository(PagNuestraPropuesta::Class)->findAll();
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         //$user1 = $session->get('nombre_usuario');
         return $this->render('main/nuestrapropuesta.html.twig', [
             'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg',
             'nuestraPropuestaBBDD' => $nuestraPropuestaBBDD,
+            'EdicionMirant' => $Mirant, 
         ]);
     }
 
@@ -51,7 +56,7 @@ class MainController extends AbstractController
         $user1 = $session->get('nombre_usuario');
         $contactoTo=new Contactar();
         $form=$this->CreateForm(EnvioContactoType::Class, $contactoTo);
-
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $entityManager=$this->getDoctrine()->getManager();
@@ -62,22 +67,33 @@ class MainController extends AbstractController
             'imagenheader' => 'Namuno.-Visita-seguiment-2-maig-2006.jpg',
             'form' => $form->CreateView(),
             'contactobbdd' => $contactoBBDD,
+            'EdicionMirant' => $Mirant, 
         ]);
 
     }
 
     /**
-     * @Route("/mirant", name="mirant")
+     * @Route("/mirant/{edicion?1}", name="mirant")
      */
-    public function mirant(SessionInterface $session)
+    public function mirant($edicion, SessionInterface $session)
     {
         $mirantBBDD=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
+        $edicionFiltro=$this->getDoctrine()
+        ->getRepository(PagMirant::Class)
+        ->findOneBy(
+            ['id' => $edicion], 
+            ['id' => 'ASC']
+          );
         $peliculasBBDD=$this->getDoctrine()->getRepository(PeliculasMirant::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         return $this->render('main/mirant.html.twig', [
           'imagenheader' => 'header-inicio.jpg',
+          'edicionFiltro' =>$edicionFiltro,
           'mirantBBDD' => $mirantBBDD,
           'peliculasBBDD' => $peliculasBBDD,
+          'EdicionMirant' => $Mirant, 
+          'edicion' => $edicion
         ]);
     }
 
@@ -88,9 +104,11 @@ class MainController extends AbstractController
     {
         $jornadasBBDD=$this->getDoctrine()->getRepository(PagJornadas::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         return $this->render('main/jornadas.html.twig', [
           'imagenheader' => 'header-inicio.jpg',
           'jornadasBBDD' => $jornadasBBDD,
+          'EdicionMirant' => $Mirant, 
         ]);
     }
 
@@ -99,9 +117,11 @@ class MainController extends AbstractController
      */
     public function entidades(SessionInterface $session)
     {
-        //$user1 = $session->get('nombre_usuario');
+        $user1 = $session->get('nombre_usuario');
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         return $this->render('main/entidades.html.twig', [
-          'imagenheader' => '/head\ fotos/fotoHeadEntidades.jpg'
+          'imagenheader' => '/head\ fotos/fotoHeadEntidades.jpg',
+          'EdicionMirant' => $Mirant, 
         ]);
     }
 
@@ -110,8 +130,10 @@ class MainController extends AbstractController
      */
     public function expandido()
     {
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         return $this->render('main/leermas.html.twig', [
-          'imagenheader' => 'header-inicio.jpg'
+          'imagenheader' => 'header-inicio.jpg',
+          'EdicionMirant' => $Mirant,
         ]);
     }
 
@@ -120,10 +142,11 @@ class MainController extends AbstractController
      */
     public function formaParte(SessionInterface $session)
     {
-        $user1 = $session->get('nombre_usuario');
+        $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         $user1 = $session->get('nombre_usuario');
         return $this->render('main/forma_parte.html.twig', [
-          'imagenheader' => '1690.jpg'
+          'imagenheader' => '1690.jpg',
+          'EdicionMirant' => $Mirant, 
         ]);
     }
 
@@ -133,7 +156,6 @@ class MainController extends AbstractController
     public function loginadmin(Request $request, SessionInterface $session)
     {
         $user1 = $session->get('nombre_usuario');
-
         $user= $request->request->get("user");
         $password= $request->request->get("password");
         $usuarioBBDD=$this->getDoctrine()
@@ -177,6 +199,7 @@ if ($user1) {
             'controller_name' => 'AdminController',
             'user' => $user1,
             'contactars' => $contactarRepository->findAll(),]);
+ 
     }
 
 
