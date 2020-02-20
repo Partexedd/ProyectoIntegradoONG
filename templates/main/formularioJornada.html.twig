@@ -1,6 +1,7 @@
 {% extends "main/layout.html.twig" %}
 {% block head %}
-    <link rel="stylesheet" href="/css/estilosContacto.css">
+    <link rel="stylesheet" href="{{asset('estilosContacto.css', 'estilos')}}">
+
 {% endblock %}
 {% block titulo %}Formulario Inscripcion Jornadas{% endblock %}
 {% block contenido %}
@@ -11,33 +12,39 @@
             <form class="form-group">
 
                 <label for="nombre">Nombre (requerido)</label><br>
-                <input name="nombre" class="form-control" type="text"></input>
+                <input name="nombre" class="form-control" type="text" required></input>
 
                 <label for="papellido">Primer apellido (requerido)</label><br>
-                <input name="papellido" class="form-control" type="text"></input>
+                <input name="papellido" class="form-control" type="text" required></input>
 
                 <label for="sapellido">Segundo apellido (requerido)</label><br>
-                <input name="sapellido" class="form-control" type="text"></input>
+                <input name="sapellido" class="form-control" type="text" required></input>
 
                 <label for="dni">DNI (requerido)</label><br>
-                <input name="dni" class="form-control" type="text"></input>
+                <input name="dni" class="form-control" type="text" required></input>
 
                 <label for="telefono">Telefono (requerido)</label><br>
-                <input name="telefono" class="form-control" type="text"></input>
+                <input name="telefono" class="form-control" type="text" required></input>
 
                 <label for="email">Email (requerido)</label><br>
-                <input name="email" class="form-control" type="text"></input>
+                <input name="email" class="form-control" type="text" required></input>
 
+                <label for="email">Selecciona província (requerido)</label><br>
+                <select class="custom-select" id="selRSS" required>
+                    <option disabled selected>Selecciona una província</option>
+                    <option value="CODNCV">Castellón</option>
+                    <option value="AyuntamientoDeValencia">Valencia</option>
+                    <option value="CODNCV">Alicante</option>
+                </select>
                 <label for="profesion">Profesión (requerido)</label><br>
-                <input name="profesion" class="form-control" type="text"></input>
-
+                <input name="profesion" class="form-control" type="text" required></input>
                 <label for="radios">¿Perteneces a alguna de las entidades que forma parte de la Red Sanitaria Solidaria de Alicante?  (requerido)</label><br>
-                <input type="radio" id="rssSi" name="PertenecesRadio" value="rssSi">
-                <label for="rssSi">Si</label><br>
-                <input type="radio" id="rssNo" name="PertenecesRadio" value="rssNo">
+                <input type="radio" id="uncheck" name="check"  value="rssNo"  onchange="showContent()" required>
                 <label for="rssNo">No</label><br>
-
-                <label for="selRSS">En caso afirmativo... ¿A cuál?</label>
+                <input type="radio" id="check" name="check"  value="rssSi"  onchange="showContent()" required>
+                <label for="rssSi">Si</label><br>
+                <div id="content" style="display: none; background-color:#2cff0012;">
+                <label for="selRSS">¿A cuál?</label>
                 <select class="custom-select" id="selRSS">
                     <option value="ACOEC">ACOEC</option>
                     <option value="AyuntamientoDeValencia">Ayuntamiento de Valencia</option>
@@ -54,7 +61,6 @@
                     <option value="UniversidadValencia">Universidad de Valencia</option>
                     <option value="NoFormoParte">No formo parte de ninguna de estas entidades</option>
                 </select>
-
                 <label for="radios2">En caso de formar parte de alguna de las entidades anteriores, lo haces en calidad de</label><br>
                 <input type="radio" id="tecnico" name="ocupacion" value="tecnico">
                 <label for="tecnico">Técnico/a / Funcionario/a</label><br>
@@ -74,22 +80,25 @@
                 <label for="voluntario">Voluntario/a</label><br>
                 <input type="radio" id="otros" name="ocupacion" value="otros">
                 <label for="otros">Otros</label><br>
-
+                </div>
                 <label for="radio3">¿Perteneces a alguna entidad que no forme parte de la Red Sanitaria Solidaria? (requerido)</label><br>
-                <input type="radio" id="entidadRssSi" name="pertenecesRadio" value="entidadRssSi">
-                <label for="entidadRssSi">Si</label><br>
-                <input type="radio" id="entidadRssNo" name="pertenecesRadio" value="entidadRssNo">
+                <input type="radio" id="uncheck2" name="check2" value="entidadRssNo" onchange="showContent2()" required>
                 <label for="entidadRssNo">No</label><br>
-
+                <input type="radio" id="check2" name="check2" value="entidadRssSi" onchange="showContent2()" required>
+                <label for="entidadRssSi">Si</label><br>
+                <div id="content2" class="cajaAfirm" style="display: none;">
                 <label for="ProfesionSiNo">En caso de respuesta afirmativa a la pregunta anterior , ¿a qué entidad perteneces?</label><br>
                 <input name="ProfesionSiNo" class="form-control" type="text"></input>
-
+                    </div>
                 <label for="radio4">¿Quieres recibir el certificado de asistencia al finalizar las jornadas? (requerido)</label><br>
-                <input type="radio" id="recibirSi" name="recibirCertRadio" value="recibirSi">
+                <input type="radio" id="recibirSi" name="recibirCertRadio" value="recibirSi" required>
                 <label for="recibirSi">Si</label><br>
-                <input type="radio" id="recibirNo" name="recibirCertRadio" value="recibirNo">
+                <input type="radio" id="recibirNo" name="recibirCertRadio" value="recibirNo" required>
                 <label for="recibirNo">No</label><br>
+                <p><button type="submit">Enviar formulario</button></p>
             </form>
+
         </article>
     </section>
+
 {% endblock %}
