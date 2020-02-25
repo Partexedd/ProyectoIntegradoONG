@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-02-2020 a las 23:44:57
+-- Tiempo de generación: 25-02-2020 a las 02:03:46
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.2
+-- Versión de PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -118,7 +118,7 @@ CREATE TABLE `pag_contacto` (
 --
 
 INSERT INTO `pag_contacto` (`id`, `tit_cabecera`, `direccion_v`, `direccion_a`, `direccion_c`) VALUES
-(1, 'Contacto', 'C/Mayor 56, escalera 3, piso 8B.<br>12001 - Castellón de la Plana<br> 964 222 020 - 601 187 746', 'Carrer d\'Utiel, 16<br> 46020 Valencia<br> 670 394 103', 'Av. de Denia, 47<br> 03013 Alicante<br> 965 650 487 - 660 575 104');
+(1, 'Ayudanos a hacer un mundo y una sociedad más sanos', 'C/Mayor 56, escalera 3, piso 8B. 12001 - Castellón de la Plana 964 222 020 - 601 187 746', 'Carrer d\'Utiel, 1646020 Valencia 670 394 103', 'Av. de Denia, 47 03013 Alicante 965 650 487 - 660 575 104');
 
 -- --------------------------------------------------------
 
@@ -176,7 +176,7 @@ CREATE TABLE `pag_inicio` (
 --
 
 INSERT INTO `pag_inicio` (`id`, `tit_cabecera`, `tit_inicio`, `subt_inicio`, `imagen_inicio`) VALUES
-(1, 'Juntas somos más fuertes.', 'Este 2020 las RSS hablan de Salud y Cámbio Climático', 'Infórmate, Inscríbete, Súmate', 'web-cartel.jpg');
+(1, 'Juntas somos más fuertes', 'Este 2020 las RSS hablan de Salud y Cámbio Climático', 'Infórmate, Inscríbete, Súmate', 'web-cartel.jpg');
 
 -- --------------------------------------------------------
 
@@ -203,7 +203,7 @@ CREATE TABLE `pag_jornadas` (
 --
 
 INSERT INTO `pag_jornadas` (`id`, `tit_cabecera`, `tit_ponente`, `foto_ponente`, `desc_ponente`, `fecha_ponente_v`, `fecha_ponente_a`, `fecha_ponente_c`, `cartel_ponente_v`, `cartel_ponente_a`, `cartel_ponente_c`) VALUES
-(1, 'Jornadas Formativas 2020', 'Dr.Carlos Gomez Gil', 'carlos-gomez-gil-150x150.jpg', 'Para estas jornadas contamos con la participación del Dr. En sociología de la Universidad de Alicante, Dr. Carlos Gomez Gil. Para conocer su extensa experiencia os recomendamos acudir a su blog. El Dr. Gomez Gil estará con nosotros los siguietes días en los que se realizará el taller:', '2019-09-24 00:00:00', '2019-08-25 00:00:00', '2019-08-26 00:00:00', 'ODS-Castellon.jpg', 'ODS-Valencia.jpg', 'ODS-Alicante.jpg');
+(1, 'Jornadas Formativas 2020', 'Dr.Carlos Gomez Gil', 'carlos-gomez-gil-150x150.jpg', 'Para estas jornadas contamos con la participación del Dr. En sociología de la Universidad de Alicante, Dr. Carlos Gomez Gil. Para conocer su extensa experiencia os recomendamos acudir a su blog. El Dr. Gomez Gil estará con nosotros los siguietes días en los que se realizará el taller:', '2019-09-24 18:15:00', '2019-09-25 18:15:00', '2019-09-26 18:15:00', 'ODS-Castellon.jpg', 'ODS-Valencia.jpg', 'ODS-Alicante.jpg');
 
 -- --------------------------------------------------------
 
@@ -244,7 +244,7 @@ CREATE TABLE `pag_nuestra_propuesta` (
 --
 
 INSERT INTO `pag_nuestra_propuesta` (`id`, `tit_cabecera`) VALUES
-(1, 'compromiso con la formación de profesionales y estudiantes');
+(1, 'Compromiso con la formación de profesionales y estudiantes');
 
 -- --------------------------------------------------------
 
