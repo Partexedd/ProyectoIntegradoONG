@@ -310,3 +310,15 @@ li>a{color: #183e7d !important;
   }
 }
 
+
+.bot{
+  margin-top: 2%;
+  background-color: #506E79 !important;
+  color: #fff !important;
+  border-radius: 0px !important;
+}
+.bot:hover{
+  background-color: #5c7f8b !important;
+  color: #fff !important;
+  border-radius: 0px !important;
+}
