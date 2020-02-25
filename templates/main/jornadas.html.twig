@@ -53,9 +53,69 @@
         <img src="/img/jornadas/{{ jornadas.fotoPonente }}" class="imagen">
         <div class="text-justify Ag30">{{ jornadas.descPonente }}</div>
         <ul class="text-left">		  
-            <li>Castellón:{{jornadas.getFechaPonenteC()|date("m/d/y")}}</li>
-            <li>Valencia:{{jornadas.getFechaPonenteV()|date("m/d/y")}}</li>
-            <li>Alicante: {{jornadas.getFechaPonenteA()|date("m/d/y")}}</li>
+            <li>Castellón:<b> {{jornadas.getFechaPonenteC()|date('l, j M Y, H:i')|replace({
+  'Jan'  : 'Enero',
+   'Feb': 'Febrero',
+   'Mar': 'Marzo',
+   'Apr': 'Abril',
+   'May': 'Mayo',
+   'Jul': 'Julio',
+   'Aug': 'Agosto',
+   'Sep': 'Septiembre',
+   'Oct':'Octubre',
+   'Nov': 'Noviembre',
+   'Dec': 'Diciembre',
+    'Monday'   : 'Lunes',
+    'Sunday': 'Domingo',
+    'Tuesday': 'Martes',
+    'Wednesday': 'Miércoles',
+    'Thursday': 'Jueves',
+    'Friday': 'Viernes',
+    'Saturday': 'Sábado',
+    'Sunday': 'Domingo',
+  'December' : 'Diciembre',}) }}</b></li>
+            <li>Valencia: <b>{{jornadas.getFechaPonenteV()|date('l, j M Y, H:i')|replace({
+  'Jan'  : 'Enero',
+   'Feb': 'Febrero',
+   'Mar': 'Marzo',
+   'Apr': 'Abril',
+   'May': 'Mayo',
+   'Jul': 'Julio',
+   'Aug': 'Agosto',
+   'Sep': 'Septiembre',
+   'Oct':'Octubre',
+   'Nov': 'Noviembre',
+   'Dec': 'Diciembre',
+    'Monday'   : 'Lunes',
+    'Sunday': 'Domingo',
+    'Tuesday': 'Martes',
+    'Wednesday': 'Miércoles',
+    'Thursday': 'Jueves',
+    'Friday': 'Viernes',
+    'Saturday': 'Sábado',
+    'Sunday': 'Domingo',
+  'December' : 'Diciembre',}) }}</b></li>
+            <li>Alicante: <b>{{jornadas.getFechaPonenteA()|date('l, j M Y, H:i')|replace({
+  'Jan'  : 'Enero',
+   'Feb': 'Febrero',
+   'Mar': 'Marzo',
+   'Apr': 'Abril',
+   'May': 'Mayo',
+   'Jul': 'Julio',
+   'Aug': 'Agosto',
+   'Sep': 'Septiembre',
+   'Oct':'Octubre',
+   'Nov': 'Noviembre',
+   'Dec': 'Diciembre',
+    'Monday'   : 'Lunes',
+    'Sunday': 'Domingo',
+    'Tuesday': 'Martes',
+    'Wednesday': 'Miércoles',
+    'Thursday': 'Jueves',
+    'Friday': 'Viernes',
+    'Saturday': 'Sábado',
+    'Sunday': 'Domingo',
+  'December' : 'Diciembre',}) }}</b></li>
         </ul>
         <div class="row">
             <img class="col-md-4 col-sm-12 carteles" id="myImg1" src="{{asset( jornadas.cartelPonenteC, 'cartelesJornadas') }}"><br>

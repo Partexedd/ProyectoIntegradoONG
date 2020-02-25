@@ -2,7 +2,7 @@
 
     {% block div %}
  <title>PeliculasMirant index</title>
-    <h1>PeliculasMirant index</h1>
+    <h1 style="text-align:center">Peliculas Mirant</h1><br>
  <a href="{{ path('peliculas_mirant_new') }}" style="margin-left:10px" ><button type="button" id="sidebarCollapse" class="btn btn-info">
             <i class="fas fa-plus"></i>
             <span>Añadir nuevo</span>
@@ -50,8 +50,9 @@
                 {% endfor %}
                 {# <td>{{peliculas_mirant.edicion}}</td> #}
                 <td>
-                    <a href="{{ path('peliculas_mirant_show', {'id': peliculas_mirant.id}) }}">show</a>
-                    <a href="{{ path('peliculas_mirant_edit', {'id': peliculas_mirant.id}) }}">edit</a>
+                    <a href="{{ path('peliculas_mirant_show', {'id': peliculas_mirant.id}) }}" ><i class="fas fa-eye" ></i></a>
+                    <br>
+                    <a href="{{ path('peliculas_mirant_edit', {'id': peliculas_mirant.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>
             </tr>
         {% else %}

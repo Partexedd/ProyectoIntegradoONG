@@ -87,7 +87,7 @@ class MainController extends AbstractController
         $user1 = $session->get('nombre_usuario');
         $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         return $this->render('main/mirant.html.twig', [
-          'imagenheader' => 'header-inicio.jpg',
+          'imagenheader' => 'Estreno-Temps-DEcoute.jpg',
           'edicionFiltro' =>$edicionFiltro,
           'mirantBBDD' => $mirantBBDD,
           'peliculasBBDD' => $peliculasBBDD,
@@ -105,7 +105,7 @@ class MainController extends AbstractController
         $user1 = $session->get('nombre_usuario');
         $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         return $this->render('main/jornadas.html.twig', [
-          'imagenheader' => 'header-inicio.jpg',
+          'imagenheader' => 'IMG_0592.jpg',
           'jornadasBBDD' => $jornadasBBDD,
           'EdicionMirant' => $Mirant, 
         ]);
@@ -263,7 +263,7 @@ class MainController extends AbstractController
     {
         $Mirant=$this->getDoctrine()->getRepository(PagMirant::Class)->findAll();
         return $this->render('main/formularioJornada.html.twig', [
-            'imagenheader' => 'head\ fotos/fotoHeadNuestraPropuesta.jpg',
+            'imagenheader' => 'Manos.jpg',
             'EdicionMirant' => $Mirant, 
         ]);
     }
