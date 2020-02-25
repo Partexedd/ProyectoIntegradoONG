@@ -32,12 +32,12 @@ input{
 }
 .bot, .collapsible1, .collapsible2, .collapsible3{
     margin-top: 2%;
-    background-color: #5c7f8b !important;
+    background-color: #506E79 !important;
     color: #fff !important;
     border-radius: 0px !important;
 }
 .bot:hover, .collapsible1:hover, .collapsible2:hover, .collapsible3:hover{
-    background-color: #506E79 !important;
+    background-color: #5c7f8b !important;
     color: #fff !important;
     border-radius: 0px !important;
 }
