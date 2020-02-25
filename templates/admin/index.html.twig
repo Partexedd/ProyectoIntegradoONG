@@ -25,14 +25,13 @@
                     <script>
  $("#Mensaje").click(function(){
   swal.fire({
-  title: "<i>Title</i>", 
-  html:"{% apply replace({'\"': '\''})|replace({'\n': ''})|raw|spaceless %}{{ include('admin/_form.html.twig', {'button_label': 'Update',}) }}{% endapply %}",
-  confirmButtonText: "V <u>redu</u>", 
+  title: "<i>Cambio de contraseña</i>", 
+  html:"{% apply replace({'\"': '\''})|replace({'\n': ''})|raw|spaceless %}{{ include('admin/_form.html.twig', {'button_label': 'Cambiar',}) }}{% endapply %}", 
 }).then((result) => {
   if (result.value) {
     swalWithBootstrapButtons.fire(
-      'Borrado!',
-      'El mensaje ha sido borrado.',
+      'Contraseña cambiada!',
+      'La contraseña ha sido cambada con exito.',
       'success'
     )
           document.getElementById('swal-input1').value,
